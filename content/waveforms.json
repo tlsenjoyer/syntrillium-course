@@ -1,0 +1,307 @@
+{
+  "id": "waveforms",
+  "title": "Форма звуковой волны",
+  "status": "review-draft",
+  "source": {
+    "executable_sha256": "c385ac83b9cad64cc988d37b8e5b3c30586fcf63c478d56d473a5dcf5c360725",
+    "topic_title": "Waveforms",
+    "entry_frame": 1003,
+    "next_topic_entry_frame": 2814,
+    "transcription_model": "Systran/faster-whisper-base.en",
+    "transcription_model_sha256": "2a166925539a16005f14ff328359f9b9adb9dc4fb631bb3b227526862e93e2ef",
+    "transcription_reviewed": false,
+    "translation_reviewed": false
+  },
+  "voice": {
+    "engine": "piper-tts",
+    "version": "1.8.0",
+    "model": "ru_RU-denis-medium",
+    "model_url": "https://huggingface.co/rhasspy/piper-voices/resolve/main/ru/ru_RU/denis/medium/ru_RU-denis-medium.onnx",
+    "reviewed": false
+  },
+  "labels": {
+    "zero": "Нулевая линия",
+    "pressure": "Давление",
+    "noChange": "Давление не изменяется",
+    "high": "Высокое давление",
+    "low": "Низкое давление",
+    "peak": "Максимум",
+    "trough": "Минимум",
+    "amplitude": "Амплитуда",
+    "cycle": "Цикл",
+    "frequency": "Частота — число циклов в секунду",
+    "hertz": "1 герц (Гц) = 1 цикл в секунду",
+    "thousandHertz": "1 000 Гц = 1 000 циклов в секунду",
+    "wavelength": "Длина волны",
+    "inPhase": "В фазе",
+    "outOfPhase": "Сдвиг фаз — 180°"
+  },
+  "review_notes": [
+    "English source text is an automatic transcription; check against original audio before accepting translation.",
+    "The original describes amplitude as the pressure change from peak to trough. This draft retains that statement; owner decision is required before any correction.",
+    "Visuals are reconstructed with exported original vector paths. Educational meaning, complete event order and synchronization require comparison with the original."
+  ],
+  "segments": [
+    {
+      "id": "1976",
+      "source_resource_id": 1976,
+      "source_start_frame": 1025,
+      "source_end_frame": 1103,
+      "english_asr": "The amplitude of the waveform is the changing pressure from the peak of the waveform to the trough.",
+      "russian": "Амплитуда волны — это изменение давления от максимума волны до её минимума.",
+      "visual": "amplitude"
+    },
+    {
+      "id": "1982",
+      "source_resource_id": 1982,
+      "source_start_frame": 1112,
+      "source_end_frame": 1205,
+      "english_asr": "A cycle is the amount of time it takes the waveform to go from one amplitude all the way through its amplitude changes.",
+      "russian": "Цикл — это время, за которое волна проходит от одного значения амплитуды через все её изменения…",
+      "visual": "cycle-start"
+    },
+    {
+      "id": "1988",
+      "source_resource_id": 1988,
+      "source_start_frame": 1206,
+      "source_end_frame": 1240,
+      "english_asr": "until it reaches the same amplitude again.",
+      "russian": "…и снова достигает того же значения амплитуды.",
+      "visual": "cycle-end"
+    },
+    {
+      "id": "1994",
+      "source_resource_id": 1994,
+      "source_start_frame": 1250,
+      "source_end_frame": 1308,
+      "english_asr": "The frequency of the waveform is how many cycles it goes through each second.",
+      "russian": "Частота волны показывает, сколько циклов она совершает за одну секунду.",
+      "visual": "frequency"
+    },
+    {
+      "id": "2000",
+      "source_resource_id": 2000,
+      "source_start_frame": 1310,
+      "source_end_frame": 1349,
+      "english_asr": "where 1 Hz is 1 cycle per second.",
+      "russian": "Один герц — это один цикл в секунду.",
+      "visual": "hertz"
+    },
+    {
+      "id": "2006",
+      "source_resource_id": 2006,
+      "source_start_frame": 1351,
+      "source_end_frame": 1432,
+      "english_asr": "That is a waveform at 1,000 Hz goes through 1,000 cycles every second.",
+      "russian": "Таким образом, волна с частотой тысяча герц совершает тысячу циклов каждую секунду.",
+      "visual": "thousand-hertz"
+    },
+    {
+      "id": "2012",
+      "source_resource_id": 2012,
+      "source_start_frame": 1440,
+      "source_end_frame": 1511,
+      "english_asr": "A waveform's phase is to measure up how far through a cycle the waveform is.",
+      "russian": "Фаза волны показывает, какую часть цикла она прошла.",
+      "visual": "phase"
+    },
+    {
+      "id": "2018",
+      "source_resource_id": 2018,
+      "source_start_frame": 1515,
+      "source_end_frame": 1559,
+      "english_asr": "There are 360 degrees in a single cycle.",
+      "russian": "В одном полном цикле — триста шестьдесят градусов.",
+      "visual": "degrees"
+    },
+    {
+      "id": "2024",
+      "source_resource_id": 2024,
+      "source_start_frame": 1561,
+      "source_end_frame": 1602,
+      "english_asr": "So if you started measuring with zero degrees at the peak,",
+      "russian": "Если начать отсчёт с нуля градусов в максимуме волны…",
+      "visual": "phase-zero"
+    },
+    {
+      "id": "2030",
+      "source_resource_id": 2030,
+      "source_start_frame": 1604,
+      "source_end_frame": 1652,
+      "english_asr": "The waveform would be at 180 degrees at the trough.",
+      "russian": "…то в её минимуме фаза составит сто восемьдесят градусов…",
+      "visual": "phase-half"
+    },
+    {
+      "id": "2036",
+      "source_resource_id": 2036,
+      "source_start_frame": 1654,
+      "source_end_frame": 1702,
+      "english_asr": "and back up to 360 degrees at the next peak.",
+      "russian": "…а в следующем максимуме достигнет трёхсот шестидесяти градусов.",
+      "visual": "phase-full"
+    },
+    {
+      "id": "1880",
+      "source_resource_id": 1880,
+      "source_start_frame": 1709,
+      "source_end_frame": 1798,
+      "english_asr": "Though wavelength is the distance measured in inches or centimeters between two points with the same phase.",
+      "russian": "Длина волны — это расстояние между двумя точками с одинаковой фазой, измеренное в дюймах или сантиметрах.",
+      "visual": "wavelength"
+    },
+    {
+      "id": "2048",
+      "source_resource_id": 2048,
+      "source_start_frame": 1807,
+      "source_end_frame": 1885,
+      "english_asr": "When two or more sound waves meet, their amplitudes add two and subtract from each other.",
+      "russian": "Когда встречаются две или несколько звуковых волн, их амплитуды складываются и вычитаются.",
+      "visual": "interference"
+    },
+    {
+      "id": "2054",
+      "source_resource_id": 2054,
+      "source_start_frame": 1889,
+      "source_end_frame": 1935,
+      "english_asr": "if the peaks and troughs of the two waveforms line up.",
+      "russian": "Если максимумы и минимумы двух волн совпадают…",
+      "visual": "aligned"
+    },
+    {
+      "id": "2060",
+      "source_resource_id": 2060,
+      "source_start_frame": 1937,
+      "source_end_frame": 1966,
+      "english_asr": "They are said to be in phase.",
+      "russian": "…говорят, что волны находятся в фазе.",
+      "visual": "in-phase"
+    },
+    {
+      "id": "2066",
+      "source_resource_id": 2066,
+      "source_start_frame": 1968,
+      "source_end_frame": 2024,
+      "english_asr": "In this situation, each peak adds to the peak in the other waveform.",
+      "russian": "В этом случае каждый максимум складывается с максимумом другой волны…",
+      "visual": "add-peaks"
+    },
+    {
+      "id": "2072",
+      "source_resource_id": 2072,
+      "source_start_frame": 2026,
+      "source_end_frame": 2065,
+      "english_asr": "and each trough subtracts from the other troughs.",
+      "russian": "…а каждый минимум — с минимумом другой волны.",
+      "visual": "add-troughs"
+    },
+    {
+      "id": "2078",
+      "source_resource_id": 2078,
+      "source_start_frame": 2067,
+      "source_end_frame": 2136,
+      "english_asr": "resulting in a waveform that has twice the amplitude of either individual waveform.",
+      "russian": "В результате получается волна, амплитуда которой вдвое больше амплитуды каждой отдельной волны.",
+      "visual": "double-amplitude"
+    },
+    {
+      "id": "2084",
+      "source_resource_id": 2084,
+      "source_start_frame": 2140,
+      "source_end_frame": 2206,
+      "english_asr": "Sometimes the peaks of one waveform match up with the troughs of the other waveform.",
+      "russian": "Иногда максимумы одной волны совпадают с минимумами другой.",
+      "visual": "opposite"
+    },
+    {
+      "id": "2090",
+      "source_resource_id": 2090,
+      "source_start_frame": 2209,
+      "source_end_frame": 2247,
+      "english_asr": "The peaks and the troughs will cancel each other out.",
+      "russian": "Максимумы и минимумы взаимно компенсируются…",
+      "visual": "cancel"
+    },
+    {
+      "id": "2096",
+      "source_resource_id": 2096,
+      "source_start_frame": 2249,
+      "source_end_frame": 2280,
+      "english_asr": "resulting in no waveform at all.",
+      "russian": "…и результирующая волна полностью исчезает.",
+      "visual": "cancelled"
+    },
+    {
+      "id": "2102",
+      "source_resource_id": 2102,
+      "source_start_frame": 2284,
+      "source_end_frame": 2342,
+      "english_asr": "Such waveforms are said to be 180 degrees out of phase.",
+      "russian": "О таких волнах говорят, что они сдвинуты по фазе на сто восемьдесят градусов.",
+      "visual": "out-of-phase"
+    },
+    {
+      "id": "2108",
+      "source_resource_id": 2108,
+      "source_start_frame": 2348,
+      "source_end_frame": 2400,
+      "english_asr": "In other cases, the waves are out of phase by some other amount.",
+      "russian": "В других случаях сдвиг фаз между волнами может быть иным.",
+      "visual": "offset"
+    },
+    {
+      "id": "2114",
+      "source_resource_id": 2114,
+      "source_start_frame": 2402,
+      "source_end_frame": 2472,
+      "english_asr": "This will result in a more complicated waveform than either of the original waveforms.",
+      "russian": "В результате получается волна более сложной формы, чем каждая из исходных волн…",
+      "visual": "complex"
+    },
+    {
+      "id": "2120",
+      "source_resource_id": 2120,
+      "source_start_frame": 2474,
+      "source_end_frame": 2529,
+      "english_asr": "as the amplitude at each point along each waveform were added together.",
+      "russian": "…поскольку амплитуды исходных волн складываются в каждой точке.",
+      "visual": "add-points"
+    },
+    {
+      "id": "2126",
+      "source_resource_id": 2126,
+      "source_start_frame": 2534,
+      "source_end_frame": 2587,
+      "english_asr": "Two simple waves can make a complex wave file like this.",
+      "russian": "Две простые волны могут образовать сложную волну, такую как эта.",
+      "visual": "simple-complex"
+    },
+    {
+      "id": "2132",
+      "source_resource_id": 2132,
+      "source_start_frame": 2592,
+      "source_end_frame": 2652,
+      "english_asr": "Continuing to add waves will make a more and more complicated waveform.",
+      "russian": "Если продолжать добавлять волны, форма результирующей волны будет становиться всё сложнее.",
+      "visual": "more-waves"
+    },
+    {
+      "id": "2138",
+      "source_resource_id": 2138,
+      "source_start_frame": 2656,
+      "source_end_frame": 2735,
+      "english_asr": "When you see music, voice, noise, or other complicated sound represented by a waveform,",
+      "russian": "Когда вы видите музыку, голос, шум или другой сложный звук в виде волны…",
+      "visual": "music"
+    },
+    {
+      "id": "2144",
+      "source_resource_id": 2144,
+      "source_start_frame": 2737,
+      "source_end_frame": 2800,
+      "english_asr": "You are actually seeing the result of adding all the waves from each instrument together.",
+      "russian": "…перед вами на самом деле результат сложения всех волн, создаваемых отдельными инструментами.",
+      "visual": "instruments"
+    }
+  ]
+}

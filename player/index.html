@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Краткий курс цифрового звука — Syntrillium</title>
+  <link rel="stylesheet" href="player.css">
+  <script src="lesson.js" defer></script>
+  <script src="player.js" defer></script>
+</head>
+<body>
+  <header class="course-header">
+    <div class="wordmark">Syntrillium</div>
+    <p>Краткий курс цифрового звука</p>
+  </header>
+  <main>
+    <section id="menu" aria-labelledby="menu-title">
+      <div class="introduction">
+        <h1 id="menu-title">Темы курса</h1>
+        <p>Знакомство с основами звука и цифрового аудио.</p>
+        <p>В этой версии для проверки доступен один урок — «Форма звуковой волны».
+          Его записи и изображения находятся в папке курса и воспроизводятся без интернета.</p>
+      </div>
+      <ol class="topics" aria-label="Темы в порядке оригинального курса">
+        <li><button disabled>Основы звука</button></li>
+        <li><button id="open-lesson" aria-label="Форма звуковой волны">Форма звуковой волны</button></li>
+        <li><button disabled>Аналоговый звук</button></li>
+        <li><button disabled>Цифровой звук</button></li>
+        <li><button disabled>Частота дискретизации</button></li>
+        <li><button disabled>Разрядность</button></li>
+        <li><button disabled>Итоги: цифровой звук</button></li>
+        <li><button disabled>Звук на компьютере</button></li>
+        <li><button disabled>MIDI</button></li>
+      </ol>
+    </section>
+    <section id="lesson" aria-labelledby="lesson-title" hidden>
+      <div class="lesson-heading">
+        <button id="back" class="text-button">К темам курса</button>
+        <h1 id="lesson-title">Форма звуковой волны</h1>
+      </div>
+      <div class="stage">
+        <svg id="visualization" viewBox="0 65 550 270" role="img" aria-label="Визуализация звуковой волны"></svg>
+      </div>
+      <div class="transport">
+        <div class="transport-buttons">
+          <button id="previous" class="icon-button" aria-label="Предыдущий фрагмент" title="Предыдущий фрагмент">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14m13-14L9 12l10 7Z"/></svg>
+          </button>
+          <button id="toggle" class="play-button" aria-label="Продолжить">Продолжить</button>
+          <button id="next" class="icon-button" aria-label="Следующий фрагмент" title="Следующий фрагмент">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M5 5l10 7-10 7Z"/></svg>
+          </button>
+        </div>
+        <label class="timeline" for="position">
+          <span class="sr-only">Положение в уроке</span>
+          <input id="position" type="range" min="0" max="1000" value="0" step="1" aria-label="Положение в уроке">
+          <span id="clock">0:00 / 0:00</span>
+        </label>
+      </div>
+      <p id="caption" class="caption"></p>
+      <p id="playback-status" class="playback-status" role="status"></p>
+      <div id="completion" hidden>
+        <h2>Урок завершён</h2>
+        <button id="replay">Повторить урок</button>
+      </div>
+    </section>
+    <div id="error" class="error" role="alert" hidden>
+      <p id="error-message"></p>
+      <button id="retry">Повторить</button>
+    </div>
+    <audio id="narration" preload="auto"></audio>
+    <noscript>Для воспроизведения урока включите JavaScript в браузере.</noscript>
+  </main>
+  <footer>Русская адаптация оригинального курса Syntrillium · Версия для проверки</footer>
+</body>
+</html>

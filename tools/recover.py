@@ -13,6 +13,9 @@ from pathlib import Path
 import struct
 import sys
 import zlib
+from typing import Any
+
+from composition import key_table, recover_composition
 
 
 class Reader:
@@ -141,18 +144,10 @@ def read_container(source):
 
 def member_inventory(rows, chunks):
     """Retain cast names and KEY* links; missing targets stay explicit."""
-    media = {}
-    for row in rows.values():
-        if row['tag'] != 'KEY*':
-            continue
-        data = chunks[row['id']]
-        size, size2, count, used = struct.unpack_from('<HHII', data)
-        if size != 12 or size2 != 12 or used > count or len(data) != 12 + count * size:
-            raise ValueError('Malformed Director key table')
-        for index in range(used):
-            target, owner, tag = struct.unpack_from('<II4s', data, 12 + index * size)
-            media.setdefault(owner, []).append(dict(
-                resource_id=target, tag=tag[::-1].decode('ascii'), present=target in rows))
+    media: dict[int, list[dict[str, Any]]] = {}
+    for target, owner, tag in key_table(rows, chunks):
+        media.setdefault(owner, []).append(dict(
+            resource_id=target, tag=tag, present=target in rows))
     members = []
     for row in rows.values():
         if row['tag'] != 'CASt':
@@ -190,6 +185,7 @@ def recover(source, destination):
     data = source.read_bytes()
     movie, offset, version, compression, rows, chunks = read_container(data)
     members = member_inventory(rows, chunks)
+    composition = recover_composition(rows, chunks, members, digest(data))
     # Parse everything before creating output. Existing output is never replaced.
     destination.mkdir(parents=True, exist_ok=False)
     (destination / 'resources').mkdir()
@@ -223,8 +219,10 @@ def recover(source, destination):
         limitations=['Resource IDs are not lesson ordering.',
                      'Proprietary sound compression is preserved, not decoded.',
                      'Flash headers do not establish playback compatibility or animation coverage.',
-                     'Text bodies, library membership, score timing and lesson composition require further recovery.'])
+                     'composition.json recovers static score spans, library membership and rich-text bodies.',
+                     'Runtime script behavior, font glyph mapping and rendered lesson timing require verification.'])
     (destination / 'inventory.json').write_text(json.dumps(inventory, indent=2) + '\n', encoding='utf-8')
+    (destination / 'composition.json').write_text(json.dumps(composition, indent=2) + '\n', encoding='utf-8')
     return inventory
 
 

@@ -1,0 +1,216 @@
+{
+  "source_sha256": "c385ac83b9cad64cc988d37b8e5b3c30586fcf63c478d56d473a5dcf5c360725",
+  "content_sha256": "15bb49f2ea9f8ff3cc219e2e48cce690b05d7ea9a7960bfda14633c86fe91a00",
+  "model_sha256": "879bc365cb14d1380e3f5ed6044162ccf54c99f6161871569b7f830aec3ce841",
+  "model_config_sha256": "e4fb4ab60262d1ab802c8c39301976c4135e545bc834a33c6eedc1f764df3bd6",
+  "voice": {
+    "engine": "piper-tts",
+    "version": "1.8.0",
+    "model": "ru_RU-denis-medium",
+    "model_url": "https://huggingface.co/rhasspy/piper-voices/resolve/main/ru/ru_RU/denis/medium/ru_RU-denis-medium.onnx",
+    "reviewed": false
+  },
+  "vectors": [
+    {
+      "path": "assets/sine.svg",
+      "resource_id": 2850,
+      "exported_frame_sha256": "e8351b205757520a231f640aa787f044d2cb3eb1827321fc029ff6e17e709803",
+      "sha256": "a6f2370b27b93034782dbe9921951569c9344418e663419c1c997e1290adc661"
+    },
+    {
+      "path": "assets/complex-1.svg",
+      "resource_id": 2911,
+      "exported_frame_sha256": "fbf4fe2a0cf2642faef91671eb383044ae46e784fba69fe15d6a532ffabbfdac",
+      "sha256": "88895f2a4afecfd8d3600ffec7ac320db4b714b3905345bbccc006d56a1e043f"
+    },
+    {
+      "path": "assets/complex-2.svg",
+      "resource_id": 2913,
+      "exported_frame_sha256": "b27a87c25accf6b08ffd35129589d2e31f7e7eeccc8a9af22ef0ed9848b3ea28",
+      "sha256": "bc7096ea379238771e708e617a5a6c05a6e5388da74845925d30e4cd2464170d"
+    },
+    {
+      "path": "assets/ball.svg",
+      "resource_id": 2844,
+      "exported_frame_sha256": "702d455165ca4cf1439aeacad8369cf72e553e3bb00d90480927ea3b5034441f",
+      "sha256": "2f575e4ba2feb4f6827bddf430e326f1e89c91b72bb6010e024becb6c7d08d7c"
+    }
+  ],
+  "audio": [
+    {
+      "path": "audio/01976.mp3",
+      "source_resource_id": 1976,
+      "sha256": "e47a6980871a11bca389529d213b9470d74f84357b0e493a04ff771571fda6a3",
+      "duration": 5.17805
+    },
+    {
+      "path": "audio/01982.mp3",
+      "source_resource_id": 1982,
+      "sha256": "b23a4dd8518f6a6105b8705279c44827a8864599d5b692c85b0d5336a45790a3",
+      "duration": 6.269388
+    },
+    {
+      "path": "audio/01988.mp3",
+      "source_resource_id": 1988,
+      "sha256": "4bb2448e6eaffc67d2440d9997573df9bfb288a24c820d356acd7ad34f527b34",
+      "duration": 3.239184
+    },
+    {
+      "path": "audio/01994.mp3",
+      "source_resource_id": 1994,
+      "sha256": "c294e757c24d2848529cbaab8dc6c61426edd53adbf69a01be7f2da067e49371",
+      "duration": 4.551111
+    },
+    {
+      "path": "audio/02000.mp3",
+      "source_resource_id": 2000,
+      "sha256": "effb69b3a6030da8f2d8ff7d296cb5422aab0b55f20abb449c305c3266f85fcb",
+      "duration": 2.867664
+    },
+    {
+      "path": "audio/02006.mp3",
+      "source_resource_id": 2006,
+      "sha256": "70b8afe648530fae2ce7a6f1a27665f89d7f136c70d3029bcfec5991ee82626b",
+      "duration": 5.561179
+    },
+    {
+      "path": "audio/02012.mp3",
+      "source_resource_id": 2012,
+      "sha256": "cb852d2657bfbe2a798035416afee3b7e1c2c45cbd88f6415e4e0b94a35464f7",
+      "duration": 3.506213
+    },
+    {
+      "path": "audio/02018.mp3",
+      "source_resource_id": 2018,
+      "sha256": "eab8cbc1e053b5e6e958bb6e694987870b281f367de15fcfb3d365cd6ab3824a",
+      "duration": 3.390113
+    },
+    {
+      "path": "audio/02024.mp3",
+      "source_resource_id": 2024,
+      "sha256": "867687e1f1ba5591506f069fe683b54aaadeb7115b6dc9d12d4a49e3260454c4",
+      "duration": 3.448163
+    },
+    {
+      "path": "audio/02030.mp3",
+      "source_resource_id": 2030,
+      "sha256": "9cceca761943c31d9853c975fc22ada58f9c9ae0cc042c0cfec0a7f74155c80e",
+      "duration": 3.715193
+    },
+    {
+      "path": "audio/02036.mp3",
+      "source_resource_id": 2036,
+      "sha256": "0861158aeaf9efd9abfc95d1d01c7a3d3818624e7e2ac13525561b0bdc02e676",
+      "duration": 4.086712
+    },
+    {
+      "path": "audio/01880.mp3",
+      "source_resource_id": 1880,
+      "sha256": "072eae5c747781a8558f8fb2fe092088e2a0d0f5e9632c790b52a13f28e2967d",
+      "duration": 6.791837
+    },
+    {
+      "path": "audio/02048.mp3",
+      "source_resource_id": 2048,
+      "sha256": "3f803cba34d910793603921590cf1a958990e18a7075d48d4e13586cc576fd3f",
+      "duration": 5.979138
+    },
+    {
+      "path": "audio/02054.mp3",
+      "source_resource_id": 2054,
+      "sha256": "317ffe1053abbbacc9d79410560462fafe40f2a2832be51edbf0f539593d0bc4",
+      "duration": 3.215964
+    },
+    {
+      "path": "audio/02060.mp3",
+      "source_resource_id": 2060,
+      "sha256": "acce2df43ed96a8428283110e26ed3fde374e4a7b0f6e207770babcef60bb988",
+      "duration": 2.612245
+    },
+    {
+      "path": "audio/02066.mp3",
+      "source_resource_id": 2066,
+      "sha256": "55ee2c631b288749bc5b53f477bede4bb9cd56e9467e1142bc506119eb08664e",
+      "duration": 4.133152
+    },
+    {
+      "path": "audio/02072.mp3",
+      "source_resource_id": 2072,
+      "sha256": "d55fa2d1e1c6e6d752b512c3cd16b459aef1b9506ff5979192eb357d158c6b9a",
+      "duration": 3.192744
+    },
+    {
+      "path": "audio/02078.mp3",
+      "source_resource_id": 2078,
+      "sha256": "1f9d4d883f249243bcb4864cca928e02a9daca3a241e343f94458dda20194879",
+      "duration": 5.712109
+    },
+    {
+      "path": "audio/02084.mp3",
+      "source_resource_id": 2084,
+      "sha256": "817e9d0fd2446c1d5aaf8e97b5721118c14ba44125e0717e5373ea27f99e22ce",
+      "duration": 3.982222
+    },
+    {
+      "path": "audio/02090.mp3",
+      "source_resource_id": 2090,
+      "sha256": "a497a507269af13f27468783bce8b0a1bdc506ef516ca9678ef834b89a81e638",
+      "duration": 3.053424
+    },
+    {
+      "path": "audio/02096.mp3",
+      "source_resource_id": 2096,
+      "sha256": "a49ddb49796d43e6018aabe272632a2c70b51f5ae3dafffcb66a8bab0cb38941",
+      "duration": 3.030204
+    },
+    {
+      "path": "audio/02102.mp3",
+      "source_resource_id": 2102,
+      "sha256": "2b6a7c4f4679b9efde26c3a4c78ff6b5a7a3f8fcc9608b04d4bae5397acb762f",
+      "duration": 4.760091
+    },
+    {
+      "path": "audio/02108.mp3",
+      "source_resource_id": 2108,
+      "sha256": "4ebcc1f9782d1afd929d9bf7699d2d1b8d25d564d4f7f7b83d9af782eb72a05d",
+      "duration": 3.610703
+    },
+    {
+      "path": "audio/02114.mp3",
+      "source_resource_id": 2114,
+      "sha256": "07e7df23bd127762404489e9cfe5f6f9c4814e787c156c359bcad2ccffa6c305",
+      "duration": 4.91102
+    },
+    {
+      "path": "audio/02120.mp3",
+      "source_resource_id": 2120,
+      "sha256": "1db6b4d6649f3ad95dd49949a62beded49da77cd3d9752e12df629b69168a380",
+      "duration": 3.970612
+    },
+    {
+      "path": "audio/02126.mp3",
+      "source_resource_id": 2126,
+      "sha256": "7dff69abbb3349e5583e68855f9395fafab3d58feb4387e4847d88ae84c5404a",
+      "duration": 4.284082
+    },
+    {
+      "path": "audio/02132.mp3",
+      "source_resource_id": 2132,
+      "sha256": "d36efd2212466eb388a416a080174818dcebcbd8b1c3fe3774d340127fa5a630",
+      "duration": 5.398639
+    },
+    {
+      "path": "audio/02138.mp3",
+      "source_resource_id": 2138,
+      "sha256": "b934f55d506f7d9f24b9c5ac45feb621dc0b587b30bf1ded90b915ffb4d18543",
+      "duration": 4.446621
+    },
+    {
+      "path": "audio/02144.mp3",
+      "source_resource_id": 2144,
+      "sha256": "899914f38c0550b142bb7ba99c87a63f0d0a819ebb94e791f54b1ba13dbe05e4",
+      "duration": 5.607619
+    }
+  ],
+  "review_status": "unverified draft"
+}

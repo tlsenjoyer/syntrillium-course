@@ -24,8 +24,8 @@ keeps encoded/unsupported resources visible rather than silently dropping them.
   container's `decoded` state means container decompression only. Audio
   classification, full narration coverage and durations remain unverified.
 - An exploratory `ffprobe` of ediM resource 2000 recognizes MP3 and estimates
-  2.82125 seconds. This single probe does not classify all ediM resources or
-  establish narration-to-lesson mapping.
+  2.82125 seconds. Subsequent probing identifies all 151 ediM resources as MP3;
+  the audio export below decodes every one rather than relying on probing alone.
 
 The extractor supports this movie's little-endian Afterburner container, zlib
 resource map and initial-load segment. It is not a general Director decompiler.
@@ -84,13 +84,79 @@ elapsed seconds, durations or verified lesson boundaries.
 | Computer Audio | 6377 |
 | MIDI | 8022 |
 
-## Remaining recovery before choosing a representative lesson
+## Static composition and decoded audio
 
-1. Decode the score (`VWSC`), labels (`VWLB`), library membership and script
-   behavior into ordered lesson composition, placement and timing. Match cast
-   media references to those events; a resource inventory alone is insufficient.
-2. Recover all visible text, including XMED rich text and text embedded in
-   bitmaps/Flash. Inventory English narration and match it to score segments.
+The standard recovery command now also writes `composition.json`. Its library
+membership and cast names agree with ProjectorRays' MCsL, CAS* and CASt output.
+Score format interpretation was researched against the primary implementations
+in [ScummVM score.cpp](https://github.com/scummvm/scummvm/blob/master/engines/director/score.cpp)
+and [frame.cpp](https://github.com/scummvm/scummvm/blob/master/engines/director/frame.cpp).
+
+- All 441 cast resources are assigned to 12 libraries with member numbers.
+- The score declares and decodes 9,416 frames, with nominal playback at 15 fps
+  and a 500×375 stage. The file has 1,006 score channels (including six main
+  channels) and 150 displayed sprite channels.
+- Recovered spans include 4,949 sprite states, 141 sound references, 16 frame
+  script references, two transition states and two palette states. Sprite spans
+  retain their complete 48-byte records as well as registration-point coordinates,
+  dimensions, cast references and detail indices. Detail indices are **not**
+  script IDs: the 1,281 nonempty score detail records remain referenced by byte
+  offsets in the preserved VWSC resource. Their behavior lists are not decoded.
+- All 96 rich-text resources have length-checked text bodies. The other 15 XMED
+  resources are the already-recovered Flash candidates. Formatting and original
+  font glyph mapping are not applied. CP1252 text decoding is provisional,
+  particularly the non-ASCII glyph in `director trademark`; inspect the rendered
+  original before using those characters in translation. Embedded bitmap/Flash
+  labels are not recovered as text by this step.
+- All labels are retained, including numeric navigation markers and comments.
+  The nine topic entry addresses above are emitted only for the known executable
+  SHA-256. A different source cannot silently inherit this navigation profile.
+- The End marker at frame 9,293 has a frame-script library value of `16388`
+  (`0x4004`) and member 1. It is retained in `unresolved_cast_references` rather
+  than guessed to be library 4. Other score cast references resolve successfully.
+
+These are static score states, not executed animation or a complete lesson
+composition. Lingo changes sprite properties and playback position. In
+particular, `animation background script` holds frames while sound channel 1
+is busy. Converting frame addresses directly to seconds would lose that behavior.
+The first score sound starts at frame 131 and references Audio member 5,
+`course005`; numeric resource IDs and names are not curriculum ordering.
+
+With FFmpeg installed, run the optional audio export documented in the README.
+It validates resource hashes before writing output, decodes all 151 ediM
+resources to PCM WAV, and records hashes, sample counts, rates and durations in
+`audio.json`. The combined decoded duration is approximately 648.19 seconds;
+this includes menu/exit resources and is **not** a measured course runtime.
+All 141 static score sound references point to exported WAVs. Roles still need
+classification by listening. MP3 encoder delay and any Director-specific trim
+behavior have not been compared with original playback.
+
+The only unexported sound member is Audio member 1, `quit`, with encoded `snd `
+resource 1870. It remains explicit as unsupported rather than being omitted.
+The separate `quit2` score sound has an ediM resource and exports successfully.
+
+On 2026-11-12 a fresh background inspection confirmed the original main menu
+and all nine topic labels in order. Opening Waveforms displayed the pressure,
+amplitude and zero-line visualization; later playback had advanced to Analog
+Audio. Screenshots were visually inspected in `/tmp`. The background workflow
+worked once the real stage was available; it did not require foreground capture.
+This adds visual navigation evidence, not continuous audiovisual comparison.
+The instance launched for this inspection was closed afterward.
+
+Waveforms is a promising representative lesson: its entry interval references
+15 rich-text members and four Flash members (`sin`, `complexwave1`,
+`complexwave2`, `backball`), as well as scripted sprite motion. Those counts use
+the provisional interval from its entry to Analog Audio's entry and do not
+establish exact lesson boundaries or complete rendered coverage.
+
+## Remaining recovery and delivery work
+
+1. Decode score detail behavior lists and script behavior into executed lesson
+   composition and timing. Static spans and labels are now recovered, but are
+   insufficient to reproduce runtime animation and narration holds.
+2. Recover text embedded in bitmaps/Flash and verify rich-text glyph mapping.
+   Transcribe and classify the exported English audio, then verify its mapping
+   and trimming against rendered score segments.
 3. Capture continuous original lesson playback with audio and known positions.
    Still images cannot establish event order, pauses or synchronization.
 4. Exercise Flash rendering before choosing reuse, reconstruction or rendered
