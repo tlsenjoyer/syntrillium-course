@@ -1,3 +1,6 @@
 __pycache__/
 /recovered/
 /.impeccable/review/
+/.env
+/.env.local
+/candidates/

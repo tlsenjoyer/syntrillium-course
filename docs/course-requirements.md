@@ -7,8 +7,8 @@ Confirmed requirements from the design interview:
   use natural Russian translation. Flag outdated material for user review.
 - Translate all learner-facing text, including interface text and labels inside
   diagrams and animations. Retain standard symbols and units where appropriate.
-- Replace all spoken narration with Russian narration. ElevenLabs is a candidate,
-  not a chosen production dependency.
+- Replace all spoken narration with Russian narration. Use ElevenLabs for
+  production generation; keep provider access out of learner playback.
 - Preserve the meaning and sequence of visualizations and animations. The user
   confirms that these are noninteractive.
 - Animation timing and pauses may change to synchronize with Russian narration.

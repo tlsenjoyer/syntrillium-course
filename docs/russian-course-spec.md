@@ -46,11 +46,27 @@ Begin with recovery of the original course's content and structure, then deliver
 - The first delivery milestone is one complete representative Russian lesson, covering visible text, narration, visualization playback, timing, navigation needed to access it, and offline operation. Choose the lesson after inventory reveals the relevant media types; an unrepresentatively simple lesson must not stand in for unresolved playback requirements.
 - Full-course conversion follows validation of that first lesson. The overall scope remains the complete original course.
 - All learner-facing English text is translated, including text embedded in images or animation assets. Preserve conventional symbols and units where appropriate. Layout and typography may change to accommodate Russian text.
-- All spoken narration is replaced with Russian narration. ElevenLabs is a candidate for generation, not a committed dependency. Generation may happen during production; learner playback must work offline without a narration service.
+- All spoken narration is replaced with Russian narration. Use ElevenLabs during
+  production; learner playback uses bundled audio and works offline without an
+  API key or narration service.
+- Generate candidate narration for a named lesson with a selected voice ID,
+  model ID, output format, and either selected segment IDs or all segments.
+  Keep each candidate isolated from approved learner audio. Resume an
+  incomplete candidate by reusing successful matching segments and requesting
+  only missing segments. Stop after an API failure and preserve generated
+  segments so credits are not spent twice.
+- Promote only explicitly selected candidate segments for the named lesson.
+  Validate the full selection and hashes before writing; roll back local file
+  replacements if a file operation fails. Record lesson/content hashes, voice,
+  model, output format, voice settings, API request IDs when available, and
+  generated audio hashes.
+- Read ElevenLabs credentials only from the environment or ignored local env
+  files. Provide an access check that lists available speech models and voices
+  without generating speech. Never put credentials in Git or learner files.
 - The user confirms that the visualizations are noninteractive and that the original course has no separate example audio. Asset references discovered during extraction must be classified rather than assumed to represent extra sound demonstrations.
 - Reuse extracted animations where fidelity, localization, and playback permit. Test Flash playback compatibility before adopting an emulator. Reconstruction or rendered animation clips are permitted where needed, provided meaning and sequence remain faithful.
 - Adjust animation duration and pauses to synchronize with Russian narration. Exact English playback duration is not a fidelity requirement.
-- Web versus desktop packaging, the player framework, codecs, supported operating-system versions, and narration voice remain open implementation choices. Decide from the sample lesson and offline/cross-platform verification rather than inventing constraints now.
+- Web versus desktop packaging, the player framework, codecs, and supported operating-system versions remain open implementation choices. Decide from the sample lesson and offline/cross-platform verification rather than inventing constraints now. Narration voice and speech model are selected per candidate generation run.
 - Existing repository content consists of the source executable, glossary, requirements, and agent configuration. There is no existing player, application interface, test suite, or architectural decision record to extend.
 
 ## Testing Decisions
