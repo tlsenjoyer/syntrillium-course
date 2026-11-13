@@ -50,12 +50,19 @@ Begin with recovery of the original course's content and structure, then deliver
   production; learner playback uses bundled audio and works offline without an
   API key or narration service.
 - Generate candidate narration for a named lesson with a selected voice ID,
-  model ID, output format, and either selected segment IDs or all segments.
+  model ID, output format, and either selected narration utterances or all utterances.
+  Each utterance is a complete sentence or short coherent passage and may span
+  multiple source segments. Preserve source segments for provenance and visual material.
+  Save each utterance's complete Russian text and covered source segments in
+  lesson content; review suggested groups rather than infer them during generation.
   Keep each candidate isolated from approved learner audio. Resume an
-  incomplete candidate by reusing successful matching segments and requesting
-  only missing segments. Stop after an API failure and preserve generated
-  segments so credits are not spent twice.
-- Promote only explicitly selected candidate segments for the named lesson.
+  incomplete candidate by reusing successful matching utterances and requesting
+  only missing utterances. Stop after an API failure and preserve generated
+  utterances so credits are not spent twice.
+- Play each utterance as one uninterrupted recording, with visual changes timed
+  to relevant spoken words and synchronization checked during narration review.
+  Previous and next navigate between utterances; timeline seeking remains available.
+- Promote only explicitly selected candidate utterances for the named lesson.
   Validate the full selection and hashes before writing; roll back local file
   replacements if a file operation fails. Record lesson/content hashes, voice,
   model, output format, voice settings, API request IDs when available, and

@@ -3,25 +3,29 @@
 (() => {
   const byId = id => document.getElementById(id);
   const error = byId('error');
-  const status = byId('playback-status');
   const audio = byId('narration');
   const data = window.LESSON;
   function showError(message) {
     byId('error-message').textContent = message;
     error.hidden = false;
   }
-  if (!data?.segments?.length) {
+  if (!data?.utterances?.length && !data?.segments?.length) {
     showError('Не удалось открыть материалы урока. Распакуйте папку курса целиком и откройте её заново.');
     byId('open-lesson').disabled = true;
     return;
   }
-  const segments = data.segments;
+  const utterances = data.utterances || data.segments;
   const starts = [];
   let total = 0;
-  for (const segment of segments) { starts.push(total); total += segment.duration; }
+  for (const utterance of utterances) { starts.push(total); total += utterance.duration; }
   let current = 0;
   let pendingOffset = 0;
   let finished = false;
+  let shouldPlay = false;
+  let seeking = false;
+  let seekWasPlaying = false;
+  let previewPosition = null;
+  let pendingSeek = null;
   let animation = 0;
   let lastDraw = 0;
   const escape = value => String(value).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
@@ -55,16 +59,30 @@
     }
     return `<g opacity="${item.opacity}">${shape}</g>`;
   }
-  function draw(progress) {
-    const frames = segments[current].frames;
+  function draw(position, segmentIndex = current) {
+    const utterance = utterances[segmentIndex];
+    let frames = utterance.frames;
+    let progress = Math.min(1, position / utterance.duration);
+    let caption = utterance.caption;
+    if (utterance.cues?.length) {
+      let cueIndex = 0;
+      while (cueIndex + 1 < utterance.cues.length && utterance.cues[cueIndex + 1].at <= position) cueIndex++;
+      const cue = utterance.cues[cueIndex];
+      const cueEnd = utterance.cues[cueIndex + 1]?.at ?? utterance.duration;
+      frames = cue.frames;
+      progress = Math.min(1, Math.max(0, (position - cue.at) / Math.max(0.001, cueEnd - cue.at)));
+      caption = cue.caption;
+    }
     let index = 0;
     while (index + 1 < frames.length && frames[index + 1].at <= progress) index++;
-    byId('visualization').innerHTML = `<title>${escape(segments[current].caption)}</title>${frames[index].items.map(commandSvg).join('')}`;
+    byId('visualization').innerHTML = `<title>${escape(caption || utterance.caption)}</title>${frames[index].items.map(commandSvg).join('')}`;
   }
 
   const time = value => `${Math.floor(value / 60)}:${String(Math.floor(value % 60)).padStart(2, '0')}`;
   function updatePosition() {
-    const elapsed = finished ? total : starts[current] + Math.min(audio.currentTime || 0, segments[current].duration);
+    const elapsed = previewPosition !== null
+      ? previewPosition
+      : (finished ? total : starts[current] + Math.min(audio.currentTime || 0, utterances[current].duration));
     byId('position').value = String(Math.round(elapsed / total * 1000));
     byId('position').setAttribute('aria-valuetext', `${time(elapsed)} из ${time(total)}`);
     byId('clock').textContent = `${time(elapsed)} / ${time(total)}`;
@@ -72,48 +90,110 @@
   function animate(timestamp) {
     if (audio.paused || byId('lesson').hidden) return;
     if (timestamp - lastDraw > 60) {
-      draw(Math.min(1, audio.currentTime / (audio.duration || segments[current].duration)));
+      draw(audio.currentTime);
       lastDraw = timestamp;
     }
     animation = requestAnimationFrame(animate);
   }
   function updateControls() {
-    const playing = !audio.paused && !finished;
-    byId('toggle').textContent = playing ? 'Пауза' : (finished ? 'Повторить' : 'Продолжить');
-    byId('toggle').setAttribute('aria-label', playing ? 'Приостановить' : (finished ? 'Повторить урок' : 'Продолжить'));
+    const playing = shouldPlay && !finished;
+    const toggle = byId('toggle');
+    const icon = byId('toggle-icon');
+    const label = playing ? 'Приостановить' : (finished ? 'Повторить урок' : 'Продолжить');
+    icon.setAttribute('d', playing ? 'M7 5v14M17 5v14' : (finished ? 'M20 11a8 8 0 0 0-14.9-4L3 9m0 0V4m0 5h5M4 13a8 8 0 0 0 14.9 4L21 15m0 0v5m0-5h-5' : 'M8 5v14l11-7Z'));
+    toggle.setAttribute('aria-label', label);
+    toggle.setAttribute('title', label);
     byId('previous').disabled = current === 0 && !finished;
-    byId('next').disabled = current === segments.length - 1;
+    byId('next').disabled = current === utterances.length - 1;
     cancelAnimationFrame(animation);
-    if (playing) animation = requestAnimationFrame(animate);
+    if (playing && !seeking && !audio.paused) animation = requestAnimationFrame(animate);
   }
   function play() {
+    shouldPlay = true;
+    updateControls();
     audio.play().catch(reason => {
       if (reason.name === 'AbortError') return;
-      status.textContent = 'Нажмите «Продолжить», чтобы включить запись.';
+      shouldPlay = false;
+      showError('Не удалось начать воспроизведение. Нажмите значок воспроизведения ещё раз.');
       updateControls();
     });
   }
   function start(index, offset = 0, playing = true) {
     current = index;
     finished = false;
+    shouldPlay = playing;
+    previewPosition = null;
+    pendingSeek = null;
     pendingOffset = Math.max(0, offset);
     byId('completion').hidden = true;
     error.hidden = true;
-    byId('caption').textContent = segments[current].caption;
-    audio.src = segments[current].audio;
+    byId('caption').textContent = utterances[current].caption || utterances[current].russian;
+    audio.src = utterances[current].audio;
     audio.load();
-    draw(pendingOffset / segments[current].duration);
+    draw(pendingOffset);
     updateControls();
     updatePosition();
     if (playing) play();
   }
   function complete() {
+    shouldPlay = false;
     audio.pause();
     finished = true;
     byId('completion').hidden = false;
-    status.textContent = '';
+    previewPosition = null;
+    pendingSeek = null;
     updatePosition();
     updateControls();
+  }
+  function locate(position) {
+    if (position >= total) {
+      const index = utterances.length - 1;
+      return {position: total, index, offset: utterances[index].duration};
+    }
+    const index = starts.findIndex((startTime, i) => position >= startTime && position < startTime + utterances[i].duration);
+    const safeIndex = Math.max(0, index);
+    return {position, index: safeIndex, offset: position - starts[safeIndex]};
+  }
+  function beginSeek() {
+    if (seeking) return;
+    seeking = true;
+    seekWasPlaying = shouldPlay && !finished;
+    finished = false;
+    byId('completion').hidden = true;
+    if (!audio.paused) audio.pause();
+    updateControls();
+  }
+  function previewSeek(position) {
+    beginSeek();
+    const selection = locate(position);
+    pendingSeek = selection;
+    previewPosition = selection.position;
+    byId('caption').textContent = utterances[selection.index].caption || utterances[selection.index].russian;
+    draw(selection.offset, selection.index);
+    updatePosition();
+  }
+  function commitSeek() {
+    if (!seeking) return;
+    const selection = pendingSeek || locate(Number(byId('position').value) / 1000 * total);
+    const playing = seekWasPlaying;
+    seeking = false;
+    previewPosition = null;
+    pendingSeek = null;
+    if (selection.position >= total) {
+      complete();
+      return;
+    }
+    if (selection.index === current) {
+      audio.currentTime = selection.offset;
+      byId('caption').textContent = utterances[current].caption || utterances[current].russian;
+      draw(selection.offset);
+      updatePosition();
+      shouldPlay = playing;
+      updateControls();
+      if (playing) play();
+      return;
+    }
+    start(selection.index, selection.offset, playing);
   }
   byId('open-lesson').addEventListener('click', () => {
     byId('menu').hidden = true;
@@ -122,7 +202,11 @@
     byId('toggle').focus();
   });
   byId('back').addEventListener('click', () => {
+    shouldPlay = false;
     audio.pause();
+    seeking = false;
+    previewPosition = null;
+    pendingSeek = null;
     byId('lesson').hidden = true;
     byId('menu').hidden = false;
     error.hidden = true;
@@ -130,27 +214,37 @@
   });
   byId('toggle').addEventListener('click', () => {
     if (finished) start(0);
-    else if (audio.paused) play();
-    else audio.pause();
+    else if (shouldPlay) {
+      shouldPlay = false;
+      audio.pause();
+      updateControls();
+    } else play();
   });
   byId('previous').addEventListener('click', () => start(Math.max(0, current - 1)));
-  byId('next').addEventListener('click', () => start(Math.min(segments.length - 1, current + 1)));
+  byId('next').addEventListener('click', () => start(Math.min(utterances.length - 1, current + 1)));
   byId('replay').addEventListener('click', () => start(0));
   byId('retry').addEventListener('click', () => start(current));
-  byId('position').addEventListener('input', event => {
-    const position = Number(event.target.value) / 1000 * total;
-    if (position >= total) { complete(); return; }
-    const next = starts.findIndex((startTime, i) => position >= startTime && position < startTime + segments[i].duration);
-    start(Math.max(0, next), position - starts[Math.max(0, next)], !audio.paused || finished);
+  byId('position').addEventListener('input', event => previewSeek(Number(event.target.value) / 1000 * total));
+  byId('position').addEventListener('change', commitSeek);
+  byId('position').addEventListener('pointerup', commitSeek);
+  document.addEventListener('keydown', event => {
+    if (event.code !== 'Space' || byId('lesson').hidden || event.target?.closest?.('button, select, textarea, [contenteditable="true"]')) return;
+    event.preventDefault();
+    if (finished) start(0);
+    else if (shouldPlay) {
+      shouldPlay = false;
+      audio.pause();
+      updateControls();
+    } else play();
   });
   audio.addEventListener('loadedmetadata', () => {
     audio.currentTime = Math.min(pendingOffset, Math.max(0, audio.duration - 0.01));
     updatePosition();
   });
-  audio.addEventListener('play', () => { status.textContent = 'Воспроизведение'; updateControls(); });
-  audio.addEventListener('pause', () => { if (!finished) status.textContent = 'Приостановлено'; updateControls(); });
-  audio.addEventListener('timeupdate', () => { updatePosition(); if (audio.paused) draw(audio.currentTime / (audio.duration || segments[current].duration)); });
-  audio.addEventListener('ended', () => { if (current + 1 < segments.length) start(current + 1); else complete(); });
+  audio.addEventListener('play', updateControls);
+  audio.addEventListener('pause', updateControls);
+  audio.addEventListener('timeupdate', () => { updatePosition(); if (audio.paused && !seeking) draw(audio.currentTime); });
+  audio.addEventListener('ended', () => { if (current + 1 < utterances.length) start(current + 1); else complete(); });
   audio.addEventListener('error', () => {
     showError('Не удалось открыть запись. Убедитесь, что папка урока распакована целиком, и повторите.');
     updateControls();

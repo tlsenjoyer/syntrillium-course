@@ -12,6 +12,17 @@ Confirmed requirements from the design interview:
 - Preserve the meaning and sequence of visualizations and animations. The user
   confirms that these are noninteractive.
 - Animation timing and pauses may change to synchronize with Russian narration.
+- Generate Russian narration as complete sentences or short coherent passages,
+  even when they span multiple source segments. Repair existing split-sentence
+  narration and prevent the same fragmentation in future generation.
+- Play each narration utterance as one uninterrupted recording, with visual
+  changes timed within it. Retain source segments for provenance and visual cues.
+- Previous and next navigation move between narration utterances. Timeline
+  seeking remains available within utterances.
+- Save each narration utterance's complete Russian text and the source segments
+  it covers in lesson content; review suggested groups before using them.
+- Time visual changes to the relevant spoken words and check synchronization
+  during narration review.
 - The user reports that the original course contains no separate example audio.
 - Support Windows and macOS, with all course content usable offline after an
   initial download or installation. Web versus desktop delivery remains open.

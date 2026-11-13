@@ -69,34 +69,53 @@ ELEVENLABS_API_KEY=your_api_key
 python3 tools/elevenlabs_audio.py check-elevenlabs
 ```
 
-Generate selected segments into an isolated candidate:
+Generate selected narration utterances into an isolated candidate. Each
+utterance is sent as one request, and the candidate stores the returned
+character timings with its audio:
 
 ```sh
 python3 tools/elevenlabs_audio.py generate-elevenlabs \
   --lesson waveforms --voice-id VOICE_ID --model-id MODEL_ID \
-  --segments 1976,1982 \
+  --utterances 1976,1982 \
   --candidate candidates/elevenlabs/waveforms/voice-model-test
 ```
 
-Use the same candidate path to resume a partial run. Existing valid segments
-are reused; only missing segments are requested. Use `--all` instead of
-`--segments` to request every remaining segment for the lesson. The default
+Use the same candidate path to resume a partial run. Existing valid utterances
+are reused; only missing utterances are requested. Use `--all` instead of
+`--utterances` to request every remaining utterance for the lesson. The default
 format is `mp3_44100_128`. Other MP3 formats can be selected with
 `--output-format`; non-MP3 formats are rejected because the current player
 packages MP3 files.
 
-After listening to the candidate, promote only reviewed segments:
+After listening to the candidate and checking its visual cue timings, promote
+only reviewed utterances:
 
 ```sh
 python3 tools/elevenlabs_audio.py promote-elevenlabs \
   --lesson waveforms --candidate candidates/elevenlabs/waveforms/voice-model-test \
-  --segments 1976,1982
+  --utterances 1976,1982
 ```
 
-Use `--all` to promote every segment in the candidate. Promotion validates all
-selected files and hashes before replacing approved MP3s, stages local copies,
-and restores prior files if a replacement fails. Generation metadata records
-the lesson, text hash, voice, model, format, selected segments, request IDs when
-returned, and audio hashes. See the [ElevenAPI quickstart](https://elevenlabs.io/docs/eleven-api/quickstart)
+Create an offline preview of the generated audio with its source-segment
+visuals and cue timings:
+
+```sh
+python3 tools/elevenlabs_audio.py preview-elevenlabs \
+  --lesson waveforms --candidate candidates/elevenlabs/waveforms/voice-model-test \
+  --utterances 1982
+```
+
+Open `candidates/elevenlabs/waveforms/voice-model-test/preview/index.html` to
+review the utterance before promotion.
+
+Use `--all` to promote every utterance in the candidate. Build player lesson data
+with utterances before promotion. Promotion validates audio, text, and cue timing
+before updating the approved audio and playback metadata. Generation metadata
+records the lesson, text hash, voice, model, format, utterances, request IDs when
+returned, alignment, and audio hashes. See the [ElevenAPI quickstart](https://elevenlabs.io/docs/eleven-api/quickstart)
 and [speech API reference](https://elevenlabs.io/docs/api-reference/text-to-speech/convert)
 for current account and output-format limits.
+
+If ElevenLabs returns audio without usable character timings, the generator
+keeps the audio in the candidate and marks its timing for manual correction.
+Preview and promotion require complete cue times.

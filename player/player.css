@@ -22,9 +22,8 @@ button, input { font: inherit; accent-color: var(--accent); }
 button { color: var(--accent); background: var(--stage); border: 1px solid #6f8260; border-radius: 22px; min-height: 44px; padding: 8px 22px; cursor: pointer; }
 button:hover:not(:disabled) { background: #e7ecd8; border-color: var(--accent); }
 button:disabled { color: #52634d; background: transparent; border-color: #a4b397; cursor: default; }
-.course-header { background: var(--blue); padding: 18px max(24px, calc((100vw - 1100px) / 2)); display: flex; justify-content: space-between; align-items: center; gap: 24px; border-bottom: 5px solid var(--green); }
-.wordmark { font-family: Georgia, serif; font-size: 28px; font-weight: bold; }
-.course-header p { font-weight: bold; margin: 0; text-align: right; }
+.course-header { background: var(--blue); padding: 18px max(24px, calc((100vw - 1100px) / 2)); display: flex; justify-content: flex-start; align-items: center; gap: 24px; border-bottom: 5px solid var(--green); }
+.course-header p { font-weight: bold; margin: 0; text-align: left; }
 main { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
 h1 { font-size: 30px; line-height: 1.2; margin: 0 0 24px; text-wrap: balance; }
 h2 { font-size: 24px; margin: 0 0 16px; }
@@ -46,20 +45,18 @@ p { margin: 0 0 18px; }
 .transport-buttons { display: flex; align-items: center; gap: 10px; }
 .icon-button { padding: 10px; width: 44px; height: 44px; background: var(--paper); border: 0; }
 .icon-button svg { display: block; width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.play-button { min-width: 130px; background: var(--paper); border: 0; font-weight: bold; }
+.play-button { width: 44px; min-width: 44px; height: 44px; padding: 10px; display: grid; place-items: center; background: var(--paper); border: 0; }
+.play-button svg { display: block; width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
 .timeline { display: flex; flex: 1; gap: 16px; align-items: center; min-width: 0; }
 .timeline input { width: 100%; min-width: 80px; height: 32px; cursor: pointer; }
 #clock { white-space: nowrap; font-size: 14px; font-variant-numeric: tabular-nums; }
 .caption { font-size: 20px; line-height: 1.55; max-width: 72ch; min-height: 3.1em; margin: 24px auto 8px; }
-.playback-status { color: var(--muted); font-size: 14px; min-height: 1.5em; }
 #completion { padding-top: 12px; }
 .error { padding: 20px; background: #f2e4d8; color: #702618; border: 1px solid #b27058; border-radius: 12px; margin-top: 20px; }
-footer { color: var(--muted); text-align: center; padding: 16px 24px 28px; font-size: 13px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 @media (max-width: 700px) {
   .course-header { padding: 14px 20px; gap: 16px; }
-  .wordmark { font-size: 22px; }
-  .course-header p { font-size: 14px; max-width: 20ch; }
+  .course-header p { font-size: 14px; }
   main { padding: 24px 16px; }
   #menu { grid-template-columns: 1fr; gap: 24px; padding: 8px 0; }
   .introduction { max-width: none; }

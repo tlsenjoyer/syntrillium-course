@@ -15,6 +15,7 @@ import wave
 import xml.etree.ElementTree as ET
 
 from waveforms import compile_visuals
+from narration import NarrationError, anchor_position, validate_utterances
 
 
 ASSETS = {'sine.svg': 2850, 'complex-1.svg': 2911, 'complex-2.svg': 2913, 'ball.svg': 2844}
@@ -32,6 +33,23 @@ def remove_flash_stage(root):
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def compile_utterance_cues(utterance, segment_by_id, frames_by_id, duration):
+    text = utterance['russian']
+    cues = []
+    for cue in utterance['visual_cues']:
+        segment_id = str(cue['segment_id'])
+        anchor = cue.get('anchor')
+        if anchor:
+            index = anchor_position(text, anchor)
+            at = duration * index / len(text)
+        else:
+            at = 0.0
+        segment = segment_by_id[segment_id]
+        cues.append(dict(segment_id=segment_id, at=at, caption=segment['russian'],
+                         frames=frames_by_id[segment_id]))
+    return cues
 
 
 def build_lesson(content, recovery, flash_export, model, destination):
@@ -52,6 +70,12 @@ def build_lesson(content, recovery, flash_export, model, destination):
     if not all(s['russian'].strip() for s in lesson['segments']):
         raise ValueError('A lesson narration segment is empty')
     visuals = compile_visuals(composition, lesson['segments'], lesson['labels'])
+    segment_by_id = {str(segment['id']): segment for segment in lesson['segments']}
+    frames_by_id = {str(segment['id']): frames for segment, frames in zip(lesson['segments'], visuals)}
+    try:
+        utterances = validate_utterances(lesson, lesson['segments'])
+    except NarrationError as error:
+        raise ValueError(str(error)) from error
     ffmpeg, ffprobe = shutil.which('ffmpeg'), shutil.which('ffprobe')
     if not ffmpeg or not ffprobe:
         raise ValueError('FFmpeg and ffprobe are required')
@@ -75,14 +99,15 @@ def build_lesson(content, recovery, flash_export, model, destination):
         path.write_bytes(data)
         manifest['vectors'].append(dict(path='assets/' + name, resource_id=ASSETS[name],
                                        exported_frame_sha256=source_hash, sha256=digest(path)))
-    segments = []
+    playback_utterances = []
     with tempfile.TemporaryDirectory(prefix='syntrillium-narration-') as temp:
-        for index, segment in enumerate(lesson['segments']):
+        for utterance in utterances:
             wav_path = Path(temp) / 'narration.wav'
             with wave.open(str(wav_path), 'wb') as audio:
-                voice.synthesize_wav(segment['russian'], audio,
+                voice.synthesize_wav(utterance['russian'], audio,
                                      syn_config=SynthesisConfig(noise_scale=0.5, noise_w_scale=0.333))
-            relative = f"audio/{segment['source_resource_id']:05d}.mp3"
+            source_ids = [segment_by_id[str(sid)]['source_resource_id'] for sid in utterance['segment_ids']]
+            relative = f"audio/{source_ids[0]:05d}.mp3"
             path = destination / relative
             result = subprocess.run([ffmpeg, '-v', 'error', '-nostdin', '-n', '-i', str(wav_path),
                                      '-codec:a', 'libmp3lame', '-q:a', '3', str(path)],
@@ -94,12 +119,14 @@ def build_lesson(content, recovery, flash_export, model, destination):
                  '-of', 'default=noprint_wrappers=1:nokey=1', str(path)], text=True))
             if duration <= 0:
                 raise ValueError('Narration has no duration')
-            segments.append(dict(id=segment['id'], caption=segment['russian'], frames=visuals[index],
-                                 audio=relative, duration=duration))
-            manifest['audio'].append(dict(path=relative, source_resource_id=segment['source_resource_id'],
-                                          sha256=digest(path), duration=duration))
-            print(f"Generated narration {len(segments)}/{len(lesson['segments'])}", flush=True)
-    playback = dict(title=lesson['title'], labels=lesson['labels'], segments=segments)
+            playback_utterances.append(dict(
+                id=str(utterance['id']), segment_ids=[str(item) for item in utterance['segment_ids']],
+                caption=utterance['russian'], audio=relative, duration=duration,
+                cues=compile_utterance_cues(utterance, segment_by_id, frames_by_id, duration)))
+            manifest['audio'].append(dict(path=relative, utterance_id=str(utterance['id']),
+                                          source_resource_ids=source_ids, sha256=digest(path), duration=duration))
+            print(f"Generated narration utterance {len(playback_utterances)}/{len(utterances)}", flush=True)
+    playback = dict(title=lesson['title'], labels=lesson['labels'], utterances=playback_utterances)
     (destination / 'lesson.js').write_text('window.LESSON = ' + json.dumps(
         playback, ensure_ascii=False, indent=2) + ';\n', encoding='utf-8')
     (destination / 'generation.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')

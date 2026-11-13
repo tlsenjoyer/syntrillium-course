@@ -4,15 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>Краткий курс цифрового звука — Syntrillium</title>
+  <title>Краткий курс цифрового звука</title>
   <link rel="stylesheet" href="player.css">
   <script src="lesson.js" defer></script>
   <script src="player.js" defer></script>
 </head>
 <body>
   <header class="course-header">
-    <div class="wordmark">Syntrillium</div>
-    <p>Краткий курс цифрового звука</p>
+    <p class="course-title">Краткий курс цифрового звука</p>
   </header>
   <main>
     <section id="menu" aria-labelledby="menu-title">
@@ -44,11 +43,13 @@
       </div>
       <div class="transport">
         <div class="transport-buttons">
-          <button id="previous" class="icon-button" aria-label="Предыдущий фрагмент" title="Предыдущий фрагмент">
+          <button id="previous" class="icon-button" aria-label="Предыдущая фраза" title="Предыдущая фраза">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14m13-14L9 12l10 7Z"/></svg>
           </button>
-          <button id="toggle" class="play-button" aria-label="Продолжить">Продолжить</button>
-          <button id="next" class="icon-button" aria-label="Следующий фрагмент" title="Следующий фрагмент">
+          <button id="toggle" class="play-button" aria-label="Продолжить" title="Продолжить">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path id="toggle-icon" d="M8 5v14l11-7Z"/></svg>
+          </button>
+          <button id="next" class="icon-button" aria-label="Следующая фраза" title="Следующая фраза">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M5 5l10 7-10 7Z"/></svg>
           </button>
         </div>
@@ -59,7 +60,6 @@
         </label>
       </div>
       <p id="caption" class="caption"></p>
-      <p id="playback-status" class="playback-status" role="status"></p>
       <div id="completion" hidden>
         <h2>Урок завершён</h2>
         <button id="replay">Повторить урок</button>
@@ -72,6 +72,5 @@
     <audio id="narration" preload="auto"></audio>
     <noscript>Для воспроизведения урока включите JavaScript в браузере.</noscript>
   </main>
-  <footer>Русская адаптация оригинального курса Syntrillium · Версия для проверки</footer>
 </body>
 </html>
