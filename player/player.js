@@ -94,6 +94,7 @@
   }
 
   const time = value => `${Math.floor(value / 60)}:${String(Math.floor(value % 60)).padStart(2, '0')}`;
+  byId('lesson-duration').textContent = time(total);
   function updatePosition() {
     const elapsed = previewPosition !== null
       ? previewPosition
@@ -114,8 +115,8 @@
     const playing = shouldPlay && !finished;
     const toggle = byId('toggle');
     const icon = byId('toggle-icon');
-    const label = playing ? 'Приостановить' : (finished ? 'Повторить урок' : 'Продолжить');
-    icon.setAttribute('d', playing ? 'M7 5v14M17 5v14' : (finished ? 'M20 11a8 8 0 0 0-14.9-4L3 9m0 0V4m0 5h5M4 13a8 8 0 0 0 14.9 4L21 15m0 0v5m0-5h-5' : 'M8 5v14l11-7Z'));
+    const label = playing ? 'Приостановить' : (finished ? 'Повторить' : 'Воспроизвести');
+    icon.setAttribute('d', playing ? 'M7 5v14M17 5v14' : (finished ? 'M4 10a8 8 0 1 1 1 8M4 4v6h6' : 'M8 5v14l11-7Z'));
     toggle.setAttribute('aria-label', label);
     toggle.setAttribute('title', label);
     byId('previous').disabled = current === 0 && !finished;
@@ -140,7 +141,6 @@
     previewPosition = null;
     pendingSeek = null;
     pendingOffset = Math.max(0, offset);
-    byId('completion').hidden = true;
     error.hidden = true;
     byId('caption').textContent = utterances[current].caption || utterances[current].russian;
     audio.src = utterances[current].audio;
@@ -154,7 +154,6 @@
     shouldPlay = false;
     audio.pause();
     finished = true;
-    byId('completion').hidden = false;
     previewPosition = null;
     pendingSeek = null;
     updatePosition();
@@ -174,7 +173,6 @@
     seeking = true;
     seekWasPlaying = shouldPlay && !finished;
     finished = false;
-    byId('completion').hidden = true;
     if (!audio.paused) audio.pause();
     updateControls();
   }
@@ -218,7 +216,7 @@
       byId('menu').hidden = true;
       byId('lesson').hidden = false;
       route = nextRoute;
-      start(0);
+      start(0, 0, false);
       return;
     }
     shouldPlay = false;
@@ -245,7 +243,6 @@
   });
   byId('previous').addEventListener('click', () => start(Math.max(0, current - 1)));
   byId('next').addEventListener('click', () => start(Math.min(utterances.length - 1, current + 1)));
-  byId('replay').addEventListener('click', () => start(0));
   byId('retry').addEventListener('click', () => start(current));
   byId('position').addEventListener('input', event => previewSeek(Number(event.target.value) / 1000 * total));
   byId('position').addEventListener('change', commitSeek);

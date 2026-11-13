@@ -53,11 +53,8 @@
       <div class="lesson-main">
         <div class="lesson-heading">
           <button id="back" class="text-button">К темам курса</button>
-          <div class="lesson-stepper" aria-label="Переход между уроками">
-            <button id="previous-lesson" class="text-button" disabled>Предыдущий урок</button>
-            <button id="next-lesson" class="text-button" disabled>Следующий урок</button>
-          </div>
           <h1 id="lesson-title">Форма звуковой волны</h1>
+          <p class="lesson-meta">Урок 2 из 9 · <span id="lesson-duration"></span></p>
         </div>
         <div class="stage">
           <svg id="visualization" viewBox="0 65 550 270" role="img" aria-label="Визуализация звуковой волны"></svg>
@@ -67,13 +64,15 @@
             <button id="previous" class="icon-button" aria-label="Предыдущая фраза" title="Предыдущая фраза">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14m13-14L9 12l10 7Z"/></svg>
             </button>
-            <button id="toggle" class="play-button" aria-label="Продолжить" title="Продолжить">
+            <button id="toggle" class="play-button" aria-label="Воспроизвести" title="Воспроизвести">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path id="toggle-icon" d="M8 5v14l11-7Z"/></svg>
             </button>
             <button id="next" class="icon-button" aria-label="Следующая фраза" title="Следующая фраза">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M5 5l10 7-10 7Z"/></svg>
             </button>
-            <button id="captions-toggle" class="captions-toggle" type="button" aria-pressed="true">Субтитры</button>
+            <button id="captions-toggle" class="icon-button captions-toggle" type="button" aria-label="Субтитры" title="Субтитры" aria-pressed="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 10a2.5 2.5 0 1 0 0 4m8-4a2.5 2.5 0 1 0 0 4"/></svg>
+            </button>
           </div>
           <label class="timeline" for="position">
             <span class="sr-only">Положение в уроке</span>
@@ -82,10 +81,10 @@
           </label>
         </div>
         <p id="caption" class="caption" aria-live="polite"></p>
-        <div id="completion" hidden>
-          <h2>Урок завершён</h2>
-          <button id="replay">Повторить урок</button>
-        </div>
+        <footer class="lesson-stepper" aria-label="Переход между уроками">
+          <button id="previous-lesson" class="text-button" disabled>← Предыдущий урок: Основы звука</button>
+          <button id="next-lesson" class="text-button" disabled>Следующий урок: Аналоговый звук →</button>
+        </footer>
       </div>
     </section>
     <div id="error" class="error" role="alert" hidden>

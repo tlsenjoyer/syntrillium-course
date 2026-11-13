@@ -2,6 +2,7 @@
 import importlib.util
 import json
 import os
+import re
 from pathlib import Path
 import unittest
 from typing import Any
@@ -14,6 +15,7 @@ class PlayerTests(unittest.TestCase):
     def _open_lesson(self, page):
         page.goto((ROOT / 'player/index.html').as_uri())
         page.get_by_role('button', name='Форма звуковой волны', exact=True).click()
+        page.get_by_role('button', name='Воспроизвести', exact=True).click()
         page.wait_for_function("!document.querySelector('audio').paused")
 
     def test_transport_controls_are_stable_and_keyboard_accessible(self):
@@ -30,7 +32,7 @@ class PlayerTests(unittest.TestCase):
             self.assertEqual(toggle.inner_text(), '')
             self.assertEqual(toggle.get_attribute('aria-label'), 'Приостановить')
             self.assertEqual(page.locator('.wordmark').count(), 0)
-            self.assertEqual(page.locator('footer').count(), 0)
+            self.assertTrue(page.locator('footer #next-lesson').is_disabled())
             self.assertEqual(page.locator('#playback-status').count(), 0)
 
             toggle.click()
@@ -71,7 +73,9 @@ class PlayerTests(unittest.TestCase):
             page = browser.new_page()
             page.goto((ROOT / 'player/index.html').as_uri())
             page.get_by_role('button', name='Форма звуковой волны', exact=True).click()
-            page.wait_for_url('**/#lesson/waveforms')
+            page.wait_for_url('**/index.html#lesson/waveforms')
+            self.assertTrue(page.locator('audio').evaluate('audio => audio.paused'))
+            page.get_by_role('button', name='Воспроизвести', exact=True).click()
             page.wait_for_function("!document.querySelector('audio').paused")
 
             self.assertEqual(page.locator('#visualization image[href="assets/ball.svg"]').count(), 0)
@@ -80,18 +84,18 @@ class PlayerTests(unittest.TestCase):
             self.assertTrue(page.locator('#caption').is_hidden())
             self.assertEqual(page.locator('#captions-toggle').get_attribute('aria-pressed'), 'false')
             page.reload()
-            page.wait_for_url('**/#lesson/waveforms')
+            page.wait_for_url('**/index.html#lesson/waveforms')
             self.assertTrue(page.locator('#caption').is_hidden())
 
             page.get_by_role('button', name='К темам курса').click()
-            page.wait_for_url('**/index.html')
+            page.wait_for_url(re.compile(r'/index\.html#?$'))
             page.wait_for_function("document.querySelector('audio').paused")
-            page.go_forward()
-            page.wait_for_url('**/#lesson/waveforms')
+            page.go_back()
+            page.wait_for_url('**/index.html#lesson/waveforms')
             self.assertTrue(page.locator('#lesson').is_visible())
             self.assertTrue(page.locator('#caption').is_hidden())
-            page.go_back()
-            page.wait_for_url('**/index.html')
+            page.go_forward()
+            page.wait_for_url(re.compile(r'/index\.html#?$'))
             self.assertTrue(page.get_by_role('heading', name='Темы курса').is_visible())
             browser.close()
 
@@ -126,6 +130,7 @@ class PlayerTests(unittest.TestCase):
             page.add_init_script(lesson_script)
             page.goto((ROOT / 'player/index.html').as_uri())
             page.get_by_role('button', name='Форма звуковой волны', exact=True).click()
+            page.get_by_role('button', name='Воспроизвести', exact=True).click()
             page.wait_for_function("document.querySelector('audio').readyState >= 1")
             page.get_by_role('button', name='Приостановить').click()
             audio = page.locator('audio')
@@ -164,14 +169,18 @@ class PlayerTests(unittest.TestCase):
                 document.querySelector('audio').playbackRate = 16;
                 document.querySelector('audio').defaultPlaybackRate = 16;
             }''')
-            page.get_by_text('Урок завершён', exact=True).wait_for(timeout=90000)
+            page.get_by_role('button', name='Воспроизвести', exact=True).click()
+            page.get_by_role('button', name='Повторить', exact=True).wait_for(timeout=90000)
             evidence = page.evaluate('window.playbackEvidence')
-            self.assertEqual(evidence['ended'], 29)
-            self.assertTrue({s['russian'] for s in lesson['segments']} <= set(evidence['captions']))
+            self.assertEqual(evidence['ended'], len(lesson['utterances']))
+            self.assertTrue({s['russian'] for s in lesson['utterances']} <= set(evidence['captions']))
             self.assertEqual(errors, [])
             self.assertEqual(network, [])
-            page.locator('#replay').scroll_into_view_if_needed()
-            self.assertGreater(page.evaluate('window.scrollY'), 0)
+            self.assertEqual(page.get_by_text('Урок завершён', exact=True).count(), 0)
+            self.assertEqual(page.get_by_role('button', name='Повторить урок', exact=True).count(), 0)
+            self.assertTrue(page.locator('#next-lesson').is_disabled())
+            page.get_by_role('button', name='Повторить', exact=True).click()
+            page.wait_for_function("!document.querySelector('audio').paused")
             self.assertEqual(page.locator('#visualization').evaluate("element => getComputedStyle(element).position"), 'static')
             page.get_by_role('button', name='К темам курса', exact=True).click()
             self.assertTrue(page.get_by_role('heading', name='Темы курса').is_visible())
