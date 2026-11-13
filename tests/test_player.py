@@ -61,6 +61,40 @@ class PlayerTests(unittest.TestCase):
             })
             browser.close()
 
+    def test_lesson_routes_preserve_history_captions_and_opening_visual(self):
+        from playwright.sync_api import sync_playwright
+        with sync_playwright() as p:
+            options: dict[str, Any] = dict(headless=True)
+            if os.environ.get('PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH'):
+                options['executable_path'] = os.environ['PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH']
+            browser = p.chromium.launch(**options)
+            page = browser.new_page()
+            page.goto((ROOT / 'player/index.html').as_uri())
+            page.get_by_role('button', name='Форма звуковой волны', exact=True).click()
+            page.wait_for_url('**/#lesson/waveforms')
+            page.wait_for_function("!document.querySelector('audio').paused")
+
+            self.assertEqual(page.locator('#visualization image[href="assets/ball.svg"]').count(), 0)
+            self.assertEqual(page.locator('#captions-toggle').get_attribute('aria-pressed'), 'true')
+            page.get_by_role('button', name='Субтитры').click()
+            self.assertTrue(page.locator('#caption').is_hidden())
+            self.assertEqual(page.locator('#captions-toggle').get_attribute('aria-pressed'), 'false')
+            page.reload()
+            page.wait_for_url('**/#lesson/waveforms')
+            self.assertTrue(page.locator('#caption').is_hidden())
+
+            page.get_by_role('button', name='К темам курса').click()
+            page.wait_for_url('**/index.html')
+            page.wait_for_function("document.querySelector('audio').paused")
+            page.go_forward()
+            page.wait_for_url('**/#lesson/waveforms')
+            self.assertTrue(page.locator('#lesson').is_visible())
+            self.assertTrue(page.locator('#caption').is_hidden())
+            page.go_back()
+            page.wait_for_url('**/index.html')
+            self.assertTrue(page.get_by_role('heading', name='Темы курса').is_visible())
+            browser.close()
+
     def test_visual_cues_change_inside_one_continuous_utterance_recording(self):
         from playwright.sync_api import sync_playwright
         utterance = {
@@ -136,6 +170,9 @@ class PlayerTests(unittest.TestCase):
             self.assertTrue({s['russian'] for s in lesson['segments']} <= set(evidence['captions']))
             self.assertEqual(errors, [])
             self.assertEqual(network, [])
+            page.locator('#replay').scroll_into_view_if_needed()
+            self.assertGreater(page.evaluate('window.scrollY'), 0)
+            self.assertEqual(page.locator('#visualization').evaluate("element => getComputedStyle(element).position"), 'static')
             page.get_by_role('button', name='К темам курса', exact=True).click()
             self.assertTrue(page.get_by_role('heading', name='Темы курса').is_visible())
             browser.close()

@@ -34,35 +34,58 @@
       </ol>
     </section>
     <section id="lesson" aria-labelledby="lesson-title" hidden>
-      <div class="lesson-heading">
-        <button id="back" class="text-button">К темам курса</button>
-        <h1 id="lesson-title">Форма звуковой волны</h1>
-      </div>
-      <div class="stage">
-        <svg id="visualization" viewBox="0 65 550 270" role="img" aria-label="Визуализация звуковой волны"></svg>
-      </div>
-      <div class="transport">
-        <div class="transport-buttons">
-          <button id="previous" class="icon-button" aria-label="Предыдущая фраза" title="Предыдущая фраза">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14m13-14L9 12l10 7Z"/></svg>
-          </button>
-          <button id="toggle" class="play-button" aria-label="Продолжить" title="Продолжить">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path id="toggle-icon" d="M8 5v14l11-7Z"/></svg>
-          </button>
-          <button id="next" class="icon-button" aria-label="Следующая фраза" title="Следующая фраза">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M5 5l10 7-10 7Z"/></svg>
-          </button>
+      <details id="lesson-navigation" class="lesson-navigation" open>
+        <summary>Уроки курса</summary>
+        <nav aria-label="Уроки курса">
+          <ol class="lesson-list">
+            <li><span aria-disabled="true">Основы звука</span></li>
+            <li><a href="#lesson/waveforms" aria-current="page">Форма звуковой волны</a></li>
+            <li><span aria-disabled="true">Аналоговый звук</span></li>
+            <li><span aria-disabled="true">Цифровой звук</span></li>
+            <li><span aria-disabled="true">Частота дискретизации</span></li>
+            <li><span aria-disabled="true">Разрядность</span></li>
+            <li><span aria-disabled="true">Итоги: цифровой звук</span></li>
+            <li><span aria-disabled="true">Звук на компьютере</span></li>
+            <li><span aria-disabled="true">MIDI</span></li>
+          </ol>
+        </nav>
+      </details>
+      <div class="lesson-main">
+        <div class="lesson-heading">
+          <button id="back" class="text-button">К темам курса</button>
+          <div class="lesson-stepper" aria-label="Переход между уроками">
+            <button id="previous-lesson" class="text-button" disabled>Предыдущий урок</button>
+            <button id="next-lesson" class="text-button" disabled>Следующий урок</button>
+          </div>
+          <h1 id="lesson-title">Форма звуковой волны</h1>
         </div>
-        <label class="timeline" for="position">
-          <span class="sr-only">Положение в уроке</span>
-          <input id="position" type="range" min="0" max="1000" value="0" step="1" aria-label="Положение в уроке">
-          <span id="clock">0:00 / 0:00</span>
-        </label>
-      </div>
-      <p id="caption" class="caption"></p>
-      <div id="completion" hidden>
-        <h2>Урок завершён</h2>
-        <button id="replay">Повторить урок</button>
+        <div class="stage">
+          <svg id="visualization" viewBox="0 65 550 270" role="img" aria-label="Визуализация звуковой волны"></svg>
+        </div>
+        <div class="transport">
+          <div class="transport-buttons">
+            <button id="previous" class="icon-button" aria-label="Предыдущая фраза" title="Предыдущая фраза">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14m13-14L9 12l10 7Z"/></svg>
+            </button>
+            <button id="toggle" class="play-button" aria-label="Продолжить" title="Продолжить">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path id="toggle-icon" d="M8 5v14l11-7Z"/></svg>
+            </button>
+            <button id="next" class="icon-button" aria-label="Следующая фраза" title="Следующая фраза">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M5 5l10 7-10 7Z"/></svg>
+            </button>
+            <button id="captions-toggle" class="captions-toggle" type="button" aria-pressed="true">Субтитры</button>
+          </div>
+          <label class="timeline" for="position">
+            <span class="sr-only">Положение в уроке</span>
+            <input id="position" type="range" min="0" max="1000" value="0" step="1" aria-label="Положение в уроке">
+            <span id="clock">0:00 / 0:00</span>
+          </label>
+        </div>
+        <p id="caption" class="caption" aria-live="polite"></p>
+        <div id="completion" hidden>
+          <h2>Урок завершён</h2>
+          <button id="replay">Повторить урок</button>
+        </div>
       </div>
     </section>
     <div id="error" class="error" role="alert" hidden>

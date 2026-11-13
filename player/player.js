@@ -5,6 +5,17 @@
   const error = byId('error');
   const audio = byId('narration');
   const data = window.LESSON;
+  const captionsToggle = byId('captions-toggle');
+  let captionsVisible = true;
+  try { captionsVisible = localStorage.getItem('syntrillium-captions') !== 'off'; } catch {}
+  function setCaptionsVisible(visible) {
+    captionsVisible = visible;
+    byId('caption').hidden = !visible;
+    captionsToggle.setAttribute('aria-pressed', String(visible));
+    try { localStorage.setItem('syntrillium-captions', visible ? 'on' : 'off'); } catch {}
+  }
+  setCaptionsVisible(captionsVisible);
+  byId('lesson-navigation').open = !matchMedia('(max-width: 850px)').matches;
   function showError(message) {
     byId('error-message').textContent = message;
     error.hidden = false;
@@ -75,7 +86,11 @@
     }
     let index = 0;
     while (index + 1 < frames.length && frames[index + 1].at <= progress) index++;
-    byId('visualization').innerHTML = `<title>${escape(caption || utterance.caption)}</title>${frames[index].items.map(commandSvg).join('')}`;
+    const frame = frames[index];
+    const items = segmentIndex === 0 && utterance.cues?.[0]?.frames === frames && index < 2
+      ? frame.items.filter(item => item.asset !== 'ball')
+      : frame.items;
+    byId('visualization').innerHTML = `<title>${escape(caption || utterance.caption)}</title>${items.map(commandSvg).join('')}`;
   }
 
   const time = value => `${Math.floor(value / 60)}:${String(Math.floor(value % 60)).padStart(2, '0')}`;
@@ -195,13 +210,17 @@
     }
     start(selection.index, selection.offset, playing);
   }
-  byId('open-lesson').addEventListener('click', () => {
-    byId('menu').hidden = true;
-    byId('lesson').hidden = false;
-    start(0);
-    byId('toggle').focus();
-  });
-  byId('back').addEventListener('click', () => {
+  let route = '';
+  function syncRoute() {
+    const nextRoute = location.hash === '#lesson/waveforms' ? 'lesson' : 'menu';
+    if (nextRoute === route) return;
+    if (nextRoute === 'lesson') {
+      byId('menu').hidden = true;
+      byId('lesson').hidden = false;
+      route = nextRoute;
+      start(0);
+      return;
+    }
     shouldPlay = false;
     audio.pause();
     seeking = false;
@@ -210,8 +229,12 @@
     byId('lesson').hidden = true;
     byId('menu').hidden = false;
     error.hidden = true;
-    byId('open-lesson').focus();
-  });
+    route = nextRoute;
+  }
+  window.addEventListener('hashchange', syncRoute);
+  byId('open-lesson').addEventListener('click', () => { location.hash = 'lesson/waveforms'; });
+  byId('back').addEventListener('click', () => { location.hash = ''; });
+  captionsToggle.addEventListener('click', () => setCaptionsVisible(!captionsVisible));
   byId('toggle').addEventListener('click', () => {
     if (finished) start(0);
     else if (shouldPlay) {
@@ -249,4 +272,5 @@
     showError('Не удалось открыть запись. Убедитесь, что папка урока распакована целиком, и повторите.');
     updateControls();
   });
+  syncRoute();
 })();

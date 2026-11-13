@@ -14,6 +14,16 @@ The Russian-language edition of the original course, with Russian interface text
 A noninteractive visual demonstration or animation accompanying the course's explanations.
 _Avoid_: Interactive simulation
 
+**Lesson**:
+A course topic presented as a sequence of narration utterances and their visualizations.
+
+**Course navigation**:
+The ordered list of lessons and controls for moving between them.
+
+**Captions**:
+Text shown with narration so learners can follow its spoken words.
+_Avoid_: Subtitles
+
 **Narration**:
 Spoken audio that presents a course explanation to the learner.
 
