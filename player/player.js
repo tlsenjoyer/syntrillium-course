@@ -90,7 +90,7 @@
     const items = segmentIndex === 0 && utterance.cues?.[0]?.frames === frames && index < 2
       ? frame.items.filter(item => item.asset !== 'ball')
       : frame.items;
-    byId('visualization').innerHTML = `<title>${escape(caption || utterance.caption)}</title>${items.map(commandSvg).join('')}`;
+    byId('visualization').innerHTML = `<desc>${escape(caption || utterance.caption)}</desc>${items.map(commandSvg).join('')}`;
   }
 
   const time = value => `${Math.floor(value / 60)}:${String(Math.floor(value % 60)).padStart(2, '0')}`;
