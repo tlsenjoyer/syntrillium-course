@@ -8,6 +8,8 @@
   --accent: #314b87;
   --muted: #405143;
   --focus: #243c81;
+  --navigation-duration: 380ms;
+  --navigation-ease: cubic-bezier(.16, 1, .3, 1);
   font-family: Arial, Helvetica, sans-serif;
   color: var(--ink);
   background: var(--paper);
@@ -46,18 +48,30 @@ p { margin: 0 0 18px; }
 .lesson-stepper { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-top: 24px; padding-top: 16px; border-top: 1px solid #a4b397; }
 .lesson-stepper .text-button { flex-shrink: 1; text-align: left; }
 .text-button { background: transparent; padding: 8px 0; border: 0; border-radius: 0; text-decoration: underline; text-underline-offset: 4px; flex-shrink: 0; }
-#lesson { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 36px; align-items: start; }
-#lesson:has(.lesson-navigation:not([open])) { grid-template-columns: minmax(0, 1fr); gap: 16px; }
-#lesson:has(.lesson-navigation:not([open])) .lesson-main { width: 100%; max-width: 846px; margin-inline: auto; }
-.lesson-navigation { padding-top: 2px; }
-.lesson-navigation nav { border-right: 1px solid #a4b397; padding-right: 12px; }
-.lesson-navigation summary { font-weight: bold; cursor: pointer; margin-bottom: 14px; }
-.lesson-list { list-style: none; margin: 0; padding: 0; }
-.lesson-list li { margin: 0 0 8px; }
-.lesson-list a, .lesson-list span { display: block; padding: 6px 8px; color: var(--muted); border-radius: 4px; }
+#lesson { position: relative; display: grid; grid-template-columns: 0px minmax(0, 1fr); align-items: start; transition: grid-template-columns var(--navigation-duration) var(--navigation-ease); }
+#lesson .lesson-main { grid-column: 2; width: 100%; max-width: 846px; margin-inline: auto; }
+#lesson[data-navigation-open="true"] { grid-template-columns: 306px minmax(0, 1fr); }
+.lesson-navigation { position: absolute; top: 0; left: 0; z-index: 5; width: 270px; pointer-events: none; }
+.lesson-navigation > summary { display: grid; place-items: center; width: 44px; height: 44px; padding: 10px; border: 1px solid #a4b397; border-radius: 10px; color: var(--accent); background: var(--paper); pointer-events: auto; list-style: none; cursor: pointer; }
+.lesson-navigation > summary::-webkit-details-marker { display: none; }
+.lesson-navigation > summary:hover { background: #e2e9d8; border-color: var(--accent); }
+.lesson-navigation[data-expanded="true"] > summary { background: #e2e9d8; }
+.lesson-navigation summary svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; transition: transform var(--navigation-duration) var(--navigation-ease); }
+.lesson-navigation summary path { transform-origin: 12px 12px; transition: transform var(--navigation-duration) var(--navigation-ease), opacity 120ms ease; }
+.lesson-navigation[data-expanded="true"] summary svg { transform: rotate(180deg); }
+.lesson-navigation[data-expanded="true"] .burger-top { transform: translateY(6px) rotate(45deg); transform-origin: 12px 6px; }
+.lesson-navigation[data-expanded="true"] .burger-middle { opacity: 0; transform: scaleX(.2); }
+.lesson-navigation[data-expanded="true"] .burger-bottom { transform: translateY(-6px) rotate(-45deg); transform-origin: 12px 18px; }
+.lesson-navigation > nav { margin-top: 12px; padding: 12px 16px 12px 0; max-height: calc(100svh - 130px); overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #a4b397 var(--paper); border-right: 1px solid #a4b397; background: var(--paper); pointer-events: auto; transform: translateX(0); clip-path: inset(0); opacity: 1; transition-property: transform, clip-path, opacity; transition-duration: var(--navigation-duration); transition-timing-function: var(--navigation-ease); }
+.lesson-navigation > nav h2 { font-size: 16px; margin: 0 8px 16px; }
+.lesson-navigation[data-expanded="false"] > nav { transform: translateX(-18px); clip-path: inset(0 100% 0 0); opacity: 0; pointer-events: none; }
+.lesson-list { list-style: none; margin: 0; padding: 0; counter-reset: lesson; }
+.lesson-list li { counter-increment: lesson; margin-bottom: 8px; }
+.lesson-list a, .lesson-list span { display: grid; grid-template-columns: 20px 1fr; gap: 8px; padding: 8px; font-size: 15px; line-height: 1.4; color: var(--muted); border-radius: 4px; }
+.lesson-list a::before, .lesson-list span::before { content: counter(lesson, decimal-leading-zero); font-size: 12px; padding-top: 2px; font-weight: normal; font-variant-numeric: tabular-nums; }
 .lesson-list a { color: var(--accent); text-decoration: none; }
-.lesson-list a[aria-current="page"] { color: var(--ink); font-weight: bold; background: #e2e9d8; }
-.lesson-list span[aria-disabled="true"] { opacity: .66; }
+.lesson-list a[aria-current="page"] { font-weight: bold; background: #e2e9d8; }
+.lesson-list a:hover { background: var(--stage); }
 .lesson-main { min-width: 0; }
 .stage { background: var(--stage); border: 2px solid #afc09a; border-radius: 20px; overflow: hidden; }
 #visualization { display: block; width: 100%; height: min(53svh, 540px); min-height: 260px; font-family: Arial, Helvetica, sans-serif; font-size: 24px; fill: #111; }
@@ -92,10 +106,21 @@ p { margin: 0 0 18px; }
 @media (pointer: coarse) {
   .icon-button, .play-button { width: 44px; min-width: 44px; height: 44px; min-height: 44px; padding: 12px; }
 }
+@media (max-width: 1080px) {
+  #lesson[data-navigation-open="false"] .lesson-heading { padding-left: 60px; min-height: 44px; }
+}
 @media (max-width: 850px) {
-  #lesson { grid-template-columns: minmax(0, 1fr); gap: 16px; }
-  .lesson-navigation nav { border-right: 0; padding-right: 0; }
-  .lesson-navigation summary { margin: 0; padding: 8px 0; }
+  #lesson, #lesson[data-navigation-open="true"] { grid-template-columns: 0px minmax(0, 1fr); }
+  .lesson-heading { padding-left: 60px; min-height: 44px; }
+  .lesson-navigation { width: min(270px, calc(100vw - 48px)); }
+  .lesson-navigation > nav { padding: 20px 16px 12px; max-height: min(520px, calc(100svh - 170px)); border: 0; border-radius: 12px; box-shadow: 0 12px 36px rgb(23 39 49 / .18); }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root { --navigation-duration: 80ms; }
+  #lesson { transition: none; }
+  .lesson-navigation summary svg, .lesson-navigation summary path { transition: opacity 80ms ease; }
+  .lesson-navigation > nav { transform: none; clip-path: none; transition-property: opacity; }
+  .lesson-navigation[data-expanded="false"] > nav { transform: none; clip-path: none; }
 }
 @media (max-width: 700px) {
   .course-header { padding: 14px 20px; gap: 16px; }

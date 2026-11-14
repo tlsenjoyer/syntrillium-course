@@ -15,7 +15,46 @@
     try { localStorage.setItem('syntrillium-captions', visible ? 'on' : 'off'); } catch {}
   }
   setCaptionsVisible(captionsVisible);
-  byId('lesson-navigation').open = !matchMedia('(max-width: 850px)').matches;
+  // Navigation is independent of narration. Keep the native details fallback,
+  // but defer removing `open` until its closing animation has finished.
+  const lesson = byId('lesson');
+  const navigation = byId('lesson-navigation');
+  const navigationToggle = navigation.querySelector('summary');
+  const navigationPanel = navigation.querySelector('nav');
+  let navigationTimer;
+  function setNavigationExpanded(expanded) {
+    clearTimeout(navigationTimer);
+    if (!expanded && navigationPanel.contains(document.activeElement)) navigationToggle.focus();
+    const label = `${expanded ? 'Закрыть' : 'Открыть'} список уроков`;
+    navigationToggle.setAttribute('aria-expanded', String(expanded));
+    navigationToggle.setAttribute('aria-label', label);
+    navigationToggle.title = label;
+    navigationPanel.inert = !expanded;
+    navigationPanel.setAttribute('aria-hidden', String(!expanded));
+    if (expanded) {
+      navigation.open = true;
+      // Establish the closed frame when native details content reappears.
+      navigationPanel.getBoundingClientRect();
+    }
+    navigation.dataset.expanded = String(expanded);
+    lesson.dataset.navigationOpen = String(expanded);
+    if (!expanded) {
+      const duration = parseFloat(getComputedStyle(navigationPanel).transitionDuration) * 1000;
+      navigationTimer = setTimeout(() => {
+        if (navigation.dataset.expanded === 'false') navigation.open = false;
+      }, duration + 30);
+    }
+  }
+  navigationToggle.addEventListener('click', event => {
+    event.preventDefault();
+    setNavigationExpanded(navigation.dataset.expanded === 'false');
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !lesson.hidden && navigation.dataset.expanded !== 'false') {
+      event.preventDefault();
+      setNavigationExpanded(false);
+    }
+  });
   function showError(message) {
     byId('error-message').textContent = message;
     error.hidden = false;
@@ -248,7 +287,7 @@
   byId('position').addEventListener('change', commitSeek);
   byId('position').addEventListener('pointerup', commitSeek);
   document.addEventListener('keydown', event => {
-    if (event.code !== 'Space' || byId('lesson').hidden || event.target?.closest?.('button, select, textarea, [contenteditable="true"]')) return;
+    if (event.code !== 'Space' || byId('lesson').hidden || event.target?.closest?.('button, summary, select, textarea, [contenteditable="true"]')) return;
     event.preventDefault();
     if (finished) start(0);
     else if (shouldPlay) {

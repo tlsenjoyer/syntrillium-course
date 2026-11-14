@@ -37,3 +37,19 @@ together in that viewport:
 
 These are reversible interface choices; they do not require an architectural
 change or new domain terminology. Lesson availability still follows ADR 0002.
+
+## Animated course navigation
+
+The next refinement prioritizes lesson space and focus, with a persistent burger
+for course navigation. Both the burger and panel animate together. Navigation
+starts open by default, including on narrow screens. Opening and closing it does
+not interrupt narration. Keyboard access and reduced-motion feedback are required.
+
+Selected after comparing a sliding drawer, a push sidebar, and a compact floating
+panel: the 270px sidebar pushes the lesson on desktop and recenters it when
+closed. The panel slides and wipes away as the burger changes from a close icon
+to three lines, using a coordinated 380ms transition. At 850px and below, the
+panel overlays the lesson so the diagram retains its width. Escape closes it;
+closed navigation leaves the keyboard order immediately. Reduced motion uses a
+brief fade with an immediate layout change. Preserve the course palette and
+content. These are reversible interface choices, not a new ADR.

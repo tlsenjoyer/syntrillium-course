@@ -33,10 +33,17 @@
         <li><button disabled>MIDI</button></li>
       </ol>
     </section>
-    <section id="lesson" aria-labelledby="lesson-title" hidden>
-      <details id="lesson-navigation" class="lesson-navigation" open>
-        <summary>Уроки курса</summary>
-        <nav aria-label="Уроки курса">
+    <section id="lesson" aria-labelledby="lesson-title" data-navigation-open="true" hidden>
+      <details id="lesson-navigation" class="lesson-navigation" data-expanded="true" open>
+        <summary aria-label="Закрыть список уроков" aria-expanded="true" aria-controls="course-topics" title="Закрыть список уроков">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path class="burger-top" d="M3 6h18"/>
+            <path class="burger-middle" d="M3 12h18"/>
+            <path class="burger-bottom" d="M3 18h18"/>
+          </svg>
+        </summary>
+        <nav id="course-topics" aria-label="Уроки курса">
+          <h2>Уроки курса</h2>
           <ol class="lesson-list">
             <li><span aria-disabled="true">Основы звука</span></li>
             <li><a href="#lesson/waveforms" aria-current="page">Форма звуковой волны</a></li>
