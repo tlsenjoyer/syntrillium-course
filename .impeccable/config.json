@@ -1,0 +1,44 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "files": [
+          "player/player.css"
+        ],
+        "createdAt": "2026-11-14T09:01:24.091Z",
+        "reason": "Agent: existing Arial typography is retained for this scoped layout refinement; PRODUCT.md requires preserving the original course visual language."
+      },
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          "player/player.css"
+        ],
+        "createdAt": "2026-11-14T09:01:24.202Z",
+        "reason": "Agent: false positive at .course-header; its 5px bottom border is on a square full-width header with no border-radius, confirmed in CSS and rendered screenshots."
+      },
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "files": [
+          "player/index.html"
+        ],
+        "createdAt": "2026-11-14T09:17:45.451Z",
+        "reason": "Agent: rendered HTML inherits the existing course Arial typography; same intentional course styling already exempted in player/player.css."
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "player/index.html"
+        ],
+        "createdAt": "2026-11-14T09:18:38.312Z",
+        "reason": "Agent: false positive; detected border-bottom:5px belongs to the existing full-width course header separator, not a side accent on a card. Verified rendered page and player/player.css."
+      }
+    ]
+  }
+}
