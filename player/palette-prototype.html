@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <!-- Throwaway color comparison: same lesson, three palettes plus incumbent. -->
+  <title>Палитры — Краткий курс цифрового звука</title>
+  <link rel="stylesheet" href="player.css">
+  <script src="lesson.js" defer></script>
+  <script src="player.js" defer></script>
+  <link rel="stylesheet" href="palette-prototype.css">
+  <script src="palette-prototype.js" defer></script>
+</head>
+<body>
+  <header class="course-header">
+    <p class="course-title"><a href="#">Краткий курс цифрового звука</a></p>
+  </header>
+  <main>
+    <section id="menu" aria-labelledby="menu-title">
+      <div class="introduction">
+        <h1 id="menu-title">Темы курса</h1>
+        <p>Знакомство с основами звука и цифрового аудио.</p>
+        <p>В этой версии для проверки доступен один урок — «Форма звуковой волны».
+          Его записи и изображения находятся в папке курса и воспроизводятся без интернета.</p>
+      </div>
+      <ol class="topics" aria-label="Темы в порядке оригинального курса">
+        <li><button disabled>Основы звука</button></li>
+        <li><button id="open-lesson" aria-label="Форма звуковой волны">Форма звуковой волны</button></li>
+        <li><button disabled>Аналоговый звук</button></li>
+        <li><button disabled>Цифровой звук</button></li>
+        <li><button disabled>Частота дискретизации</button></li>
+        <li><button disabled>Разрядность</button></li>
+        <li><button disabled>Итоги: цифровой звук</button></li>
+        <li><button disabled>Звук на компьютере</button></li>
+        <li><button disabled>MIDI</button></li>
+      </ol>
+    </section>
+    <section id="lesson" aria-labelledby="lesson-title" data-navigation-open="true" hidden>
+      <details id="lesson-navigation" class="lesson-navigation" data-expanded="true" open>
+        <summary aria-label="Закрыть список уроков" aria-expanded="true" aria-controls="course-topics" title="Закрыть список уроков">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path class="burger-top" d="M3 6h18"/>
+            <path class="burger-middle" d="M3 12h18"/>
+            <path class="burger-bottom" d="M3 18h18"/>
+          </svg>
+        </summary>
+        <nav id="course-topics" aria-label="Уроки курса">
+          <h2>Уроки курса</h2>
+          <ol class="lesson-list">
+            <li><span aria-disabled="true">Основы звука</span></li>
+            <li><a href="#lesson/waveforms" aria-current="page">Форма звуковой волны</a></li>
+            <li><span aria-disabled="true">Аналоговый звук</span></li>
+            <li><span aria-disabled="true">Цифровой звук</span></li>
+            <li><span aria-disabled="true">Частота дискретизации</span></li>
+            <li><span aria-disabled="true">Разрядность</span></li>
+            <li><span aria-disabled="true">Итоги: цифровой звук</span></li>
+            <li><span aria-disabled="true">Звук на компьютере</span></li>
+            <li><span aria-disabled="true">MIDI</span></li>
+          </ol>
+        </nav>
+      </details>
+      <div class="lesson-main">
+        <div class="lesson-heading">
+          <button id="back" class="text-button">К темам курса</button>
+          <h1 id="lesson-title">Форма звуковой волны</h1>
+          <p class="lesson-meta">Урок 2 из 9 · <span id="lesson-duration"></span></p>
+        </div>
+        <div class="stage">
+          <svg id="visualization" viewBox="0 65 550 270" role="img" aria-label="Визуализация звуковой волны"></svg>
+        </div>
+        <div class="transport">
+          <div class="transport-buttons">
+            <button id="previous" class="icon-button" aria-label="Предыдущая фраза" title="Предыдущая фраза">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14m13-14L9 12l10 7Z"/></svg>
+            </button>
+            <button id="toggle" class="play-button" aria-label="Воспроизвести" title="Воспроизвести">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path id="toggle-icon" d="M8 5v14l11-7Z"/></svg>
+            </button>
+            <button id="next" class="icon-button" aria-label="Следующая фраза" title="Следующая фраза">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M5 5l10 7-10 7Z"/></svg>
+            </button>
+            <button id="captions-toggle" class="icon-button captions-toggle" type="button" aria-label="Субтитры" title="Субтитры" aria-pressed="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 10a2.5 2.5 0 1 0 0 4m8-4a2.5 2.5 0 1 0 0 4"/></svg>
+            </button>
+          </div>
+          <label class="timeline" for="position">
+            <span class="sr-only">Положение в уроке</span>
+            <input id="position" type="range" min="0" max="1000" value="0" step="1" aria-label="Положение в уроке">
+            <span id="clock">0:00 / 0:00</span>
+          </label>
+        </div>
+        <p id="caption" class="caption" aria-live="polite"></p>
+        <footer class="lesson-stepper" aria-label="Переход между уроками">
+          <button id="previous-lesson" class="text-button" disabled>← Предыдущий урок: Основы звука</button>
+          <button id="next-lesson" class="text-button" disabled>Следующий урок: Аналоговый звук →</button>
+        </footer>
+      </div>
+    </section>
+    <div id="error" class="error" role="alert" hidden>
+      <p id="error-message"></p>
+      <button id="retry">Повторить</button>
+    </div>
+    <audio id="narration" preload="auto"></audio>
+    <noscript>Для воспроизведения урока включите JavaScript в браузере.</noscript>
+  </main>
+</body>
+</html>

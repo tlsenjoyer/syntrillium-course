@@ -1,0 +1,40 @@
+/* Throwaway palette study. Geometry and scientific diagram colors stay fixed. */
+:root[data-palette="slate"] {
+  --paper: #f4f6f8; --green: #b8c9dc; --stage: #eef2f6; --blue: #dbe4ee;
+  --ink: #1b2938; --accent: #285490; --muted: #4c5f72; --focus: #285490;
+  --edge: #b3c1cf; --soft: #e1e9f2; --hover: #1e4375; --disabled: #596b7c;
+}
+:root[data-palette="ivory"] {
+  --paper: #faf6ef; --green: #ddc8b2; --stage: #f2e9dc; --blue: #e8d9c6;
+  --ink: #322b26; --accent: #934425; --muted: #6b5848; --focus: #934425;
+  --edge: #cbb9a4; --soft: #ecdfce; --hover: #76351d; --disabled: #75624f;
+}
+:root[data-palette="mint"] {
+  --paper: #f2f7f5; --green: #aacdc5; --stage: #e5f0eb; --blue: #cce1da;
+  --ink: #193830; --accent: #176553; --muted: #44655b; --focus: #176553;
+  --edge: #a6c4b9; --soft: #d6e8e0; --hover: #104d3f; --disabled: #506f63;
+}
+:root[data-palette]:not([data-palette="original"]) button { border-color: var(--edge); }
+:root[data-palette]:not([data-palette="original"]) button:hover:not(:disabled) { background: var(--soft); border-color: var(--accent); }
+:root[data-palette]:not([data-palette="original"]) button:disabled { color: var(--disabled); }
+:root[data-palette]:not([data-palette="original"]) .stage { border-color: var(--edge); }
+:root[data-palette]:not([data-palette="original"]) .lesson-stepper,
+:root[data-palette]:not([data-palette="original"]) .lesson-navigation > summary { border-color: var(--edge); }
+:root[data-palette]:not([data-palette="original"]) .lesson-navigation > nav { scrollbar-color: var(--edge) var(--paper); }
+:root[data-palette]:not([data-palette="original"]) .lesson-list a[aria-current],
+:root[data-palette]:not([data-palette="original"]) .lesson-navigation[data-expanded="true"] > summary,
+:root[data-palette]:not([data-palette="original"]) .lesson-navigation > summary:hover { background: var(--soft); }
+:root[data-palette]:not([data-palette="original"]) .play-button:hover:not(:disabled),
+:root[data-palette]:not([data-palette="original"]) .captions-toggle:hover:not(:disabled),
+:root[data-palette]:not([data-palette="original"]) .topics #open-lesson:hover { background: var(--hover); }
+body { padding-bottom: 112px; }
+.palette-switcher { position: fixed; z-index: 100; bottom: 16px; left: 50%; transform: translateX(-50%); width: max-content; max-width: calc(100% - 24px); padding: 10px 14px; background: #202832; color: #fff; border-radius: 12px; box-shadow: 0 6px 24px #0003; font: 14px/1.4 Arial, sans-serif; }
+.palette-switcher .palette-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.palette-switcher button { color: white; background: transparent; border: 1px solid #7b8998 !important; border-radius: 6px; padding: 6px; width: 44px; height: 44px; }
+.palette-switcher button:hover:not(:disabled) { background: #3b4858 !important; }
+.palette-switcher button:focus-visible { outline-color: white; }
+.palette-switcher svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; vertical-align: middle; }
+.palette-name { font-weight: bold; }
+.palette-colors { display: flex; gap: 5px; margin-top: 4px; }
+.palette-colors i { width: 24px; height: 8px; background: var(--swatch); border-radius: 2px; }
+.palette-note { margin: 6px 0 0; color: #c7d1dc; font-size: 12px; }

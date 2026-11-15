@@ -1,13 +1,17 @@
 :root {
   color-scheme: light;
-  --paper: #f4f5eb;
-  --green: #b7c9a4;
-  --stage: #d4dfbd;
-  --blue: #7c94ab;
-  --ink: #172731;
-  --accent: #314b87;
-  --muted: #405143;
-  --focus: #243c81;
+  --paper: #f4f6f8;
+  --green: #b8c9dc;
+  --stage: #eef2f6;
+  --blue: #dbe4ee;
+  --ink: #1b2938;
+  --accent: #285490;
+  --muted: #4c5f72;
+  --focus: #285490;
+  --edge: #b3c1cf;
+  --soft: #e1e9f2;
+  --hover: #1e4375;
+  --disabled: #596b7c;
   --navigation-duration: 380ms;
   --navigation-ease: cubic-bezier(.16, 1, .3, 1);
   font-family: Arial, Helvetica, sans-serif;
@@ -22,10 +26,10 @@ body { margin: 0; }
 ::selection { color: white; background: var(--accent); }
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
 button, input { font: inherit; accent-color: var(--accent); }
-button { color: var(--accent); background: var(--stage); border: 1px solid #6f8260; border-radius: 22px; min-height: 44px; padding: 8px 22px; cursor: pointer; }
-button:hover:not(:disabled) { background: #e7ecd8; border-color: var(--accent); }
-button:disabled { color: #52634d; background: transparent; border-color: #a4b397; cursor: default; }
-.course-header { background: var(--blue); padding: 18px max(24px, calc((100vw - 1100px) / 2)); display: flex; justify-content: flex-start; align-items: center; gap: 24px; border-bottom: 5px solid var(--green); }
+button { color: var(--accent); background: var(--stage); border: 1px solid var(--edge); border-radius: 22px; min-height: 44px; padding: 8px 22px; cursor: pointer; }
+button:hover:not(:disabled) { background: var(--soft); border-color: var(--accent); }
+button:disabled { color: var(--disabled); background: transparent; border-color: var(--edge); cursor: default; }
+.course-header { background: var(--blue); padding: 18px max(24px, calc((100% - 1200px) / 2 + 24px)); display: flex; justify-content: flex-start; align-items: center; gap: 24px; border-bottom: 5px solid var(--green); }
 .course-header p { font-weight: bold; margin: 0; text-align: left; }
 .course-title a { color: inherit; text-decoration: none; }
 .course-title a:hover { text-decoration: underline; text-underline-offset: 4px; }
@@ -40,29 +44,29 @@ p { margin: 0 0 18px; }
 .topics li { padding-left: 8px; margin-bottom: 10px; }
 .topics button { width: 100%; text-align: left; }
 .topics #open-lesson { background: var(--accent); color: white; border-color: var(--accent); font-weight: bold; }
-.topics #open-lesson:hover { background: #24396c; }
+.topics #open-lesson:hover { background: var(--hover); }
 .lesson-heading { margin-bottom: 20px; text-align: left; }
 .lesson-heading h1 { margin: 8px 0; font-size: 28px; }
 .lesson-heading #back { font-size: 14px; min-height: 44px; }
 .lesson-meta { margin: 0; color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
-.lesson-stepper { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-top: 24px; padding-top: 16px; border-top: 1px solid #a4b397; }
+.lesson-stepper { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--edge); }
 .lesson-stepper .text-button { flex-shrink: 1; text-align: left; }
 .text-button { background: transparent; padding: 8px 0; border: 0; border-radius: 0; text-decoration: underline; text-underline-offset: 4px; flex-shrink: 0; }
 #lesson { position: relative; display: grid; grid-template-columns: 0px minmax(0, 1fr); align-items: start; transition: grid-template-columns var(--navigation-duration) var(--navigation-ease); }
 #lesson .lesson-main { grid-column: 2; width: 100%; max-width: 846px; margin-inline: auto; }
 #lesson[data-navigation-open="true"] { grid-template-columns: 306px minmax(0, 1fr); }
 .lesson-navigation { position: absolute; top: 0; left: 0; z-index: 5; width: 270px; pointer-events: none; }
-.lesson-navigation > summary { display: grid; place-items: center; width: 44px; height: 44px; padding: 10px; border: 1px solid #a4b397; border-radius: 10px; color: var(--accent); background: var(--paper); pointer-events: auto; list-style: none; cursor: pointer; }
+.lesson-navigation > summary { display: grid; place-items: center; width: 44px; height: 44px; padding: 10px; border: 1px solid var(--edge); border-radius: 10px; color: var(--accent); background: var(--paper); pointer-events: auto; list-style: none; cursor: pointer; }
 .lesson-navigation > summary::-webkit-details-marker { display: none; }
-.lesson-navigation > summary:hover { background: #e2e9d8; border-color: var(--accent); }
-.lesson-navigation[data-expanded="true"] > summary { background: #e2e9d8; }
+.lesson-navigation > summary:hover { background: var(--soft); border-color: var(--accent); }
+.lesson-navigation[data-expanded="true"] > summary { background: var(--soft); }
 .lesson-navigation summary svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; transition: transform var(--navigation-duration) var(--navigation-ease); }
 .lesson-navigation summary path { transform-origin: 12px 12px; transition: transform var(--navigation-duration) var(--navigation-ease), opacity 120ms ease; }
 .lesson-navigation[data-expanded="true"] summary svg { transform: rotate(180deg); }
 .lesson-navigation[data-expanded="true"] .burger-top { transform: translateY(6px) rotate(45deg); transform-origin: 12px 6px; }
 .lesson-navigation[data-expanded="true"] .burger-middle { opacity: 0; transform: scaleX(.2); }
 .lesson-navigation[data-expanded="true"] .burger-bottom { transform: translateY(-6px) rotate(-45deg); transform-origin: 12px 18px; }
-.lesson-navigation > nav { margin-top: 12px; padding: 12px 16px 12px 0; max-height: calc(100svh - 130px); overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #a4b397 var(--paper); border-right: 1px solid #a4b397; background: var(--paper); pointer-events: auto; transform: translateX(0); clip-path: inset(0); opacity: 1; transition-property: transform, clip-path, opacity; transition-duration: var(--navigation-duration); transition-timing-function: var(--navigation-ease); }
+.lesson-navigation > nav { margin-top: 12px; padding: 12px 16px 12px 0; max-height: calc(100svh - 130px); overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--edge) var(--paper); background: var(--paper); pointer-events: auto; transform: translateX(0); clip-path: inset(0); opacity: 1; transition-property: transform, clip-path, opacity; transition-duration: var(--navigation-duration); transition-timing-function: var(--navigation-ease); }
 .lesson-navigation > nav h2 { font-size: 16px; margin: 0 8px 16px; }
 .lesson-navigation[data-expanded="false"] > nav { transform: translateX(-18px); clip-path: inset(0 100% 0 0); opacity: 0; pointer-events: none; }
 .lesson-list { list-style: none; margin: 0; padding: 0; counter-reset: lesson; }
@@ -70,20 +74,20 @@ p { margin: 0 0 18px; }
 .lesson-list a, .lesson-list span { display: grid; grid-template-columns: 20px 1fr; gap: 8px; padding: 8px; font-size: 15px; line-height: 1.4; color: var(--muted); border-radius: 4px; }
 .lesson-list a::before, .lesson-list span::before { content: counter(lesson, decimal-leading-zero); font-size: 12px; padding-top: 2px; font-weight: normal; font-variant-numeric: tabular-nums; }
 .lesson-list a { color: var(--accent); text-decoration: none; }
-.lesson-list a[aria-current="page"] { font-weight: bold; background: #e2e9d8; }
+.lesson-list a[aria-current="page"] { font-weight: bold; background: var(--soft); }
 .lesson-list a:hover { background: var(--stage); }
 .lesson-main { min-width: 0; }
-.stage { background: var(--stage); border: 2px solid #afc09a; border-radius: 20px; overflow: hidden; }
+.stage { background: var(--stage); border: 2px solid var(--edge); border-radius: 20px; overflow: hidden; }
 #visualization { display: block; width: 100%; height: min(53svh, 540px); min-height: 260px; font-family: Arial, Helvetica, sans-serif; font-size: 24px; fill: #111; }
 .transport { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; background: var(--blue); margin-top: 8px; padding: 6px 12px; border-radius: 14px; }
 .transport-buttons { display: flex; align-items: center; gap: 6px; }
 .icon-button { padding: 8px; width: 36px; min-height: 36px; height: 36px; background: var(--paper); border: 0; }
 .icon-button svg { display: block; width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .play-button { width: 36px; min-width: 36px; min-height: 36px; height: 36px; border-radius: 50%; padding: 8px; display: grid; place-items: center; color: white; background: var(--accent); border: 0; }
-.play-button:hover:not(:disabled) { background: #24396c; }
+.play-button:hover:not(:disabled) { background: var(--hover); }
 .play-button svg { display: block; width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
 .captions-toggle { margin-left: 6px; border-radius: 5px; border: 1px solid var(--accent); color: white; background: var(--accent); }
-.captions-toggle:hover:not(:disabled) { background: #24396c; }
+.captions-toggle:hover:not(:disabled) { background: var(--hover); }
 .captions-toggle[aria-pressed="false"] { color: var(--accent); background: var(--paper); border-color: transparent; }
 .timeline { display: flex; flex: 1 1 240px; gap: 16px; align-items: center; min-width: 0; }
 .timeline input { width: 100%; min-width: 80px; height: 32px; cursor: pointer; }
@@ -123,7 +127,7 @@ p { margin: 0 0 18px; }
   .lesson-navigation[data-expanded="false"] > nav { transform: none; clip-path: none; }
 }
 @media (max-width: 700px) {
-  .course-header { padding: 14px 20px; gap: 16px; }
+  .course-header { padding: 14px 16px; gap: 16px; }
   .course-header p { font-size: 14px; }
   main { padding: 24px 16px; }
   #menu { grid-template-columns: 1fr; gap: 24px; padding: 8px 0; }
