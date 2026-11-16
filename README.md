@@ -52,6 +52,33 @@ See [recovery findings and remaining work](docs/recovery.md) before using these
 assets as lesson inputs. For Windows inspection, follow
 [the project guide](docs/agents/windows-inspection.md).
 
+## Transcribe original audio locally
+
+The local transcription environment uses Python 3.12 and `faster-whisper==1.2.1`.
+Its Python, packages and cached models live in the ignored `recovered/tools/`
+directory. Install Python 3.12 with `venv` and `pip` support, then create the
+environment once from the repository root:
+
+```sh
+python3.12 -m venv recovered/tools/whisper-env
+recovered/tools/whisper-env/bin/python -m pip install faster-whisper==1.2.1
+```
+
+Transcribe an exported WAV file from the repository root:
+
+```sh
+recovered/tools/whisper-env/bin/python tools/transcribe_audio.py \
+  recovered/audio/01892.wav \
+  --output recovered/transcripts/01892.json
+```
+
+The first run downloads `base.en`; subsequent runs reuse the local model.
+Transcription runs on the CPU without an API key or paid requests. Each output
+records the source audio hash, model, text and segment times. Existing output
+files are never overwritten. English source transcription is an unreviewed
+input to Russian translation; Russian narration and captions are authored from
+that translation, not from the English transcript directly.
+
 ## Generate lesson narration with ElevenLabs
 
 ElevenLabs is used only when producing course audio. Learner playback uses
