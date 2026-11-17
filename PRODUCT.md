@@ -4,18 +4,18 @@
 
 ## Platform
 
-web
+Desktop app for Windows, macOS, and Linux
 
 ## Stack
 
 Implementation choice delegated by issue #1: a local HTML/CSS/JavaScript sample
 with bundled narration and SVG assets. It must open directly from disk after
 download, without a server, build tool, account or speech service at playback.
-Final full-course packaging remains open pending sample validation.
+The finished course will ship the player in Electron for offline desktop use. See the [desktop delivery decision](docs/adr/0003-distribute-the-course-as-a-desktop-app.md).
 
 ## Users
 
-Russian-speaking learners studying introductory audio on Windows and macOS.
+Russian-speaking learners studying introductory audio on Windows, macOS, and Linux.
 The course owner evaluates the representative lesson before full conversion.
 
 ## Product Purpose

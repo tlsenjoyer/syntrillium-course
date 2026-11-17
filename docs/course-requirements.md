@@ -27,8 +27,8 @@ Confirmed requirements from the design interview:
 - Time visual changes to the relevant spoken words and check synchronization
   during narration review.
 - The user reports that the original course contains no separate example audio.
-- Support Windows and macOS, with all course content usable offline after an
-  initial download or installation. Web versus desktop delivery remains open.
+- Deliver an installable desktop app for Windows, macOS, and Linux with all
+  course content usable offline after installation.
 
 Technical investigation and delivery choices remain open. These requirements
 do not approve a particular reconstruction method or implementation plan.

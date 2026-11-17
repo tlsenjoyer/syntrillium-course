@@ -1,12 +1,12 @@
 ## Problem Statement
 
-The original course is Syntrillium's introductory audio course, distributed as a self-contained Windows executable. The user wants its complete educational content available in Russian on Windows and macOS, with the original visualizations and animations preserved and all course playback available offline. Translating narration alone would leave English interface text and diagram labels, and would risk losing synchronization between explanations and visuals.
+The original course is Syntrillium's introductory audio course, distributed as a self-contained Windows executable. The user wants its complete educational content available in Russian on Windows, macOS, and Linux, with the original visualizations and animations preserved and all course playback available offline. Translating narration alone would leave English interface text and diagram labels, and would risk losing synchronization between explanations and visuals.
 
 ## Solution
 
 Create a Russian adaptation that preserves the original course's curriculum, lesson order, explanations, examples, and visual demonstrations. Translate all learner-facing text and replace spoken narration with natural Russian narration. Preserve each visualization's meaning and sequence while allowing timing changes to fit Russian speech.
 
-Begin with recovery of the original course's content and structure, then deliver one representative, complete Russian lesson as the first milestone. Validate that lesson against the original course before scaling the method to the full curriculum. Deliver the finished course for offline use on Windows and macOS after initial download or installation; web versus desktop packaging remains an implementation choice.
+Begin with recovery of the original course's content and structure, then deliver one representative, complete Russian lesson as the first milestone. Validate that lesson against the original course before scaling the method to the full curriculum. Deliver the finished course as an installable desktop app for offline use on Windows, macOS, and Linux.
 
 ## User Stories
 
@@ -78,7 +78,7 @@ Begin with recovery of the original course's content and structure, then deliver
 - The user confirms that the visualizations are noninteractive and that the original course has no separate example audio. Asset references discovered during extraction must be classified rather than assumed to represent extra sound demonstrations.
 - Reuse extracted animations where fidelity, localization, and playback permit. Test Flash playback compatibility before adopting an emulator. Reconstruction or rendered animation clips are permitted where needed, provided meaning and sequence remain faithful.
 - Adjust animation duration and pauses to synchronize with Russian narration. Exact English playback duration is not a fidelity requirement.
-- Web versus desktop packaging, the player framework, codecs, and supported operating-system versions remain open implementation choices. Decide from the sample lesson and offline/cross-platform verification rather than inventing constraints now. Narration voice and speech model are selected per candidate generation run.
+- Package the player with Electron for the targets in the [desktop delivery decision](adr/0003-distribute-the-course-as-a-desktop-app.md). Select package formats and codecs through offline playback verification. Narration voice and speech model are selected per candidate generation run.
 - Existing repository content consists of the source executable, glossary, requirements, and agent configuration. There is no existing player, application interface, test suite, or architectural decision record to extend.
 
 ## Testing Decisions
@@ -87,10 +87,10 @@ Begin with recovery of the original course's content and structure, then deliver
 - A good test asserts learner-visible behavior or educational fidelity. Avoid tests tied to a particular component tree, extraction algorithm, or internal animation implementation.
 - At that boundary, verify that the representative lesson can be opened and completed, with Russian interface text, Russian labels within visuals, complete Russian narration, and visual events aligned with the corresponding explanation. Check for clipping, omitted content, and interrupted speech.
 - Compare the sample lesson against the rendered original for educational content, visual meaning, event order, and completeness. Permit the explicitly approved translation, typography, layout, and timing changes. Include human review of translation, technical pronunciation, and perceptual synchronization; automated playback checks cannot establish those qualities by themselves.
-- Verify the delivered sample on both Windows and macOS. After initial download or installation, disable networking and verify access, complete playback, local narration, and all visualizations. Exercise a fresh launch in the offline state so an already-running online session cannot mask dependencies.
+- Verify the delivered sample on Windows, macOS, and Linux. After initial download or installation, disable networking and verify access, complete playback, local narration, and all visualizations. Exercise a fresh launch in the offline state so an already-running online session cannot mask dependencies.
 - Repeat the same learner-facing acceptance checks across the complete converted curriculum. Reconcile lesson order and coverage with the recovered inventory, including all narration and visible text.
 - Recovery/conversion tools and content packaging support the primary boundary. Add targeted content-integrity checks for missing media or broken lesson references where failures could silently omit material; these supplement the end-to-end boundary rather than require a separate unit-test framework for every module.
-- There is no prior test infrastructure in this repo. Select an automation harness after the delivery platform is chosen. Automated checks on one host do not establish Windows and macOS compatibility; report any unavailable platform validation explicitly.
+- There is no prior test infrastructure in this repo. Select an automation harness after the delivery platform is chosen. Automated checks on one host do not establish compatibility across all three platforms; report any unavailable platform validation explicitly.
 - First-milestone acceptance requires a complete representative Russian lesson, comparison against the original, and offline playback verified on both target platforms. Full-course acceptance additionally requires complete curriculum coverage and the same localization and preservation checks throughout.
 
 ## Out of Scope
