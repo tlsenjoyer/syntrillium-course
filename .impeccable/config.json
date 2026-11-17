@@ -38,6 +38,137 @@
         ],
         "createdAt": "2026-11-14T09:18:38.312Z",
         "reason": "Agent: false positive; detected border-bottom:5px belongs to the existing full-width course header separator, not a side accent on a card. Verified rendered page and player/player.css."
+      },
+      {
+        "rule": "overused-font",
+        "value": "helvetica",
+        "files": [
+          "recovered/tools/python/cpython-3.12.16-linux-x86_64-gnu/lib/python3.12/pydoc_data/_pydoc.css"
+        ],
+        "createdAt": "2026-11-16T06:54:49.800Z",
+        "reason": "Codex triage: third-party CPython documentation CSS installed as part of the local Whisper runtime, outside the course interface."
+      },
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "files": [
+          "candidates/lessons/sound-fundamentals/index.html"
+        ],
+        "createdAt": "2026-11-17T18:40:33.581Z",
+        "reason": "Agent decision: this generated review lesson inherits Arial from player/index.html and player/player.css; preserving the existing course interface is intentional."
+      },
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "files": [
+          "candidates/lessons/sound-fundamentals/player.css"
+        ],
+        "createdAt": "2026-11-17T18:40:33.751Z",
+        "reason": "Agent decision: this generated stylesheet is copied from player/player.css; its established Arial interface and scientific diagram labels are intentionally preserved for lesson review."
+      },
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "files": [
+          "candidates/elevenlabs/analog-audio/review-1/preview/index.html",
+          "candidates/elevenlabs/analog-audio/review-1/preview/player.css",
+          "candidates/lessons/analog-audio-mask-review/index.html",
+          "candidates/lessons/analog-audio-mask-review/player.css",
+          "candidates/lessons/analog-audio/index.html",
+          "candidates/lessons/analog-audio/player.css"
+        ],
+        "createdAt": "2026-11-17T19:27:27.493Z",
+        "reason": "Agent: these six generated lesson-review files copy the existing offline player typography; retaining Arial preserves consistency with lessons 1 and 2 and requires no downloaded font."
+      },
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "files": [
+          "candidates/lessons/digital-audio/player.css"
+        ],
+        "createdAt": "2026-11-17T21:11:01.705Z",
+        "reason": "Agent: generated lesson review copy preserves the incumbent player/player.css typography; user requested lesson 4 like the existing lessons, and PRODUCT.md calls for an adaptation rather than a new visual identity."
+      },
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "files": [
+          "candidates/lessons/digital-audio/index.html"
+        ],
+        "createdAt": "2026-11-17T21:11:01.731Z",
+        "reason": "Agent: generated lesson review copy preserves the incumbent player/player.css typography; user requested lesson 4 like the existing lessons, and PRODUCT.md calls for an adaptation rather than a new visual identity."
+      },
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "files": [
+          "candidates/lessons/digital-audio-final/player.css"
+        ],
+        "createdAt": "2026-11-17T21:11:01.757Z",
+        "reason": "Agent: generated lesson review copy preserves the incumbent player/player.css typography; user requested lesson 4 like the existing lessons, and PRODUCT.md calls for an adaptation rather than a new visual identity."
+      },
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "files": [
+          "candidates/lessons/digital-audio-final/index.html"
+        ],
+        "createdAt": "2026-11-17T21:11:01.785Z",
+        "reason": "Agent: generated lesson review copy preserves the incumbent player/player.css typography; user requested lesson 4 like the existing lessons, and PRODUCT.md calls for an adaptation rather than a new visual identity."
+      },
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "files": [
+          "candidates/elevenlabs/digital-audio/review-1/preview/player.css"
+        ],
+        "createdAt": "2026-11-17T21:11:01.811Z",
+        "reason": "Agent: generated lesson review copy preserves the incumbent player/player.css typography; user requested lesson 4 like the existing lessons, and PRODUCT.md calls for an adaptation rather than a new visual identity."
+      },
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "files": [
+          "candidates/elevenlabs/digital-audio/review-1/preview/index.html"
+        ],
+        "createdAt": "2026-11-17T21:11:01.837Z",
+        "reason": "Agent: generated lesson review copy preserves the incumbent player/player.css typography; user requested lesson 4 like the existing lessons, and PRODUCT.md calls for an adaptation rather than a new visual identity."
+      },
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "files": [
+          "candidates/lessons/sampling-rate/player.css"
+        ],
+        "createdAt": "2026-11-17T21:26:14.436Z",
+        "reason": "Agent decision: generated copy is byte-identical to player/player.css; retain established offline course typography as requested for lesson 5 like the other lessons."
+      },
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "files": [
+          "candidates/elevenlabs/sampling-rate/review-1/preview/player.css"
+        ],
+        "createdAt": "2026-11-17T21:26:14.465Z",
+        "reason": "Agent decision: generated preview CSS is byte-identical to player/player.css; retain the existing course typography and its already documented Arial exception."
+      },
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "files": [
+          "candidates/lessons/sampling-rate/index.html"
+        ],
+        "createdAt": "2026-11-17T21:26:14.494Z",
+        "reason": "Agent decision: generated review HTML inherits the incumbent player Arial typography; lesson 5 preserves the same interface as existing lessons."
+      },
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "files": [
+          "candidates/elevenlabs/sampling-rate/review-1/preview/index.html"
+        ],
+        "createdAt": "2026-11-17T21:26:14.523Z",
+        "reason": "Agent decision: generated narration preview inherits the incumbent player Arial typography; preserve consistency with the course and the source stylesheet exception."
       }
     ]
   }
