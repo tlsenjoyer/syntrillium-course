@@ -45,7 +45,8 @@ on this recovery tool. A failed export may leave partial WAVs, but writes no
 completed manifest; retry with a new destination after resolving the error.
 
 Checks: `python3 -m unittest discover -s tests` exercises recovery and, when
-FFmpeg is installed, audio decoding. `mypy --check-untyped-defs tools tests`
+FFmpeg is installed, audio decoding. After the tool setup below,
+`recovered/tools/whisper-env/bin/python -m mypy --check-untyped-defs tools tests`
 checks Python types. Generated recovery/audio output belongs outside Git.
 
 See [recovery findings and remaining work](docs/recovery.md) before using these
@@ -54,15 +55,36 @@ assets as lesson inputs. For Windows inspection, follow
 
 ## Transcribe original audio locally
 
-The local transcription environment uses Python 3.12 and `faster-whisper==1.2.1`.
-Its Python, packages and cached models live in the ignored `recovered/tools/`
-directory. Install Python 3.12 with `venv` and `pip` support, then create the
-environment once from the repository root:
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/) on your PATH
+(an existing `recovered/tools/uv` is also supported), then run:
 
 ```sh
-python3.12 -m venv recovered/tools/whisper-env
-recovered/tools/whisper-env/bin/python -m pip install faster-whisper==1.2.1
+bash scripts/setup-tools.sh
 ```
+
+This downloads Python 3.12.16 if needed, recreates the local environment at the
+current checkout path, and installs every dependency pinned in
+`requirements-tools.txt`, including Whisper, its compatible PyAV decoder, mypy,
+and Playwright for existing player checks. Run it again after moving the checkout
+or to restore the pinned packages. Only `recovered/tools/whisper-env` is cleared;
+cached models, recovery outputs, and transcripts are retained.
+
+Setup checks mypy availability, then decodes and transcribes a six-second English
+source clip on the CPU, asserting recognizable text. The first run downloads the
+`base.en` model; subsequent runs reuse it. Python, packages, and cached models
+stay in the ignored `recovered/tools/` directory. To repeat just the smoke test:
+
+```sh
+recovered/tools/whisper-env/bin/python tools/smoke_transcription.py
+```
+
+To intentionally update dependencies, edit `requirements-tools.in`, regenerate
+the lock with `uv pip compile requirements-tools.in --python-version 3.12
+--output-file requirements-tools.txt`, and rerun setup and the checks. PyAV is
+pinned because newer releases removed the `metadata_errors` argument used by
+Whisper 1.2.1. Playwright browser binaries are separate: install Chromium with
+`recovered/tools/whisper-env/bin/python -m playwright install chromium` before
+running browser tests.
 
 Transcribe an exported WAV file from the repository root:
 

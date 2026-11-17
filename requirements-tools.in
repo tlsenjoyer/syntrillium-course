@@ -1,0 +1,6 @@
+faster-whisper==1.2.1
+# Newer PyAV removed metadata_errors, which this Whisper release still passes.
+av==16.1.0
+mypy==1.18.2
+# Required by the existing player tests and their type checks.
+playwright==1.61.0
