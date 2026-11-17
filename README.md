@@ -2,7 +2,61 @@
 
 Work in progress for [issue #1](https://github.com/tlsenjoyer/syntrillium-course/issues/1).
 The source is `course.exe`; the requirements are in
-[the spec](docs/russian-course-spec.md). A Russian lesson/player is not delivered yet.
+[the spec](docs/russian-course-spec.md). The offline player in `player/index.html`
+presents Sound Fundamentals, Waveforms, Analog Audio, Digital Audio, and Sampling Rate for review, with bundled Russian
+narration, lesson selection, and browser history.
+
+For the complete production sequence, review gates, and remaining first-lesson
+tooling gaps, see the [lesson-authoring workflow](docs/lesson-authoring.md).
+
+Lesson 3, «Аналоговый звук», is available from the course menu, the lesson list,
+and lesson 2's next-lesson control. It includes all eight original narration
+segments in seven complete Russian utterances, generated with ElevenLabs voice
+`3EuKHIEZbSzrHGNmdYsx` and model `eleven_v4_turbo`. Its microphone, speaker, and
+tape-recorder illustrations are converted from the original Flash paths.
+Audio and visuals are bundled for offline playback. This is a review draft;
+listening review, continuous original-playback comparison, and Windows/macOS
+acceptance remain outstanding. See the [lesson 3 production record](docs/analog-audio-review.md).
+
+Lesson 4, «Цифровой звук», is enabled in the main menu, lesson list, and
+lesson 3's next-lesson control. Five source segments form three complete Russian
+utterances, generated with the same ElevenLabs voice and model. Waveform,
+sampling animation, and localized labels are bundled for offline review.
+See the [lesson 4 production record](docs/digital-audio-review.md) for source
+coverage, generation details, and outstanding review.
+
+Lesson 5, «Частота дискретизации», is enabled in the main menu, lesson list,
+and lesson 4's next-lesson control. All thirteen source segments are presented
+in ten complete Russian utterances, generated with the same ElevenLabs voice
+and model. The waveform, sample-density animation, translated definitions, and
+narration are bundled for offline review. See the
+[lesson 5 production record](docs/sampling-rate-review.md) for remaining review.
+
+The first course topic, Sound Fundamentals (Основы звука), now has a
+[Russian content draft](content/sound-fundamentals.json): all 14 source narration
+segments, their automatic English transcripts, and nine complete Russian
+narration utterances with visual cue anchors. Its
+[source inventory](content/sources/sound-fundamentals.json) retains audio hashes
+and visual member references. Translation and transcription remain unreviewed;
+suspected ASR and scientific wording issues are recorded in `review_notes`.
+Build its separate silent review player without generating narration:
+
+```sh
+python3 tools/build_lesson.py content/sound-fundamentals.json \
+  candidates/lessons/sound-fundamentals --recovery recovered --visuals-only
+```
+
+Open `candidates/lessons/sound-fundamentals/index.html`. The destination must be
+new; the main Waveforms player is preserved. Play, pause, seeking, and phrase
+navigation work without audio. The speaker bitmaps and ear outline are converted
+from the original; pressure-wave motion is a draft reconstruction. Timing uses
+source durations and text anchors until your narration is added. Original
+playback comparison, content approval, narration, and synchronization review
+remain outstanding; this is not an accepted learner lesson. The main player
+bundles the promoted `review-2` narration in `player/lessons/sound-fundamentals/`.
+The silent build command above creates a separate fresh draft and does not
+replace that narration. For subsequent promotions into the main player, use
+`--player player/lessons/sound-fundamentals`.
 
 ## Recover the original resources
 

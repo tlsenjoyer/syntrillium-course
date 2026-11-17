@@ -1,0 +1,321 @@
+{
+  "id": "sound-fundamentals",
+  "title": "Основы звука",
+  "status": "review-draft",
+  "source": {
+    "executable_sha256": "c385ac83b9cad64cc988d37b8e5b3c30586fcf63c478d56d473a5dcf5c360725",
+    "topic_title": "Sound Fundamentals",
+    "entry_frame": 130,
+    "next_topic_entry_frame": 1003,
+    "transcription_model": "Systran/faster-whisper-base.en",
+    "transcription_reviewed": false,
+    "translation_reviewed": false
+  },
+  "labels": {
+    "zero": "Нулевая линия",
+    "pressure": "Давление",
+    "noChange": "Давление не изменяется",
+    "high": "Высокое давление",
+    "low": "Низкое давление",
+    "peak": "Максимум",
+    "trough": "Минимум"
+  },
+  "review_notes": [
+    "English text is unreviewed automatic transcription, retained verbatim for provenance.",
+    "Segment 1910 ASR says \"Horsing\"; the Russian draft interprets this as \"forcing\" from context. Confirm against the original recording.",
+    "The source describes vibrations of receptors in the ears (1934); retained pending owner review of scientific wording.",
+    "Utterance groups and Russian cue anchors are authored drafts. No Russian audio or cue times have been approved.",
+    "Visual member references are inventory only. Speaker-cone bitmaps, ear graphic and runtime animation still need conversion and comparison before this lesson can be enabled in the player."
+  ],
+  "segments": [
+    {
+      "id": "1892",
+      "source_resource_id": 1892,
+      "source_start_frame": 131,
+      "source_end_frame": 220,
+      "audio_path": "recovered/audio/01892.wav",
+      "audio_sha256": "57c0e487e1061b59b28d354f122f9044c591ef0c671a71f5012706a8e736985b",
+      "duration_seconds": 6.164897959183674,
+      "english_asr": "Understanding the fundamentals of sound itself is the first step in learning about digital audio and sound.",
+      "russian": "Чтобы разобраться в цифровом аудио, сначала нужно понять основы самого звука."
+    },
+    {
+      "id": "1898",
+      "source_resource_id": 1898,
+      "source_start_frame": 222,
+      "source_end_frame": 312,
+      "audio_path": "recovered/audio/01898.wav",
+      "audio_sha256": "ccfd66c97c85c2d05a1dd24bf54caae0d5f1a36c95a3c6717b0f464e17a03db5",
+      "duration_seconds": 6.2693877551020405,
+      "english_asr": "Sound is created by vibrations, such as in a guitar string, vocal cord or speaker cone.",
+      "russian": "Звук возникает благодаря колебаниям — например, гитарной струны, голосовой связки или диффузора динамика."
+    },
+    {
+      "id": "1904",
+      "source_resource_id": 1904,
+      "source_start_frame": 314,
+      "source_end_frame": 360,
+      "audio_path": "recovered/audio/01904.wav",
+      "audio_sha256": "7452b6f8ec2fe5165f2055bd472a084815e82d48de0d6ef2843cb97e9b707a76",
+      "duration_seconds": 3.317551020408163,
+      "english_asr": "These vibrations disturb the air molecules near them.",
+      "russian": "Эти колебания воздействуют на ближайшие молекулы воздуха,"
+    },
+    {
+      "id": "1910",
+      "source_resource_id": 1910,
+      "source_start_frame": 362,
+      "source_end_frame": 414,
+      "audio_path": "recovered/audio/01910.wav",
+      "audio_sha256": "6b3b6ab62ee388176343827186e49a141bf57f43a6d22246261b91dfb5d13da0",
+      "duration_seconds": 3.7355102040816326,
+      "english_asr": "Horsing molecules together, raising the air pressure slightly.",
+      "russian": "сближая их и немного повышая давление воздуха."
+    },
+    {
+      "id": "1916",
+      "source_resource_id": 1916,
+      "source_start_frame": 418,
+      "source_end_frame": 487,
+      "audio_path": "recovered/audio/01916.wav",
+      "audio_sha256": "64b48e4fd993daa4bfd2f38c2cb9c9c9d34527740f57c32e568b470a5b821a2a",
+      "duration_seconds": 4.806530612244898,
+      "english_asr": "The air molecules that are under pressure then push on the air molecules surrounding them.",
+      "russian": "Молекулы воздуха в области повышенного давления толкают окружающие молекулы,"
+    },
+    {
+      "id": "1922",
+      "source_resource_id": 1922,
+      "source_start_frame": 489,
+      "source_end_frame": 542,
+      "audio_path": "recovered/audio/01922.wav",
+      "audio_sha256": "c53e8c422cf85ccf729678eceb5f4d006929062292feebf64dc6979d2c20b635",
+      "duration_seconds": 3.6310204081632653,
+      "english_asr": "which pushes on the next set of air molecules and so forth.",
+      "russian": "те, в свою очередь, толкают следующие и так далее,"
+    },
+    {
+      "id": "1928",
+      "source_resource_id": 1928,
+      "source_start_frame": 545,
+      "source_end_frame": 597,
+      "audio_path": "recovered/audio/01928.wav",
+      "audio_sha256": "ee35294cd4b115402d1ae018ac9c2de241aa2564cf6c19e970cdccb111a1c0c8",
+      "duration_seconds": 3.6310204081632653,
+      "english_asr": "causing an area of high pressure to move through the air.",
+      "russian": "в результате чего область повышенного давления распространяется в воздухе."
+    },
+    {
+      "id": "1934",
+      "source_resource_id": 1934,
+      "source_start_frame": 600,
+      "source_end_frame": 701,
+      "audio_path": "recovered/audio/01934.wav",
+      "audio_sha256": "f72a8c763d4d60278a300956484443696b373b5050057417cf04fb50509f5c3a",
+      "duration_seconds": 7.026938775510204,
+      "english_asr": "When these pressure waves reach us, they vibrate the receptors in our ears and we hear the vibrations as sound.",
+      "russian": "Когда эти волны давления достигают нас, они вызывают колебания рецепторов в наших ушах, и мы воспринимаем эти колебания как звук."
+    },
+    {
+      "id": "1940",
+      "source_resource_id": 1940,
+      "source_start_frame": 704,
+      "source_end_frame": 745,
+      "audio_path": "recovered/audio/01940.wav",
+      "audio_sha256": "dd977b00b11000098eaf798927b1a9737760e556dd12dbc8b91a22d2b4afaeea",
+      "duration_seconds": 2.9779591836734696,
+      "english_asr": "when you see a waveform that represents audio.",
+      "russian": "Когда вы видите график звуковой волны,"
+    },
+    {
+      "id": "1946",
+      "source_resource_id": 1946,
+      "source_start_frame": 747,
+      "source_end_frame": 791,
+      "audio_path": "recovered/audio/01946.wav",
+      "audio_sha256": "05f7a4e75b19bc132f39a52ea814c8fc9d7b973159630c4998723040da82e701",
+      "duration_seconds": 3.1608163265306124,
+      "english_asr": "That waveform represents these pressure waves.",
+      "russian": "он отображает именно эти волны давления."
+    },
+    {
+      "id": "1952",
+      "source_resource_id": 1952,
+      "source_start_frame": 793,
+      "source_end_frame": 847,
+      "audio_path": "recovered/audio/01952.wav",
+      "audio_sha256": "0bd4ff15884a744518a3876bd9901c06203a392ebcacb1d7dae0e71af618ceb0",
+      "duration_seconds": 3.7877551020408164,
+      "english_asr": "The zero line in the waveform is the pressure of air at rest.",
+      "russian": "Нулевая линия на графике соответствует давлению неподвижного воздуха."
+    },
+    {
+      "id": "1958",
+      "source_resource_id": 1958,
+      "source_start_frame": 849,
+      "source_end_frame": 894,
+      "audio_path": "recovered/audio/01958.wav",
+      "audio_sha256": "4e1319c4085cb4f3d67efd2a01712b636e25d568f2b73869059324ab3b4ded8e",
+      "duration_seconds": 3.1085714285714285,
+      "english_asr": "When the line swings up, it represents higher pressure.",
+      "russian": "Отклонение линии вверх означает повышение давления,"
+    },
+    {
+      "id": "1964",
+      "source_resource_id": 1964,
+      "source_start_frame": 896,
+      "source_end_frame": 942,
+      "audio_path": "recovered/audio/01964.wav",
+      "audio_sha256": "d747e7dd2557db3eb31e0cacedc28b17c2b36fc26165a01e52d2b31f7039012e",
+      "duration_seconds": 3.3436734693877552,
+      "english_asr": "And when it swings low, it represents lower pressure.",
+      "russian": "а отклонение вниз — понижение давления."
+    },
+    {
+      "id": "1970",
+      "source_resource_id": 1970,
+      "source_start_frame": 944,
+      "source_end_frame": 1002,
+      "audio_path": "recovered/audio/01970.wav",
+      "audio_sha256": "8b8da6f493ae6114c1d605b6a75d06b8c070b3de73111b1098aff6101fd16b8e",
+      "duration_seconds": 4.0751020408163265,
+      "english_asr": "This waveform is the equivalent of the pressure waves in the air below.",
+      "russian": "Эта кривая соответствует волнам давления в воздухе, показанным внизу."
+    }
+  ],
+  "utterances": [
+    {
+      "id": "1892",
+      "segment_ids": [
+        "1892"
+      ],
+      "russian": "Чтобы разобраться в цифровом аудио, сначала нужно понять основы самого звука.",
+      "visual_cues": [
+        {
+          "segment_id": "1892"
+        }
+      ]
+    },
+    {
+      "id": "1898",
+      "segment_ids": [
+        "1898"
+      ],
+      "russian": "Звук возникает благодаря колебаниям — например, гитарной струны, голосовой связки или диффузора динамика.",
+      "visual_cues": [
+        {
+          "segment_id": "1898"
+        }
+      ]
+    },
+    {
+      "id": "1904",
+      "segment_ids": [
+        "1904",
+        "1910"
+      ],
+      "russian": "Эти колебания воздействуют на ближайшие молекулы воздуха, сближая их и немного повышая давление воздуха.",
+      "visual_cues": [
+        {
+          "segment_id": "1904"
+        },
+        {
+          "segment_id": "1910",
+          "anchor": "сближая их и немного повышая давление воздуха."
+        }
+      ]
+    },
+    {
+      "id": "1916",
+      "segment_ids": [
+        "1916",
+        "1922",
+        "1928"
+      ],
+      "russian": "Молекулы воздуха в области повышенного давления толкают окружающие молекулы, те, в свою очередь, толкают следующие и так далее, в результате чего область повышенного давления распространяется в воздухе.",
+      "visual_cues": [
+        {
+          "segment_id": "1916"
+        },
+        {
+          "segment_id": "1922",
+          "anchor": "те, в свою очередь, толкают следующие и так далее,"
+        },
+        {
+          "segment_id": "1928",
+          "anchor": "в результате чего область повышенного давления распространяется в воздухе."
+        }
+      ]
+    },
+    {
+      "id": "1934",
+      "segment_ids": [
+        "1934"
+      ],
+      "russian": "Когда эти волны давления достигают нас, они вызывают колебания рецепторов в наших ушах, и мы воспринимаем эти колебания как звук.",
+      "visual_cues": [
+        {
+          "segment_id": "1934"
+        }
+      ]
+    },
+    {
+      "id": "1940",
+      "segment_ids": [
+        "1940",
+        "1946"
+      ],
+      "russian": "Когда вы видите график звуковой волны, он отображает именно эти волны давления.",
+      "visual_cues": [
+        {
+          "segment_id": "1940"
+        },
+        {
+          "segment_id": "1946",
+          "anchor": "он отображает именно эти волны давления."
+        }
+      ]
+    },
+    {
+      "id": "1952",
+      "segment_ids": [
+        "1952"
+      ],
+      "russian": "Нулевая линия на графике соответствует давлению неподвижного воздуха.",
+      "visual_cues": [
+        {
+          "segment_id": "1952"
+        }
+      ]
+    },
+    {
+      "id": "1958",
+      "segment_ids": [
+        "1958",
+        "1964"
+      ],
+      "russian": "Отклонение линии вверх означает повышение давления, а отклонение вниз — понижение давления.",
+      "visual_cues": [
+        {
+          "segment_id": "1958"
+        },
+        {
+          "segment_id": "1964",
+          "anchor": "а отклонение вниз — понижение давления."
+        }
+      ]
+    },
+    {
+      "id": "1970",
+      "segment_ids": [
+        "1970"
+      ],
+      "russian": "Эта кривая соответствует волнам давления в воздухе, показанным внизу.",
+      "visual_cues": [
+        {
+          "segment_id": "1970"
+        }
+      ]
+    }
+  ]
+}

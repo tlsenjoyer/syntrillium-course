@@ -1,0 +1,470 @@
+{
+  "source_sha256": "c385ac83b9cad64cc988d37b8e5b3c30586fcf63c478d56d473a5dcf5c360725",
+  "content_sha256": "cf724c9f2f944420e48814121bf628c7ac5bdeafbaa0523ce72d8b7107f138b1",
+  "vectors": [
+    {
+      "path": "assets/cone-18.svg",
+      "resource_id": 2873,
+      "source_sha256": "f4d1fc8ec45a21d98ef4500130b58af56e684bfc28061941cf5153a199e01c11",
+      "cast_resource_id": 610,
+      "cast_sha256": "3044c751db2a08b707706834d3e5b9bf7592a3f339151dc7a0f48b25e8439ad5",
+      "sha256": "50f1fc263dd48ab445063548f81a3cb288a4f52b00649b5142b0b952896fa112"
+    },
+    {
+      "path": "assets/cone-19.svg",
+      "resource_id": 2875,
+      "source_sha256": "d8470da75891f4e8a3f679e87c7b843c90821213a836cb6c18fe36ef03ed46ba",
+      "cast_resource_id": 475,
+      "cast_sha256": "c75930c4a8d41971e63d38d05141e63430241598f9548ae970bf0a53a4f7c874",
+      "sha256": "ffa486fabf353331f245a1e3a12986806f02f5574844dd26fc9e0ce86c26b407"
+    },
+    {
+      "path": "assets/cone-20.svg",
+      "resource_id": 2877,
+      "source_sha256": "81aec36e1a98c18b9998aed1d8802c28fe1d5313765b6b91633022a34a3c29f5",
+      "cast_resource_id": 1227,
+      "cast_sha256": "18808c89bcfcb14b0dba86e6a4c858c868387ba29cbe51e3289f0d38d1cad7a3",
+      "sha256": "8e3e698e940ce24577c8feb7436de54ecf9913c1b9e5531dfab48e1587eefc8b"
+    },
+    {
+      "path": "assets/cone-21.svg",
+      "resource_id": 2879,
+      "source_sha256": "0278bc3fb5a44db74108ddd1fb0389ec3afabf2c3958606e524e9f1476638ae9",
+      "cast_resource_id": 384,
+      "cast_sha256": "113374f51306215cc8102dd55622bb4c3760da2122f1684d91e6cea3555bc4c1",
+      "sha256": "b40fbd54b67c8340f3d467031b22872729b089f48ef0a9bcaa5c294110133130"
+    },
+    {
+      "path": "assets/cone-22.svg",
+      "resource_id": 2881,
+      "source_sha256": "f9cf7ae45e6bd1c994ad93623a5de3d652716bf84bdc86b8620c8be8f6665e27",
+      "cast_resource_id": 1209,
+      "cast_sha256": "209df805bf7fd1f1599e7b57c8e60b1a9b347bd03a5533cf59469ae554a14c79",
+      "sha256": "7bb8d1c5559b40dde7fbe97925b4068732463e366bd08f6b6b4c580186ef9c2e"
+    },
+    {
+      "path": "assets/cone-23.svg",
+      "resource_id": 2883,
+      "source_sha256": "8e0ea7081f7dbcf5fc341a8f1bfbe9e96d064ca23eb0f4af28891eb64e765b3a",
+      "cast_resource_id": 1194,
+      "cast_sha256": "daf89c3054a53ebc6f844bef6bea274ee0b8b88112caac124d94b25ff36ead3f",
+      "sha256": "8782558ecf6c8494fb922b5f58ddec52dbfb9f3e69d407943013a9cfd896568e"
+    },
+    {
+      "path": "assets/cone-24.svg",
+      "resource_id": 2885,
+      "source_sha256": "69e96e5068736b4d1fa04bbf2c62ef6593d4e746a405d352f81c718acfe427bf",
+      "cast_resource_id": 460,
+      "cast_sha256": "8c29f38788466e410bd504cdbf95ab00fbc43fcb1bc877897fecb2e8e32f0399",
+      "sha256": "0f6dc3c64c01e5f66b1f6c43c0e3037c02e97c67f0676d461de212cd75fd175b"
+    },
+    {
+      "path": "assets/cone-25.svg",
+      "resource_id": 2887,
+      "source_sha256": "2dc8e720ca962ac3e490bcb17f7de38f514432c252acecddde159847094cb35a",
+      "cast_resource_id": 763,
+      "cast_sha256": "6a10390b76a1e53569f5350bbdade6ee9ca54ba9823d0d00f92319b95b15e4fd",
+      "sha256": "9146332d834368efdbbddecd533e51a6352a175d12782e5ab6844cbd6423af16"
+    },
+    {
+      "path": "assets/cone-26.svg",
+      "resource_id": 2889,
+      "source_sha256": "4d8ad07bda7626701b1af3dad3f2083c3f636fce84edecec965ae4eb8282e58c",
+      "cast_resource_id": 340,
+      "cast_sha256": "e8b1a0e3f014f5683957d5d8ad540d927fefccdcbaf712c1eb478e842ac8dc5f",
+      "sha256": "5a94000e24b3d62c3fe61992040a7169a5b73862b6c8228edd7ea1a1ddba89f2"
+    },
+    {
+      "path": "assets/ear.svg",
+      "resource_id": 2847,
+      "source_sha256": "b50a065f3b27bfeaf937a954e9123d157546989b088c120dad3ce4e21d006db8",
+      "sha256": "146c69077b8d5949081be59bb890f1304d55c1d464027c977afa9714c9ef2f70"
+    },
+    {
+      "path": "assets/ball.svg",
+      "reused_from": "player/assets/ball.svg",
+      "source_sha256": "2f575e4ba2feb4f6827bddf430e326f1e89c91b72bb6010e024becb6c7d08d7c",
+      "sha256": "2f575e4ba2feb4f6827bddf430e326f1e89c91b72bb6010e024becb6c7d08d7c"
+    },
+    {
+      "path": "assets/sine.svg",
+      "reused_from": "player/assets/sine.svg",
+      "source_sha256": "a6f2370b27b93034782dbe9921951569c9344418e663419c1c997e1290adc661",
+      "sha256": "a6f2370b27b93034782dbe9921951569c9344418e663419c1c997e1290adc661"
+    }
+  ],
+  "audio": [
+    {
+      "path": "audio/01892.mp3",
+      "utterance_id": "1892",
+      "source_resource_id": 1892,
+      "source_resource_ids": [
+        1892
+      ],
+      "sha256": "2a9e95520f53fb58d76f463cb30da0f97ad34009c8e78b20ffc208cbe67ad987",
+      "duration": 5.12
+    },
+    {
+      "path": "audio/01898.mp3",
+      "utterance_id": "1898",
+      "source_resource_id": 1898,
+      "source_resource_ids": [
+        1898
+      ],
+      "sha256": "fc10f863a6786078bf8df5c355022511c71904bb17d01176304e58c5aef9cc3d",
+      "duration": 7.2
+    },
+    {
+      "path": "audio/01904.mp3",
+      "utterance_id": "1904",
+      "source_resource_id": 1904,
+      "source_resource_ids": [
+        1904,
+        1910
+      ],
+      "sha256": "c1ef38f7f8eaddfe1c67cb29d9fa86eb240ce5292de5dd2a260e9da82dc8b969",
+      "duration": 7.04
+    },
+    {
+      "path": "audio/01916.mp3",
+      "utterance_id": "1916",
+      "source_resource_id": 1916,
+      "source_resource_ids": [
+        1916,
+        1922,
+        1928
+      ],
+      "sha256": "1d929d590675827c9804ca305c8d80dfddba6c03800f7aaf02bbe1d27cded23e",
+      "duration": 13.04
+    },
+    {
+      "path": "audio/01934.mp3",
+      "utterance_id": "1934",
+      "source_resource_id": 1934,
+      "source_resource_ids": [
+        1934
+      ],
+      "sha256": "cb5638ae92748a80853f34042440fd89c5058c32df865d75ce403d609ec1c7a6",
+      "duration": 8.56
+    },
+    {
+      "path": "audio/01940.mp3",
+      "utterance_id": "1940",
+      "source_resource_id": 1940,
+      "source_resource_ids": [
+        1940,
+        1946
+      ],
+      "sha256": "e910ee948c25467bdbba0c407c421eeb572f10c18cc1f0f74ffee287cfc6ca15",
+      "duration": 5.28
+    },
+    {
+      "path": "audio/01952.mp3",
+      "utterance_id": "1952",
+      "source_resource_id": 1952,
+      "source_resource_ids": [
+        1952
+      ],
+      "sha256": "1e5bb5cc929bdcb316f1e9ef44ec47f335c57d5307890cbae91c9a49327c031b",
+      "duration": 4.48
+    },
+    {
+      "path": "audio/01958.mp3",
+      "utterance_id": "1958",
+      "source_resource_id": 1958,
+      "source_resource_ids": [
+        1958,
+        1964
+      ],
+      "sha256": "795d05df3937b7a9320bb6e2dae5eea7bb6d13bd6cc7c1d9d9ea75489378c5c3",
+      "duration": 6.56
+    },
+    {
+      "path": "audio/01970.mp3",
+      "utterance_id": "1970",
+      "source_resource_id": 1970,
+      "source_resource_ids": [
+        1970
+      ],
+      "sha256": "c1a0844fcfae2594823a962ba9919e559397244d25ebec318d006edda86941c9",
+      "duration": 4.56
+    }
+  ],
+  "review_status": "unverified draft",
+  "timing_status": "estimated",
+  "limitations": [
+    "Original continuous playback comparison unavailable in this session.",
+    "Pressure-wave motion is reconstructed; source frame timing is provisional.",
+    "Transcription, translation, scientific wording and narration are unapproved."
+  ],
+  "approved_utterances": {
+    "1892": {
+      "provider": "elevenlabs",
+      "voice_id": "3EuKHIEZbSzrHGNmdYsx",
+      "model_id": "eleven_v4_turbo",
+      "output_format": "mp3_44100_128",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 1
+      },
+      "text_sha256": "aad8fef2c8747fecdd98fcff48da96acd1cce709287fdedf27d0fc7533cb48cd",
+      "sha256": "2a9e95520f53fb58d76f463cb30da0f97ad34009c8e78b20ffc208cbe67ad987",
+      "request_id": "MaU6PGJsvyZQrK52Unil",
+      "candidate": "candidates/elevenlabs/sound-fundamentals/review-2",
+      "duration": 5.12,
+      "cue_times": [
+        {
+          "segment_id": "1892",
+          "at": 0.0
+        }
+      ],
+      "segment_ids": [
+        "1892"
+      ]
+    },
+    "1898": {
+      "provider": "elevenlabs",
+      "voice_id": "3EuKHIEZbSzrHGNmdYsx",
+      "model_id": "eleven_v4_turbo",
+      "output_format": "mp3_44100_128",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 1
+      },
+      "text_sha256": "59abbaa3bd42bd5d2bce1193b453c337e82d738d6362b6b0603c97d9c554e565",
+      "sha256": "fc10f863a6786078bf8df5c355022511c71904bb17d01176304e58c5aef9cc3d",
+      "request_id": "nRUkkMs9jX8gpVqwcfw7",
+      "candidate": "candidates/elevenlabs/sound-fundamentals/review-2",
+      "duration": 7.2,
+      "cue_times": [
+        {
+          "segment_id": "1898",
+          "at": 0.0
+        }
+      ],
+      "segment_ids": [
+        "1898"
+      ]
+    },
+    "1904": {
+      "provider": "elevenlabs",
+      "voice_id": "3EuKHIEZbSzrHGNmdYsx",
+      "model_id": "eleven_v4_turbo",
+      "output_format": "mp3_44100_128",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 1
+      },
+      "text_sha256": "0156f918dd613be1a5fbc8940a3d3158018517e2c95050d56c0c3988a965fbd4",
+      "sha256": "c1ef38f7f8eaddfe1c67cb29d9fa86eb240ce5292de5dd2a260e9da82dc8b969",
+      "request_id": "TNf175QzXjJGDxt990FP",
+      "candidate": "candidates/elevenlabs/sound-fundamentals/review-2",
+      "duration": 7.04,
+      "cue_times": [
+        {
+          "segment_id": "1904",
+          "at": 0.0
+        },
+        {
+          "segment_id": "1910",
+          "at": 3.6
+        }
+      ],
+      "segment_ids": [
+        "1904",
+        "1910"
+      ]
+    },
+    "1916": {
+      "provider": "elevenlabs",
+      "voice_id": "3EuKHIEZbSzrHGNmdYsx",
+      "model_id": "eleven_v4_turbo",
+      "output_format": "mp3_44100_128",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 1
+      },
+      "text_sha256": "7410e7ef323801662c2fa9551e3b3579acd2585d6d51f5c3bf7b6fca7e2f2107",
+      "sha256": "1d929d590675827c9804ca305c8d80dfddba6c03800f7aaf02bbe1d27cded23e",
+      "request_id": "B3Xu4YN2vgTrLJ6WrVAs",
+      "candidate": "candidates/elevenlabs/sound-fundamentals/review-2",
+      "duration": 13.04,
+      "cue_times": [
+        {
+          "segment_id": "1916",
+          "at": 0.0
+        },
+        {
+          "segment_id": "1922",
+          "at": 5.16
+        },
+        {
+          "segment_id": "1928",
+          "at": 8.48
+        }
+      ],
+      "segment_ids": [
+        "1916",
+        "1922",
+        "1928"
+      ]
+    },
+    "1934": {
+      "provider": "elevenlabs",
+      "voice_id": "3EuKHIEZbSzrHGNmdYsx",
+      "model_id": "eleven_v4_turbo",
+      "output_format": "mp3_44100_128",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 1
+      },
+      "text_sha256": "2a8c4bb83338b976e3d7d0bbed7f9b324eb058288808d5a1c36f0f160942dd61",
+      "sha256": "cb5638ae92748a80853f34042440fd89c5058c32df865d75ce403d609ec1c7a6",
+      "request_id": "YRft8SZGxfi2YlIMX9lg",
+      "candidate": "candidates/elevenlabs/sound-fundamentals/review-2",
+      "duration": 8.56,
+      "cue_times": [
+        {
+          "segment_id": "1934",
+          "at": 0.0
+        }
+      ],
+      "segment_ids": [
+        "1934"
+      ]
+    },
+    "1940": {
+      "provider": "elevenlabs",
+      "voice_id": "3EuKHIEZbSzrHGNmdYsx",
+      "model_id": "eleven_v4_turbo",
+      "output_format": "mp3_44100_128",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 1
+      },
+      "text_sha256": "f17d71e6119f73a06d88b3ba584c52542b2fa7bdc87790eef289a348eed5a7a7",
+      "sha256": "e910ee948c25467bdbba0c407c421eeb572f10c18cc1f0f74ffee287cfc6ca15",
+      "request_id": "YiFsCUZbM2Xk2eL8i3TL",
+      "candidate": "candidates/elevenlabs/sound-fundamentals/review-2",
+      "duration": 5.28,
+      "cue_times": [
+        {
+          "segment_id": "1940",
+          "at": 0.0
+        },
+        {
+          "segment_id": "1946",
+          "at": 2.4
+        }
+      ],
+      "segment_ids": [
+        "1940",
+        "1946"
+      ]
+    },
+    "1952": {
+      "provider": "elevenlabs",
+      "voice_id": "3EuKHIEZbSzrHGNmdYsx",
+      "model_id": "eleven_v4_turbo",
+      "output_format": "mp3_44100_128",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 1
+      },
+      "text_sha256": "f9e6ba5d1c2684fc996b4d309f8b32569ba65087cfa9633da473c119bdec3784",
+      "sha256": "1e5bb5cc929bdcb316f1e9ef44ec47f335c57d5307890cbae91c9a49327c031b",
+      "request_id": "33OIhoQ1gf6tWwaXHWVZ",
+      "candidate": "candidates/elevenlabs/sound-fundamentals/review-2",
+      "duration": 4.48,
+      "cue_times": [
+        {
+          "segment_id": "1952",
+          "at": 0.0
+        }
+      ],
+      "segment_ids": [
+        "1952"
+      ]
+    },
+    "1958": {
+      "provider": "elevenlabs",
+      "voice_id": "3EuKHIEZbSzrHGNmdYsx",
+      "model_id": "eleven_v4_turbo",
+      "output_format": "mp3_44100_128",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 1
+      },
+      "text_sha256": "611fa04885258fe7d63f445fb022c6eefeae360192a7e5223e7272268188c8a9",
+      "sha256": "795d05df3937b7a9320bb6e2dae5eea7bb6d13bd6cc7c1d9d9ea75489378c5c3",
+      "request_id": "mh3gGrP0goWISLRV4rgO",
+      "candidate": "candidates/elevenlabs/sound-fundamentals/review-2",
+      "duration": 6.56,
+      "cue_times": [
+        {
+          "segment_id": "1958",
+          "at": 0.0
+        },
+        {
+          "segment_id": "1964",
+          "at": 3.76
+        }
+      ],
+      "segment_ids": [
+        "1958",
+        "1964"
+      ]
+    },
+    "1970": {
+      "provider": "elevenlabs",
+      "voice_id": "3EuKHIEZbSzrHGNmdYsx",
+      "model_id": "eleven_v4_turbo",
+      "output_format": "mp3_44100_128",
+      "voice_settings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true,
+        "speed": 1
+      },
+      "text_sha256": "94faf033767e7830c9d387a13070f61ad4f91fd79e594d6189598c7a7252303c",
+      "sha256": "c1a0844fcfae2594823a962ba9919e559397244d25ebec318d006edda86941c9",
+      "request_id": "huxXWvnhUwSlxNHPHn7K",
+      "candidate": "candidates/elevenlabs/sound-fundamentals/review-2",
+      "duration": 4.56,
+      "cue_times": [
+        {
+          "segment_id": "1970",
+          "at": 0.0
+        }
+      ],
+      "segment_ids": [
+        "1970"
+      ]
+    }
+  }
+}

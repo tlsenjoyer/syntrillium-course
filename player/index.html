@@ -9,7 +9,7 @@
   <script src="lesson.js" defer></script>
   <script src="player.js" defer></script>
 </head>
-<body>
+<body data-course>
   <header class="course-header">
     <p class="course-title"><a href="#">Курс цифрового звука</a></p>
   </header>
@@ -18,15 +18,15 @@
       <div class="introduction">
         <h1 id="menu-title">Темы курса</h1>
         <p>Знакомство с основами звука и цифрового аудио.</p>
-        <p>В этой версии для проверки доступен один урок — «Форма звуковой волны».
-          Его записи и изображения находятся в папке курса и воспроизводятся без интернета.</p>
+        <p>Для проверки доступны первые пять уроков.
+          Записи и изображения находятся в папке курса и воспроизводятся без интернета.</p>
       </div>
       <ol class="topics" aria-label="Темы в порядке оригинального курса">
-        <li><button disabled>Основы звука</button></li>
+        <li><button id="open-sound-fundamentals" data-lesson="sound-fundamentals">Основы звука</button></li>
         <li><button id="open-lesson" aria-label="Форма звуковой волны">Форма звуковой волны</button></li>
-        <li><button disabled>Аналоговый звук</button></li>
-        <li><button disabled>Цифровой звук</button></li>
-        <li><button disabled>Частота дискретизации</button></li>
+        <li><button id="open-analog-audio" data-lesson="analog-audio">Аналоговый звук</button></li>
+        <li><button id="open-digital-audio" data-lesson="digital-audio">Цифровой звук</button></li>
+        <li><button id="open-sampling-rate" data-lesson="sampling-rate">Частота дискретизации</button></li>
         <li><button disabled>Разрядность</button></li>
         <li><button disabled>Итоги: цифровой звук</button></li>
         <li><button disabled>Звук на компьютере</button></li>
@@ -45,11 +45,11 @@
         <nav id="course-topics" aria-label="Уроки курса">
           <h2>Уроки курса</h2>
           <ol class="lesson-list">
-            <li><span aria-disabled="true">Основы звука</span></li>
+            <li><a href="#lesson/sound-fundamentals">Основы звука</a></li>
             <li><a href="#lesson/waveforms" aria-current="page">Форма звуковой волны</a></li>
-            <li><span aria-disabled="true">Аналоговый звук</span></li>
-            <li><span aria-disabled="true">Цифровой звук</span></li>
-            <li><span aria-disabled="true">Частота дискретизации</span></li>
+            <li><a href="#lesson/analog-audio">Аналоговый звук</a></li>
+            <li><a href="#lesson/digital-audio">Цифровой звук</a></li>
+            <li><a href="#lesson/sampling-rate">Частота дискретизации</a></li>
             <li><span aria-disabled="true">Разрядность</span></li>
             <li><span aria-disabled="true">Итоги: цифровой звук</span></li>
             <li><span aria-disabled="true">Звук на компьютере</span></li>
@@ -61,7 +61,7 @@
         <div class="lesson-heading">
           <button id="back" class="text-button">К темам курса</button>
           <h1 id="lesson-title">Форма звуковой волны</h1>
-          <p class="lesson-meta">Урок 2 из 9 · <span id="lesson-duration"></span></p>
+          <p class="lesson-meta">Урок <span id="lesson-number">2</span> из 9 · <span id="lesson-duration"></span></p>
         </div>
         <div class="stage">
           <svg id="visualization" viewBox="0 65 550 270" role="img" aria-label="Визуализация звуковой волны"></svg>

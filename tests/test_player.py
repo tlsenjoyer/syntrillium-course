@@ -12,6 +12,48 @@ ROOT = Path(__file__).resolve().parents[1]
 
 @unittest.skipUnless(importlib.util.find_spec('playwright'), 'Player checks require Playwright')
 class PlayerTests(unittest.TestCase):
+    def test_first_lesson_is_available_offline_and_switches_without_old_narration(self):
+        from playwright.sync_api import sync_playwright
+        with sync_playwright() as p:
+            options: dict[str, Any] = dict(headless=True)
+            if os.environ.get('PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH'):
+                options['executable_path'] = os.environ['PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH']
+            browser = p.chromium.launch(**options)
+            page = browser.new_page(offline=True)
+            errors = []
+            page.on('pageerror', lambda error: errors.append(str(error)))
+            page.goto((ROOT / 'player/index.html').as_uri())
+            first = page.get_by_role('button', name='Основы звука', exact=True)
+            self.assertTrue(first.is_enabled())
+            first.click()
+            page.wait_for_function("document.querySelector('#lesson-title').textContent === 'Основы звука'")
+            self.assertEqual(page.locator('#lesson-number').inner_text(), '1')
+            self.assertTrue(page.locator('#previous-lesson').is_disabled())
+            self.assertTrue(page.locator('#next-lesson').is_enabled())
+            page.get_by_role('button', name='Воспроизвести', exact=True).click()
+            page.wait_for_function("document.querySelector('audio').currentTime > 0.1")
+            self.assertTrue(page.locator('audio').get_attribute('src').startswith('lessons/sound-fundamentals/audio/'))
+            page.locator('#next').click()
+            page.wait_for_function("document.querySelector('#visualization image') !== null")
+            self.assertTrue(page.locator('#visualization image').first.get_attribute('href').startswith(
+                'lessons/sound-fundamentals/assets/'))
+            page.locator('#next-lesson').click()
+            page.wait_for_function("document.querySelector('#lesson-title').textContent === 'Форма звуковой волны'")
+            self.assertEqual(page.locator('#lesson-number').inner_text(), '2')
+            self.assertTrue(page.locator('audio').evaluate('audio => audio.paused'))
+            self.assertTrue(page.locator('audio').get_attribute('src').startswith('audio/'))
+            page.go_back()
+            page.wait_for_function("document.querySelector('#lesson-title').textContent === 'Основы звука'")
+            self.assertTrue(page.locator('audio').evaluate('audio => audio.paused'))
+            page.reload()
+            page.wait_for_function("document.querySelector('#lesson-title').textContent === 'Основы звука'")
+            self.assertEqual(page.locator('.lesson-list a[aria-current="page"]').inner_text(), 'Основы звука')
+            page.locator('.lesson-list a[href="#lesson/waveforms"]').click()
+            page.wait_for_function("document.querySelector('#lesson-title').textContent === 'Форма звуковой волны'")
+            self.assertTrue(page.locator('#error').is_hidden())
+            self.assertEqual(errors, [])
+            browser.close()
+
     def _open_lesson(self, page):
         page.goto((ROOT / 'player/index.html').as_uri())
         page.get_by_role('button', name='Форма звуковой волны', exact=True).click()
@@ -32,7 +74,7 @@ class PlayerTests(unittest.TestCase):
             self.assertEqual(toggle.inner_text(), '')
             self.assertEqual(toggle.get_attribute('aria-label'), 'Приостановить')
             self.assertEqual(page.locator('.wordmark').count(), 0)
-            self.assertTrue(page.locator('footer #next-lesson').is_disabled())
+            self.assertTrue(page.locator('footer #next-lesson').is_enabled())
             self.assertEqual(page.locator('#playback-status').count(), 0)
 
             toggle.click()
@@ -179,7 +221,7 @@ class PlayerTests(unittest.TestCase):
             self.assertEqual(network, [])
             self.assertEqual(page.get_by_text('Урок завершён', exact=True).count(), 0)
             self.assertEqual(page.get_by_role('button', name='Повторить урок', exact=True).count(), 0)
-            self.assertTrue(page.locator('#next-lesson').is_disabled())
+            self.assertTrue(page.locator('#next-lesson').is_enabled())
             page.get_by_role('button', name='Повторить', exact=True).click()
             page.wait_for_function("!document.querySelector('audio').paused")
             self.assertEqual(page.locator('#visualization').evaluate("element => getComputedStyle(element).position"), 'static')

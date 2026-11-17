@@ -365,7 +365,7 @@ def build_preview(content: Path, lesson_id: str, candidate: Path, player: Path,
     for name in ('index.html', 'player.js', 'player.css'):
         shutil.copyfile(player / name, preview / name)
     shutil.copytree(player / 'assets', preview / 'assets', dirs_exist_ok=True)
-    preview_data = dict(title=playback.get('title', lesson['title']),
+    preview_data = dict(id=lesson_id, title=playback.get('title', lesson['title']),
                         labels=playback.get('labels', lesson.get('labels', {})),
                         utterances=preview_utterances)
     (preview / 'lesson.js').write_text('window.LESSON = ' + json.dumps(

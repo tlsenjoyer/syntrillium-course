@@ -1,0 +1,371 @@
+{
+  "id": "digital-audio",
+  "status": "Unreviewed source inventory; score spans are frame addresses, not timestamps.",
+  "source": {
+    "executable_sha256": "c385ac83b9cad64cc988d37b8e5b3c30586fcf63c478d56d473a5dcf5c360725",
+    "topic_title": "Digital Audio",
+    "entry_frame": 3389,
+    "next_topic_entry_frame": 3697
+  },
+  "segments": [
+    {
+      "id": "2198",
+      "source_resource_id": 2198,
+      "source_start_frame": 3406,
+      "source_end_frame": 3464,
+      "audio_path": "recovered/audio/02198.wav",
+      "audio_sha256": "062de8e3a968e56fd46115ac3634417bad2e717c16000c6d231ca864cadb6a8f",
+      "duration_seconds": 4.12734693877551,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 47
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 8,
+          "member_number": 38
+        },
+        {
+          "library_id": 8,
+          "member_number": 39
+        },
+        {
+          "library_id": 8,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 42
+        },
+        {
+          "library_id": 8,
+          "member_number": 43
+        },
+        {
+          "library_id": 8,
+          "member_number": 44
+        },
+        {
+          "library_id": 9,
+          "member_number": 30
+        }
+      ]
+    },
+    {
+      "id": "2204",
+      "source_resource_id": 2204,
+      "source_start_frame": 3466,
+      "source_end_frame": 3509,
+      "audio_path": "recovered/audio/02204.wav",
+      "audio_sha256": "272ad5c44e3284e8b7f9ef1afc7cef44c7d4fac7098924f3afc070174e023186",
+      "duration_seconds": 3.0040816326530613,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 47
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 8,
+          "member_number": 37
+        },
+        {
+          "library_id": 8,
+          "member_number": 38
+        },
+        {
+          "library_id": 8,
+          "member_number": 39
+        },
+        {
+          "library_id": 8,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 42
+        },
+        {
+          "library_id": 8,
+          "member_number": 43
+        },
+        {
+          "library_id": 9,
+          "member_number": 30
+        }
+      ]
+    },
+    {
+      "id": "2210",
+      "source_resource_id": 2210,
+      "source_start_frame": 3511,
+      "source_end_frame": 3581,
+      "audio_path": "recovered/audio/02210.wav",
+      "audio_sha256": "482356d0fdd36431895ec7df4389d1ae365866525207ae153fc9f72593eeea7b",
+      "duration_seconds": 4.884897959183673,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 47
+        },
+        {
+          "library_id": 8,
+          "member_number": 9
+        },
+        {
+          "library_id": 8,
+          "member_number": 37
+        },
+        {
+          "library_id": 8,
+          "member_number": 45
+        },
+        {
+          "library_id": 8,
+          "member_number": 47
+        }
+      ]
+    },
+    {
+      "id": "2216",
+      "source_resource_id": 2216,
+      "source_start_frame": 3583,
+      "source_end_frame": 3632,
+      "audio_path": "recovered/audio/02216.wav",
+      "audio_sha256": "c1d78ed4992a831cab12ff7c096127b817f990aa473ecc5f747b04183cfd1067",
+      "duration_seconds": 3.500408163265306,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 47
+        },
+        {
+          "library_id": 8,
+          "member_number": 37
+        },
+        {
+          "library_id": 8,
+          "member_number": 47
+        },
+        {
+          "library_id": 8,
+          "member_number": 48
+        }
+      ]
+    },
+    {
+      "id": "2222",
+      "source_resource_id": 2222,
+      "source_start_frame": 3634,
+      "source_end_frame": 3681,
+      "audio_path": "recovered/audio/02222.wav",
+      "audio_sha256": "7008c7d7847ee95f678cdf973a7d278078bd87a77b59581187048585202c9f7f",
+      "duration_seconds": 3.369795918367347,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 47
+        },
+        {
+          "library_id": 8,
+          "member_number": 37
+        },
+        {
+          "library_id": 8,
+          "member_number": 47
+        },
+        {
+          "library_id": 8,
+          "member_number": 49
+        }
+      ]
+    }
+  ]
+}

@@ -49,6 +49,11 @@ Begin with recovery of the original course's content and structure, then deliver
 - All spoken narration is replaced with Russian narration. Use ElevenLabs during
   production; learner playback uses bundled audio and works offline without an
   API key or narration service.
+- Scientific errors confirmed against the original may be corrected in the
+  Russian adaptation. Preserve the original wording, document the corrected
+  wording, reason and supporting evidence, and obtain explicit owner approval
+  for each substantive correction before generating narration. Suspected errors
+  remain flagged pending review; this does not authorize curriculum expansion.
 - Generate candidate narration for a named lesson with a selected voice ID,
   model ID, output format, and either selected narration utterances or all utterances.
   Each utterance is a complete sentence or short coherent passage and may span

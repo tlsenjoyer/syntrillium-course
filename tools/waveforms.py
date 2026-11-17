@@ -23,20 +23,23 @@ def drawing(member, state, labels):
         return dict(base, kind='image', asset=asset, x=x - width / 2, y=y - height / 2,
                     width=width, height=height)
     texts = {
-        7: [labels['zero'], 'Давление', 'не изменяется'],
-        8: [labels['peak'], labels['high']],
-        10: [labels['trough'], labels['low']],
-        11: [labels['amplitude']], 12: [labels['peak']], 14: [labels['trough']],
-        15: [labels['cycle']], 16: [labels['frequency']], 17: [labels['hertz']],
-        28: ['0°'], 29: ['180°'], 30: ['360°'], 31: [labels['wavelength']],
-        34: [labels['inPhase']], 36: [labels['outOfPhase']],
+        7: ['zero'], 8: ['peak', 'high'], 10: ['trough', 'low'],
+        11: ['amplitude'], 12: ['peak'], 14: ['trough'],
+        15: ['cycle'], 16: ['frequency'], 17: ['hertz'],
+        28: [], 29: [], 30: [], 31: ['wavelength'],
+        34: ['inPhase'], 36: ['outOfPhase'],
     }
     if number in texts:
         # Keep source placement and event order, expanding short English labels
         # into readable Russian lines. The stage has extra right-hand room.
         font_size = 22 if number in (34, 36) else 12
+        lines = [labels[key] for key in texts[number]]
+        if number == 7:
+            lines += ['Давление', 'не изменяется']
+        if number in (28, 29, 30):
+            lines = [f'{(number - 28) * 180}°']
         return dict(base, kind='text', x=x + width / 2 if number != 7 else 483,
-                    y=y + font_size, lines=texts[number], font_size=font_size)
+                    y=y + font_size, lines=lines, font_size=font_size)
     color = f'#{raw[2]:02x}{raw[24]:02x}{raw[26]:02x}' if raw[20] & 0x10 else '#111111'
     if number in (6, 9):
         return dict(base, kind='line', x1=x, y1=y, x2=x + (width if number == 6 else 0),

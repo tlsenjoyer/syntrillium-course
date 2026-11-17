@@ -1,0 +1,1646 @@
+{
+  "id": "sound-fundamentals",
+  "status": "source-preparation",
+  "source": {
+    "executable_sha256": "c385ac83b9cad64cc988d37b8e5b3c30586fcf63c478d56d473a5dcf5c360725",
+    "topic_title": "Sound Fundamentals",
+    "entry_frame": 130,
+    "next_topic_entry_frame": 1003
+  },
+  "segments": [
+    {
+      "id": "1892",
+      "source_resource_id": 1892,
+      "source_start_frame": 131,
+      "source_end_frame": 220,
+      "audio_path": "recovered/audio/01892.wav",
+      "audio_sha256": "57c0e487e1061b59b28d354f122f9044c591ef0c671a71f5012706a8e736985b",
+      "duration_seconds": 6.164897959183674,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 41
+        }
+      ]
+    },
+    {
+      "id": "1898",
+      "source_resource_id": 1898,
+      "source_start_frame": 222,
+      "source_end_frame": 312,
+      "audio_path": "recovered/audio/01898.wav",
+      "audio_sha256": "ccfd66c97c85c2d05a1dd24bf54caae0d5f1a36c95a3c6717b0f464e17a03db5",
+      "duration_seconds": 6.2693877551020405,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 18
+        },
+        {
+          "library_id": 8,
+          "member_number": 19
+        },
+        {
+          "library_id": 8,
+          "member_number": 20
+        },
+        {
+          "library_id": 8,
+          "member_number": 21
+        },
+        {
+          "library_id": 8,
+          "member_number": 22
+        },
+        {
+          "library_id": 8,
+          "member_number": 23
+        },
+        {
+          "library_id": 8,
+          "member_number": 24
+        },
+        {
+          "library_id": 8,
+          "member_number": 25
+        },
+        {
+          "library_id": 8,
+          "member_number": 26
+        }
+      ]
+    },
+    {
+      "id": "1904",
+      "source_resource_id": 1904,
+      "source_start_frame": 314,
+      "source_end_frame": 360,
+      "audio_path": "recovered/audio/01904.wav",
+      "audio_sha256": "7452b6f8ec2fe5165f2055bd472a084815e82d48de0d6ef2843cb97e9b707a76",
+      "duration_seconds": 3.317551020408163,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 1
+        },
+        {
+          "library_id": 8,
+          "member_number": 18
+        },
+        {
+          "library_id": 8,
+          "member_number": 19
+        },
+        {
+          "library_id": 8,
+          "member_number": 20
+        },
+        {
+          "library_id": 8,
+          "member_number": 21
+        },
+        {
+          "library_id": 8,
+          "member_number": 22
+        },
+        {
+          "library_id": 8,
+          "member_number": 23
+        },
+        {
+          "library_id": 8,
+          "member_number": 24
+        },
+        {
+          "library_id": 8,
+          "member_number": 25
+        },
+        {
+          "library_id": 8,
+          "member_number": 26
+        }
+      ]
+    },
+    {
+      "id": "1910",
+      "source_resource_id": 1910,
+      "source_start_frame": 362,
+      "source_end_frame": 414,
+      "audio_path": "recovered/audio/01910.wav",
+      "audio_sha256": "6b3b6ab62ee388176343827186e49a141bf57f43a6d22246261b91dfb5d13da0",
+      "duration_seconds": 3.7355102040816326,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 1
+        },
+        {
+          "library_id": 8,
+          "member_number": 18
+        },
+        {
+          "library_id": 8,
+          "member_number": 19
+        },
+        {
+          "library_id": 8,
+          "member_number": 20
+        },
+        {
+          "library_id": 8,
+          "member_number": 21
+        },
+        {
+          "library_id": 8,
+          "member_number": 22
+        },
+        {
+          "library_id": 8,
+          "member_number": 23
+        },
+        {
+          "library_id": 8,
+          "member_number": 24
+        },
+        {
+          "library_id": 8,
+          "member_number": 25
+        },
+        {
+          "library_id": 8,
+          "member_number": 26
+        }
+      ]
+    },
+    {
+      "id": "1916",
+      "source_resource_id": 1916,
+      "source_start_frame": 418,
+      "source_end_frame": 487,
+      "audio_path": "recovered/audio/01916.wav",
+      "audio_sha256": "64b48e4fd993daa4bfd2f38c2cb9c9c9d34527740f57c32e568b470a5b821a2a",
+      "duration_seconds": 4.806530612244898,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 1
+        },
+        {
+          "library_id": 8,
+          "member_number": 18
+        },
+        {
+          "library_id": 8,
+          "member_number": 19
+        },
+        {
+          "library_id": 8,
+          "member_number": 20
+        },
+        {
+          "library_id": 8,
+          "member_number": 21
+        },
+        {
+          "library_id": 8,
+          "member_number": 22
+        },
+        {
+          "library_id": 8,
+          "member_number": 23
+        },
+        {
+          "library_id": 8,
+          "member_number": 24
+        },
+        {
+          "library_id": 8,
+          "member_number": 25
+        },
+        {
+          "library_id": 8,
+          "member_number": 26
+        }
+      ]
+    },
+    {
+      "id": "1922",
+      "source_resource_id": 1922,
+      "source_start_frame": 489,
+      "source_end_frame": 542,
+      "audio_path": "recovered/audio/01922.wav",
+      "audio_sha256": "c53e8c422cf85ccf729678eceb5f4d006929062292feebf64dc6979d2c20b635",
+      "duration_seconds": 3.6310204081632653,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 1
+        },
+        {
+          "library_id": 8,
+          "member_number": 18
+        },
+        {
+          "library_id": 8,
+          "member_number": 19
+        },
+        {
+          "library_id": 8,
+          "member_number": 20
+        },
+        {
+          "library_id": 8,
+          "member_number": 21
+        },
+        {
+          "library_id": 8,
+          "member_number": 22
+        },
+        {
+          "library_id": 8,
+          "member_number": 23
+        },
+        {
+          "library_id": 8,
+          "member_number": 24
+        },
+        {
+          "library_id": 8,
+          "member_number": 25
+        },
+        {
+          "library_id": 8,
+          "member_number": 26
+        }
+      ]
+    },
+    {
+      "id": "1928",
+      "source_resource_id": 1928,
+      "source_start_frame": 545,
+      "source_end_frame": 597,
+      "audio_path": "recovered/audio/01928.wav",
+      "audio_sha256": "ee35294cd4b115402d1ae018ac9c2de241aa2564cf6c19e970cdccb111a1c0c8",
+      "duration_seconds": 3.6310204081632653,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 1
+        },
+        {
+          "library_id": 8,
+          "member_number": 4
+        },
+        {
+          "library_id": 8,
+          "member_number": 18
+        },
+        {
+          "library_id": 8,
+          "member_number": 19
+        },
+        {
+          "library_id": 8,
+          "member_number": 20
+        },
+        {
+          "library_id": 8,
+          "member_number": 21
+        },
+        {
+          "library_id": 8,
+          "member_number": 22
+        },
+        {
+          "library_id": 8,
+          "member_number": 23
+        },
+        {
+          "library_id": 8,
+          "member_number": 24
+        },
+        {
+          "library_id": 8,
+          "member_number": 25
+        },
+        {
+          "library_id": 8,
+          "member_number": 26
+        }
+      ]
+    },
+    {
+      "id": "1934",
+      "source_resource_id": 1934,
+      "source_start_frame": 600,
+      "source_end_frame": 701,
+      "audio_path": "recovered/audio/01934.wav",
+      "audio_sha256": "f72a8c763d4d60278a300956484443696b373b5050057417cf04fb50509f5c3a",
+      "duration_seconds": 7.026938775510204,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 1
+        },
+        {
+          "library_id": 8,
+          "member_number": 3
+        },
+        {
+          "library_id": 8,
+          "member_number": 4
+        },
+        {
+          "library_id": 8,
+          "member_number": 18
+        },
+        {
+          "library_id": 8,
+          "member_number": 19
+        },
+        {
+          "library_id": 8,
+          "member_number": 20
+        },
+        {
+          "library_id": 8,
+          "member_number": 21
+        },
+        {
+          "library_id": 8,
+          "member_number": 22
+        },
+        {
+          "library_id": 8,
+          "member_number": 23
+        },
+        {
+          "library_id": 8,
+          "member_number": 24
+        },
+        {
+          "library_id": 8,
+          "member_number": 25
+        },
+        {
+          "library_id": 8,
+          "member_number": 26
+        }
+      ]
+    },
+    {
+      "id": "1940",
+      "source_resource_id": 1940,
+      "source_start_frame": 704,
+      "source_end_frame": 745,
+      "audio_path": "recovered/audio/01940.wav",
+      "audio_sha256": "dd977b00b11000098eaf798927b1a9737760e556dd12dbc8b91a22d2b4afaeea",
+      "duration_seconds": 2.9779591836734696,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 1
+        },
+        {
+          "library_id": 8,
+          "member_number": 5
+        },
+        {
+          "library_id": 8,
+          "member_number": 21
+        }
+      ]
+    },
+    {
+      "id": "1946",
+      "source_resource_id": 1946,
+      "source_start_frame": 747,
+      "source_end_frame": 791,
+      "audio_path": "recovered/audio/01946.wav",
+      "audio_sha256": "05f7a4e75b19bc132f39a52ea814c8fc9d7b973159630c4998723040da82e701",
+      "duration_seconds": 3.1608163265306124,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 1
+        },
+        {
+          "library_id": 8,
+          "member_number": 5
+        }
+      ]
+    },
+    {
+      "id": "1952",
+      "source_resource_id": 1952,
+      "source_start_frame": 793,
+      "source_end_frame": 847,
+      "audio_path": "recovered/audio/01952.wav",
+      "audio_sha256": "0bd4ff15884a744518a3876bd9901c06203a392ebcacb1d7dae0e71af618ceb0",
+      "duration_seconds": 3.7877551020408164,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 1
+        },
+        {
+          "library_id": 8,
+          "member_number": 5
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 8,
+          "member_number": 7
+        }
+      ]
+    },
+    {
+      "id": "1958",
+      "source_resource_id": 1958,
+      "source_start_frame": 849,
+      "source_end_frame": 894,
+      "audio_path": "recovered/audio/01958.wav",
+      "audio_sha256": "4e1319c4085cb4f3d67efd2a01712b636e25d568f2b73869059324ab3b4ded8e",
+      "duration_seconds": 3.1085714285714285,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 1
+        },
+        {
+          "library_id": 8,
+          "member_number": 5
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 8,
+          "member_number": 7
+        },
+        {
+          "library_id": 8,
+          "member_number": 8
+        },
+        {
+          "library_id": 8,
+          "member_number": 9
+        }
+      ]
+    },
+    {
+      "id": "1964",
+      "source_resource_id": 1964,
+      "source_start_frame": 896,
+      "source_end_frame": 942,
+      "audio_path": "recovered/audio/01964.wav",
+      "audio_sha256": "d747e7dd2557db3eb31e0cacedc28b17c2b36fc26165a01e52d2b31f7039012e",
+      "duration_seconds": 3.3436734693877552,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 1
+        },
+        {
+          "library_id": 8,
+          "member_number": 5
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 8,
+          "member_number": 7
+        },
+        {
+          "library_id": 8,
+          "member_number": 8
+        },
+        {
+          "library_id": 8,
+          "member_number": 9
+        },
+        {
+          "library_id": 8,
+          "member_number": 10
+        }
+      ]
+    },
+    {
+      "id": "1970",
+      "source_resource_id": 1970,
+      "source_start_frame": 944,
+      "source_end_frame": 1002,
+      "audio_path": "recovered/audio/01970.wav",
+      "audio_sha256": "8b8da6f493ae6114c1d605b6a75d06b8c070b3de73111b1098aff6101fd16b8e",
+      "duration_seconds": 4.0751020408163265,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 1
+        },
+        {
+          "library_id": 8,
+          "member_number": 5
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 8,
+          "member_number": 7
+        },
+        {
+          "library_id": 8,
+          "member_number": 8
+        },
+        {
+          "library_id": 8,
+          "member_number": 9
+        },
+        {
+          "library_id": 8,
+          "member_number": 10
+        }
+      ]
+    }
+  ],
+  "visual_members": [
+    {
+      "library_id": 1,
+      "member_number": 3,
+      "name": "tooltipField",
+      "type": 3,
+      "media": [
+        {
+          "resource_id": 1791,
+          "tag": "STXT",
+          "present": true
+        }
+      ]
+    },
+    {
+      "library_id": 2,
+      "member_number": 1,
+      "name": "OLD Logo",
+      "type": 1,
+      "media": [
+        {
+          "resource_id": 1724,
+          "tag": "BITD",
+          "present": true
+        },
+        {
+          "resource_id": 1725,
+          "tag": "Thum",
+          "present": false
+        }
+      ]
+    },
+    {
+      "library_id": 2,
+      "member_number": 9,
+      "name": "Blue Bar Bottom",
+      "type": 1,
+      "media": [
+        {
+          "resource_id": 1730,
+          "tag": "BITD",
+          "present": true
+        },
+        {
+          "resource_id": 1731,
+          "tag": "Thum",
+          "present": false
+        }
+      ]
+    },
+    {
+      "library_id": 2,
+      "member_number": 10,
+      "name": "Blue Bar Top",
+      "type": 1,
+      "media": [
+        {
+          "resource_id": 1732,
+          "tag": "BITD",
+          "present": true
+        },
+        {
+          "resource_id": 1733,
+          "tag": "Thum",
+          "present": false
+        }
+      ]
+    },
+    {
+      "library_id": 3,
+      "member_number": 2,
+      "name": "||  UP",
+      "type": 1,
+      "media": [
+        {
+          "resource_id": 1766,
+          "tag": "BITD",
+          "present": true
+        },
+        {
+          "resource_id": 1767,
+          "tag": "Thum",
+          "present": false
+        }
+      ]
+    },
+    {
+      "library_id": 3,
+      "member_number": 47,
+      "name": "I<  UP",
+      "type": 1,
+      "media": [
+        {
+          "resource_id": 1770,
+          "tag": "BITD",
+          "present": true
+        },
+        {
+          "resource_id": 1771,
+          "tag": "Thum",
+          "present": false
+        }
+      ]
+    },
+    {
+      "library_id": 3,
+      "member_number": 48,
+      "name": "<<  UP",
+      "type": 1,
+      "media": [
+        {
+          "resource_id": 1772,
+          "tag": "BITD",
+          "present": true
+        },
+        {
+          "resource_id": 1773,
+          "tag": "Thum",
+          "present": false
+        }
+      ]
+    },
+    {
+      "library_id": 3,
+      "member_number": 49,
+      "name": ">>  UP",
+      "type": 1,
+      "media": [
+        {
+          "resource_id": 1774,
+          "tag": "BITD",
+          "present": true
+        },
+        {
+          "resource_id": 1775,
+          "tag": "Thum",
+          "present": false
+        }
+      ]
+    },
+    {
+      "library_id": 3,
+      "member_number": 55,
+      "name": "Light Green Window",
+      "type": 1,
+      "media": [
+        {
+          "resource_id": 1786,
+          "tag": "BITD",
+          "present": true
+        },
+        {
+          "resource_id": 1787,
+          "tag": "Thum",
+          "present": false
+        }
+      ]
+    },
+    {
+      "library_id": 6,
+      "member_number": 41,
+      "name": "Layer 1",
+      "type": 1,
+      "media": [
+        {
+          "resource_id": 2780,
+          "tag": "BITD",
+          "present": true
+        },
+        {
+          "resource_id": 2781,
+          "tag": "Thum",
+          "present": false
+        }
+      ]
+    },
+    {
+      "library_id": 8,
+      "member_number": 1,
+      "name": "backball",
+      "type": 15,
+      "media": [
+        {
+          "resource_id": 2845,
+          "tag": "Thum",
+          "present": false
+        },
+        {
+          "resource_id": 2844,
+          "tag": "XMED",
+          "present": true
+        }
+      ]
+    },
+    {
+      "library_id": 8,
+      "member_number": 3,
+      "name": "ear",
+      "type": 15,
+      "media": [
+        {
+          "resource_id": 2848,
+          "tag": "Thum",
+          "present": false
+        },
+        {
+          "resource_id": 2847,
+          "tag": "XMED",
+          "present": true
+        }
+      ]
+    },
+    {
+      "library_id": 8,
+      "member_number": 4,
+      "name": "",
+      "type": 8,
+      "media": [
+        {
+          "resource_id": 2849,
+          "tag": "Thum",
+          "present": false
+        }
+      ]
+    },
+    {
+      "library_id": 8,
+      "member_number": 5,
+      "name": "sin",
+      "type": 15,
+      "media": [
+        {
+          "resource_id": 2851,
+          "tag": "Thum",
+          "present": false
+        },
+        {
+          "resource_id": 2850,
+          "tag": "XMED",
+          "present": true
+        }
+      ]
+    },
+    {
+      "library_id": 8,
+      "member_number": 6,
+      "name": "horiz line",
+      "type": 8,
+      "media": [
+        {
+          "resource_id": 2852,
+          "tag": "Thum",
+          "present": false
+        }
+      ]
+    },
+    {
+      "library_id": 8,
+      "member_number": 7,
+      "name": "0 Line label",
+      "type": 15,
+      "media": [
+        {
+          "resource_id": 2854,
+          "tag": "Thum",
+          "present": false
+        },
+        {
+          "resource_id": 2853,
+          "tag": "XMED",
+          "present": true
+        }
+      ],
+      "text": {
+        "value": "0 Line\nno pressure change",
+        "encoding": "cp1252",
+        "glyph_mapping_verified": false,
+        "offset": 224,
+        "byte_length": 25,
+        "resource_id": 2853
+      }
+    },
+    {
+      "library_id": 8,
+      "member_number": 8,
+      "name": "high Line label",
+      "type": 15,
+      "media": [
+        {
+          "resource_id": 2856,
+          "tag": "Thum",
+          "present": false
+        },
+        {
+          "resource_id": 2855,
+          "tag": "XMED",
+          "present": true
+        }
+      ],
+      "text": {
+        "value": "Top\nhigh pressure",
+        "encoding": "cp1252",
+        "glyph_mapping_verified": false,
+        "offset": 230,
+        "byte_length": 17,
+        "resource_id": 2855
+      }
+    },
+    {
+      "library_id": 8,
+      "member_number": 9,
+      "name": "vert line",
+      "type": 8,
+      "media": [
+        {
+          "resource_id": 2857,
+          "tag": "Thum",
+          "present": false
+        }
+      ]
+    },
+    {
+      "library_id": 8,
+      "member_number": 10,
+      "name": "low Line label",
+      "type": 15,
+      "media": [
+        {
+          "resource_id": 2859,
+          "tag": "Thum",
+          "present": false
+        },
+        {
+          "resource_id": 2858,
+          "tag": "XMED",
+          "present": true
+        }
+      ],
+      "text": {
+        "value": "Bottom\nlow pressure",
+        "encoding": "cp1252",
+        "glyph_mapping_verified": false,
+        "offset": 230,
+        "byte_length": 19,
+        "resource_id": 2858
+      }
+    },
+    {
+      "library_id": 8,
+      "member_number": 18,
+      "name": "center",
+      "type": 1,
+      "media": [
+        {
+          "resource_id": 2873,
+          "tag": "BITD",
+          "present": true
+        },
+        {
+          "resource_id": 2874,
+          "tag": "Thum",
+          "present": false
+        }
+      ]
+    },
+    {
+      "library_id": 8,
+      "member_number": 19,
+      "name": "right 1",
+      "type": 1,
+      "media": [
+        {
+          "resource_id": 2875,
+          "tag": "BITD",
+          "present": true
+        },
+        {
+          "resource_id": 2876,
+          "tag": "Thum",
+          "present": false
+        }
+      ]
+    },
+    {
+      "library_id": 8,
+      "member_number": 20,
+      "name": "right 2",
+      "type": 1,
+      "media": [
+        {
+          "resource_id": 2877,
+          "tag": "BITD",
+          "present": true
+        },
+        {
+          "resource_id": 2878,
+          "tag": "Thum",
+          "present": false
+        }
+      ]
+    },
+    {
+      "library_id": 8,
+      "member_number": 21,
+      "name": "right 3",
+      "type": 1,
+      "media": [
+        {
+          "resource_id": 2879,
+          "tag": "BITD",
+          "present": true
+        },
+        {
+          "resource_id": 2880,
+          "tag": "Thum",
+          "present": false
+        }
+      ]
+    },
+    {
+      "library_id": 8,
+      "member_number": 22,
+      "name": "right 4",
+      "type": 1,
+      "media": [
+        {
+          "resource_id": 2881,
+          "tag": "BITD",
+          "present": true
+        },
+        {
+          "resource_id": 2882,
+          "tag": "Thum",
+          "present": false
+        }
+      ]
+    },
+    {
+      "library_id": 8,
+      "member_number": 23,
+      "name": "left 1",
+      "type": 1,
+      "media": [
+        {
+          "resource_id": 2883,
+          "tag": "BITD",
+          "present": true
+        },
+        {
+          "resource_id": 2884,
+          "tag": "Thum",
+          "present": false
+        }
+      ]
+    },
+    {
+      "library_id": 8,
+      "member_number": 24,
+      "name": "left 2 ",
+      "type": 1,
+      "media": [
+        {
+          "resource_id": 2885,
+          "tag": "BITD",
+          "present": true
+        },
+        {
+          "resource_id": 2886,
+          "tag": "Thum",
+          "present": false
+        }
+      ]
+    },
+    {
+      "library_id": 8,
+      "member_number": 25,
+      "name": "left 3",
+      "type": 1,
+      "media": [
+        {
+          "resource_id": 2887,
+          "tag": "BITD",
+          "present": true
+        },
+        {
+          "resource_id": 2888,
+          "tag": "Thum",
+          "present": false
+        }
+      ]
+    },
+    {
+      "library_id": 8,
+      "member_number": 26,
+      "name": "left 4",
+      "type": 1,
+      "media": [
+        {
+          "resource_id": 2889,
+          "tag": "BITD",
+          "present": true
+        },
+        {
+          "resource_id": 2890,
+          "tag": "Thum",
+          "present": false
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Topic interval and segment visual overlap are inferred from static score addresses, not verified runtime playback.",
+    "No transcription, translation, utterance grouping or narration has been approved.",
+    "Frame addresses are not playback timestamps; source scripts can hold or jump.",
+    "Visual member references include shared interface assets; they do not establish instructional roles."
+  ]
+}

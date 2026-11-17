@@ -46,6 +46,8 @@ continuous audiovisual comparison and macOS acceptance are outstanding.
 ## Product Principles
 
 - Preserve educational content and examples; flag suspected errors for the owner.
+- Correct confirmed scientific errors only with documented source wording,
+  evidence, and explicit owner approval before narration generation.
 - Keep production tools separate from files used by the learner.
 - Make narration and visual event ordering explicit.
 - Treat platform checks and human review as acceptance evidence, not assumptions.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Produce bundled Russian media/data for the Waveforms review lesson.
+"""Build narrated Waveforms media or silent lesson review players.
 
 Requires Piper 1.8.0, its local Denis model, FFmpeg, and FFDec SVG frame exports.
 None of these tools or models are required during learner playback.
@@ -19,6 +19,220 @@ from narration import NarrationError, anchor_position, validate_utterances
 
 
 ASSETS = {'sine.svg': 2850, 'complex-1.svg': 2911, 'complex-2.svg': 2913, 'ball.svg': 2844}
+
+
+def stage_audio(content, recovery, destination):
+    """Build Analog/Digital Audio and Sampling Rate visuals with silent, provisional narration timing."""
+    from analog_audio import FLASH_ASSETS, solid_flash_svg
+    from analog_audio import compile_visuals
+    from digital_audio import compile_visuals as compile_digital_visuals
+    from composition import SOURCE_SHA256
+    from sampling_rate import compile_visuals as compile_sampling_visuals
+    from sound_fundamentals import cone_bitmap
+
+    lesson = json.loads(content.read_text(encoding='utf-8'))
+    composition = json.loads((recovery / 'composition.json').read_text(encoding='utf-8'))
+    digital = lesson['id'] == 'digital-audio'
+    sampling = lesson['id'] == 'sampling-rate'
+    title, start, end = {
+        'analog-audio': ('Analog Audio', 2814, 3389),
+        'digital-audio': ('Digital Audio', 3389, 3697),
+        'sampling-rate': ('Sampling Rate', 3697, 4684),
+    }.get(lesson['id'], ('Unknown', 0, 0))
+    if (lesson['id'] not in ('analog-audio', 'digital-audio', 'sampling-rate') or composition['source_sha256'] != SOURCE_SHA256
+            or lesson['source']['executable_sha256'] != SOURCE_SHA256):
+        raise ValueError(f'Lesson and recovery source do not match {title}')
+    members = {(m['library_id'], m['member_number']): m for m in composition['members']}
+    sounds = [s for s in composition['score']['sounds'] if start <= s['start_frame'] < end]
+    expected = [(s['start_frame'], media['resource_id']) for s in sounds
+                for media in members[s['library_id'], s['member_number']]['media']
+                if media['present'] and media['tag'] == 'ediM']
+    supplied = [(s['source_start_frame'], s['source_resource_id']) for s in lesson['segments']]
+    if supplied != expected:
+        raise ValueError(f'Lesson does not cover the recovered {title} sound references in order')
+    utterances = validate_utterances(lesson, lesson['segments'])
+    shell = Path(__file__).resolve().parents[1] / 'player'
+    names = ('complex-1.svg',) if sampling else (('complex-1.svg', 'complex-2.svg') if digital else ('complex-2.svg',))
+    assets = {name: (shell / 'assets' / name).read_bytes() for name in names}
+    provenance = [dict(path=f'assets/{name}', reused_from=f'player/assets/{name}',
+                       source_sha256=digest(shell / 'assets' / name)) for name in names]
+    flash_assets = {} if sampling else ({'speaker': FLASH_ASSETS['speaker']} if digital else FLASH_ASSETS)
+    for name, rid in flash_assets.items():
+        source = recovery / 'flash' / f'{rid:05d}-12.swf'
+        assets[name + '.svg'] = solid_flash_svg(source.read_bytes())
+        provenance.append(dict(path=f'assets/{name}.svg', resource_id=rid, source_sha256=digest(source)))
+    if not sampling:
+        member = members[8, 39]
+        cast = recovery / 'resources' / f"{member['resource_id']:05d}.bin"
+        bitmap = recovery / 'resources/02915.bin'
+        width, height, _ = cone_bitmap(cast.read_bytes(), bitmap.read_bytes())
+        # The source background-colored mask must match the adapted player's stage.
+        assets['leftcover.svg'] = (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}">'
+                                   f'<path fill="#eef2f6" d="M0 0H{width}V{height}H0Z"/></svg>\n').encode()
+        provenance.append(dict(path='assets/leftcover.svg', resource_id=2915, source_sha256=digest(bitmap),
+                               cast_resource_id=member['resource_id'], cast_sha256=digest(cast),
+                               adaptation='Background mask recolored to player stage #eef2f6.'))
+    if digital or sampling:
+        assets['sample.svg'] = b'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 5"><path fill="#076938" d="M0 0H5V5H0Z"/></svg>\n'
+        provenance.append(dict(path='assets/sample.svg', cast_resource_id=858,
+                               cast_sha256=digest(recovery / 'resources/00858.bin'),
+                               adaptation='Original primitive square, source RGB #076938.'))
+    compiler = compile_sampling_visuals if sampling else (compile_digital_visuals if digital else compile_visuals)
+    visuals = compiler(composition, lesson['segments'], lesson['labels'])
+    segments = {str(s['id']): s for s in lesson['segments']}
+    frames = {str(s['id']): f for s, f in zip(lesson['segments'], visuals)}
+    playback = []
+    for utterance in utterances:
+        duration = sum(segments[str(sid)]['duration_seconds'] for sid in utterance['segment_ids'])
+        playback.append(dict(id=str(utterance['id']), segment_ids=utterance['segment_ids'],
+                             caption=utterance['russian'], audio=None, duration=duration,
+                             cues=compile_utterance_cues(utterance, segments, frames, duration)))
+    data = dict(id=lesson['id'], title=lesson['title'], labels=lesson['labels'], utterances=playback,
+                review_status='draft', timing_status='estimated')
+    destination.mkdir(parents=True, exist_ok=False)
+    (destination / 'assets').mkdir()
+    (destination / 'audio').mkdir()
+    for name, body in assets.items():
+        (destination / 'assets' / name).write_bytes(body)
+    for name in ('player.js', 'player.css'):
+        shutil.copyfile(shell / name, destination / name)
+    html = (shell / 'index.html').read_text(encoding='utf-8').replace('<body data-course>', '<body>')
+    html = html.replace('id="open-lesson"', 'disabled')
+    for lesson_id, other_title in (('analog-audio', 'Аналоговый звук'),
+                                   ('digital-audio', 'Цифровой звук'),
+                                   ('sampling-rate', 'Частота дискретизации')):
+        html = html.replace(f'id="open-{lesson_id}" data-lesson="{lesson_id}"',
+                            'id="open-lesson"' if lesson_id == lesson['id'] else 'disabled')
+        if lesson_id != lesson['id']:
+            html = html.replace(f'<a href="#lesson/{lesson_id}">{other_title}</a>',
+                                f'<span aria-disabled="true">{other_title}</span>')
+    html = html.replace('id="open-sound-fundamentals" data-lesson="sound-fundamentals"', 'disabled')
+    html = html.replace('<a href="#lesson/sound-fundamentals">Основы звука</a>',
+                        '<span aria-disabled="true">Основы звука</span>')
+    html = html.replace('<a href="#lesson/waveforms" aria-current="page">Форма звуковой волны</a>',
+                        '<span aria-disabled="true">Форма звуковой волны</span>')
+    html = html.replace('Для проверки доступны первые пять уроков.',
+                        f'Черновик урока «{lesson["title"]}» для проверки.')
+    html = html.replace('id="lesson-number">2', f'id="lesson-number">{5 if sampling else (4 if digital else 3)}')
+    (destination / 'index.html').write_text(html, encoding='utf-8')
+    (destination / 'lesson.js').write_text('window.LESSON = ' + json.dumps(
+        data, ensure_ascii=False, separators=(',', ':')) + ';\n', encoding='utf-8')
+    for record in provenance:
+        record['sha256'] = digest(destination / record['path'])
+    manifest = dict(source_sha256=SOURCE_SHA256, content_sha256=digest(content), vectors=provenance,
+                    audio=[], review_status='unverified draft', timing_status='estimated',
+                    limitations=['Original Windows playback comparison unavailable on this host.',
+                                 'Score event order is preserved; within-cue timing is provisional.',
+                                 'Transcription, translation and narration require listening review.'])
+    if digital:
+        manifest['reconstructed_visuals'] = [dict(
+            name='White Pop', resource_id=2927, source_sha256=digest(recovery / 'resources/02927.bin'),
+            adaptation='Three-frame white-circle pulse; original playback comparison pending.')]
+        manifest['limitations'].append('White Pop film-loop pulse is reconstructed and unverified.')
+    (destination / 'generation.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
+
+
+def stage_sound_fundamentals(content, recovery, destination):
+    """Build a separate, silent review player; never generate or approve speech."""
+    from sound_fundamentals import bitmap_svg, cone_bitmap, ear_svg
+    from sound_fundamentals import compile_visuals as compile_sound_visuals
+    from composition import SOURCE_SHA256
+
+    lesson = json.loads(content.read_text(encoding='utf-8'))
+    composition = json.loads((recovery / 'composition.json').read_text(encoding='utf-8'))
+    if (lesson['id'] != 'sound-fundamentals' or composition['source_sha256'] != SOURCE_SHA256
+            or lesson['source']['executable_sha256'] != SOURCE_SHA256):
+        raise ValueError('Lesson and recovery source do not match Sound Fundamentals')
+    members = {(m['library_id'], m['member_number']): m for m in composition['members']}
+    sounds = [s for s in composition['score']['sounds'] if 130 <= s['start_frame'] < 1003]
+    expected = {(s['start_frame'], media['resource_id']) for s in sounds
+                for media in members[s['library_id'], s['member_number']]['media']
+                if media['present'] and media['tag'] == 'ediM'}
+    supplied = [(s['source_start_frame'], s['source_resource_id']) for s in lesson['segments']]
+    if set(supplied) != expected or len(supplied) != len(expected) or supplied != sorted(supplied):
+        raise ValueError('Lesson does not cover the recovered Sound Fundamentals sound references in order')
+    utterances = validate_utterances(lesson, lesson['segments'])
+    shell = Path(__file__).resolve().parents[1] / 'player'
+    assets = {}
+    sizes = {}
+    provenance = []
+    for number in range(18, 27):
+        member = members[8, number]
+        rid = next(m['resource_id'] for m in member['media'] if m['tag'] == 'BITD' and m['present'])
+        cast_path = recovery / 'resources' / f"{member['resource_id']:05d}.bin"
+        media_path = recovery / 'resources' / f'{rid:05d}.bin'
+        width, height, pixels = cone_bitmap(cast_path.read_bytes(), media_path.read_bytes())
+        sizes[number] = width, height
+        name = f'cone-{number}.svg'
+        assets[name] = bitmap_svg(width, height, pixels)
+        provenance.append(dict(path=f'assets/{name}', resource_id=rid, source_sha256=digest(media_path),
+                               cast_resource_id=member['resource_id'], cast_sha256=digest(cast_path)))
+    ear = recovery / 'flash' / '02847-12.swf'
+    assets['ear.svg'] = ear_svg(ear.read_bytes())
+    provenance.append(dict(path='assets/ear.svg', resource_id=2847, source_sha256=digest(ear)))
+    for name in ('ball.svg', 'sine.svg'):
+        assets[name] = (shell / 'assets' / name).read_bytes()
+        provenance.append(dict(path=f'assets/{name}', reused_from=f'player/assets/{name}',
+                               source_sha256=digest(shell / 'assets' / name)))
+    visuals = compile_sound_visuals(composition, lesson['segments'], lesson['labels'], sizes)
+    segments = {str(s['id']): s for s in lesson['segments']}
+    frames = {str(s['id']): f for s, f in zip(lesson['segments'], visuals)}
+    playback = []
+    for utterance in utterances:
+        duration = sum(segments[str(sid)]['duration_seconds'] for sid in utterance['segment_ids'])
+        playback.append(dict(id=str(utterance['id']), segment_ids=utterance['segment_ids'],
+                             caption=utterance['russian'], audio=None, duration=duration,
+                             cues=compile_utterance_cues(utterance, segments, frames, duration)))
+    data = dict(id=lesson['id'], title=lesson['title'], labels=lesson['labels'], utterances=playback,
+                review_status='draft', timing_status='estimated')
+    destination.mkdir(parents=True, exist_ok=False)
+    (destination / 'assets').mkdir()
+    (destination / 'audio').mkdir()
+    for name, body in assets.items():
+        (destination / 'assets' / name).write_bytes(body)
+    for name in ('player.js', 'player.css'):
+        shutil.copyfile(shell / name, destination / name)
+    html = (shell / 'index.html').read_text(encoding='utf-8')
+    html = html.replace('<body data-course>', '<body>')
+    html = html.replace('<li><button id="open-sound-fundamentals" data-lesson="sound-fundamentals">Основы звука</button></li>',
+                        '<li><button id="open-lesson" aria-label="Основы звука">Основы звука</button></li>')
+    html = html.replace('<button id="open-lesson" aria-label="Форма звуковой волны">', '<button disabled>')
+    html = html.replace('<a href="#lesson/sound-fundamentals">Основы звука</a>',
+                        '<a href="#lesson/sound-fundamentals" aria-current="page">Основы звука</a>')
+    html = html.replace('<a href="#lesson/waveforms" aria-current="page">Форма звуковой волны</a>',
+                        '<span aria-disabled="true">Форма звуковой волны</span>')
+    html = html.replace('<button id="open-analog-audio" data-lesson="analog-audio">', '<button disabled>')
+    html = html.replace('<a href="#lesson/analog-audio">Аналоговый звук</a>',
+                        '<span aria-disabled="true">Аналоговый звук</span>')
+    html = html.replace('<button id="open-digital-audio" data-lesson="digital-audio">', '<button disabled>')
+    html = html.replace('<a href="#lesson/digital-audio">Цифровой звук</a>',
+                        '<span aria-disabled="true">Цифровой звук</span>')
+    html = html.replace('<button id="open-sampling-rate" data-lesson="sampling-rate">', '<button disabled>')
+    html = html.replace('<a href="#lesson/sampling-rate">Частота дискретизации</a>',
+                        '<span aria-disabled="true">Частота дискретизации</span>')
+    html = html.replace('Для проверки доступны первые пять уроков.\n'
+                        '          Записи и изображения находятся в папке курса и воспроизводятся без интернета.',
+                        'Черновик первого урока «Основы звука». Проверьте текст, '
+                        'визуализации и последовательность объяснений.')
+    html = html.replace('id="lesson-number">2', 'id="lesson-number">1').replace('Визуализация звуковой волны', 'Визуализация основ звука')
+    html = html.replace('viewBox="0 65 550 270"', 'viewBox="0 65 550 290"')
+    html = html.replace('← Предыдущий урок: Основы звука', '← Предыдущий урок')
+    html = html.replace('Следующий урок: Аналоговый звук →', 'Следующий урок: Форма звуковой волны →')
+    html = html.replace('<h1 id="lesson-title">Форма звуковой волны</h1>',
+                        '<h1 id="lesson-title">Основы звука</h1>')
+    html = html.replace('<span id="lesson-duration"></span></p>',
+                        '<span id="lesson-duration"></span><br><span id="narration-note"></span></p>')
+    (destination / 'index.html').write_text(html, encoding='utf-8')
+    (destination / 'lesson.js').write_text('window.LESSON = ' + json.dumps(
+        data, ensure_ascii=False, separators=(',', ':')) + ';\n', encoding='utf-8')
+    for record in provenance:
+        record['sha256'] = digest(destination / record['path'])
+    manifest = dict(source_sha256=SOURCE_SHA256, content_sha256=digest(content), vectors=provenance,
+                    audio=[], review_status='unverified draft', timing_status='estimated',
+                    limitations=['Original continuous playback comparison unavailable in this session.',
+                                 'Pressure-wave motion is reconstructed; source frame timing is provisional.',
+                                 'Transcription, translation, scientific wording and narration are unapproved.'])
+    (destination / 'generation.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
 
 
 def remove_flash_stage(root):
@@ -137,11 +351,21 @@ def main():
     parser.add_argument('content', type=Path)
     parser.add_argument('destination', type=Path, help='New generated output directory')
     parser.add_argument('--recovery', type=Path, required=True)
-    parser.add_argument('--flash-export', type=Path, required=True)
-    parser.add_argument('--voice-model', type=Path, required=True)
+    parser.add_argument('--flash-export', type=Path)
+    parser.add_argument('--voice-model', type=Path)
+    parser.add_argument('--visuals-only', action='store_true', help='Stage lesson visuals without generating narration')
     args = parser.parse_args()
     try:
-        build_lesson(args.content, args.recovery, args.flash_export, args.voice_model, args.destination)
+        if args.visuals_only:
+            lesson_id = json.loads(args.content.read_text(encoding='utf-8'))['id']
+            if lesson_id in ('analog-audio', 'digital-audio', 'sampling-rate'):
+                stage_audio(args.content, args.recovery, args.destination)
+            else:
+                stage_sound_fundamentals(args.content, args.recovery, args.destination)
+        else:
+            if not args.flash_export or not args.voice_model:
+                raise ValueError('--flash-export and --voice-model are required for narrated Waveforms builds')
+            build_lesson(args.content, args.recovery, args.flash_export, args.voice_model, args.destination)
     except (OSError, ValueError, KeyError, ET.ParseError, ImportError, subprocess.SubprocessError) as error:
         parser.exit(1, f'Lesson build failed: {error}\n')
 

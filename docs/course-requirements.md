@@ -5,6 +5,9 @@ Confirmed requirements from the design interview:
 - Adapt the complete Syntrillium introductory audio course in `course.exe`.
 - Preserve the original curriculum, lesson order, explanations, and examples;
   use natural Russian translation. Flag outdated material for user review.
+- Scientific errors confirmed against the original may be corrected in Russian.
+  Preserve the original wording, document the correction and evidence, and obtain
+  explicit owner approval for each substantive correction before narration generation.
 - Translate all learner-facing text, including interface text and labels inside
   diagrams and animations. Retain standard symbols and units where appropriate.
 - Replace all spoken narration with Russian narration. Use ElevenLabs for

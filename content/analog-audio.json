@@ -1,0 +1,768 @@
+{
+  "id": "analog-audio",
+  "title": "Аналоговый звук",
+  "source": {
+    "executable_sha256": "c385ac83b9cad64cc988d37b8e5b3c30586fcf63c478d56d473a5dcf5c360725",
+    "topic_title": "Analog Audio",
+    "entry_frame": 2814,
+    "next_topic_entry_frame": 3389,
+    "transcription_reviewed": false,
+    "translation_reviewed": false
+  },
+  "labels": {
+    "pressure": "Давление",
+    "voltage": "Напряжение",
+    "analogAudio": "Аналоговый звук"
+  },
+  "segments": [
+    {
+      "id": "2150",
+      "source_resource_id": 2150,
+      "source_start_frame": 2824,
+      "source_end_frame": 2909,
+      "audio_path": "recovered/audio/02150.wav",
+      "audio_sha256": "96b7302d34d69e612886b7608cbb08db15fe3a2762a2331ae1518e2ee468d5d3",
+      "duration_seconds": 5.98204081632653,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 45
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 8,
+          "member_number": 38
+        },
+        {
+          "library_id": 8,
+          "member_number": 39
+        },
+        {
+          "library_id": 8,
+          "member_number": 40
+        },
+        {
+          "library_id": 8,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 42
+        },
+        {
+          "library_id": 9,
+          "member_number": 30
+        }
+      ],
+      "english_asr": "A microphone works by converting the pressure waves of sound into changes in voltage on a wire.",
+      "russian": "Микрофон преобразует звуковые волны давления в изменения электрического напряжения в проводе."
+    },
+    {
+      "id": "2156",
+      "source_resource_id": 2156,
+      "source_start_frame": 2911,
+      "source_end_frame": 2968,
+      "audio_path": "recovered/audio/02156.wav",
+      "audio_sha256": "9f484ad0a418409fe6afb40a0f55869d128a209ccfbe3ddb4871db5502a8a8cc",
+      "duration_seconds": 4.048979591836734,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 45
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 8,
+          "member_number": 38
+        },
+        {
+          "library_id": 8,
+          "member_number": 39
+        },
+        {
+          "library_id": 8,
+          "member_number": 40
+        },
+        {
+          "library_id": 8,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 42
+        },
+        {
+          "library_id": 9,
+          "member_number": 30
+        }
+      ],
+      "english_asr": "These changes in voltage match the pressure waves of the original sound.",
+      "russian": "Эти изменения напряжения повторяют волны давления исходного звука."
+    },
+    {
+      "id": "2162",
+      "source_resource_id": 2162,
+      "source_start_frame": 2970,
+      "source_end_frame": 3057,
+      "audio_path": "recovered/audio/02162.wav",
+      "audio_sha256": "0f21fc285094887491771eb5aebc23c6f451a6e8b05ef2c87aca8dd026695a49",
+      "duration_seconds": 6.060408163265306,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 45
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 8,
+          "member_number": 38
+        },
+        {
+          "library_id": 8,
+          "member_number": 39
+        },
+        {
+          "library_id": 8,
+          "member_number": 40
+        },
+        {
+          "library_id": 8,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 42
+        },
+        {
+          "library_id": 9,
+          "member_number": 30
+        }
+      ],
+      "english_asr": "High pressure is represented by high voltage and low pressure is represented by low voltage.",
+      "russian": "Высокому давлению соответствует высокое напряжение, а низкому давлению — низкое напряжение."
+    },
+    {
+      "id": "2168",
+      "source_resource_id": 2168,
+      "source_start_frame": 3059,
+      "source_end_frame": 3136,
+      "audio_path": "recovered/audio/02168.wav",
+      "audio_sha256": "8a1a3aabe9b74444bf49b83b459928e5ba3822dab06939538f08e804007fb550",
+      "duration_seconds": 5.40734693877551,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 45
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 8,
+          "member_number": 38
+        },
+        {
+          "library_id": 8,
+          "member_number": 39
+        },
+        {
+          "library_id": 8,
+          "member_number": 40
+        },
+        {
+          "library_id": 8,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 42
+        },
+        {
+          "library_id": 9,
+          "member_number": 6
+        },
+        {
+          "library_id": 9,
+          "member_number": 30
+        }
+      ],
+      "english_asr": "Voltages travel down the microphone wire and can be recorded onto tape as changes in magnetic strength.",
+      "russian": "Изменения напряжения передаются по проводу микрофона и могут быть записаны на магнитную ленту как изменения силы намагничивания."
+    },
+    {
+      "id": "2174",
+      "source_resource_id": 2174,
+      "source_start_frame": 3138,
+      "source_end_frame": 3190,
+      "audio_path": "recovered/audio/02174.wav",
+      "audio_sha256": "82188c146d95e3117f5fbdb95c81949eb439e8fb61c5e3b413d78e4899905d23",
+      "duration_seconds": 3.7616326530612243,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 45
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 8,
+          "member_number": 38
+        },
+        {
+          "library_id": 8,
+          "member_number": 39
+        },
+        {
+          "library_id": 8,
+          "member_number": 42
+        },
+        {
+          "library_id": 9,
+          "member_number": 6
+        },
+        {
+          "library_id": 9,
+          "member_number": 30
+        }
+      ],
+      "english_asr": "or on vinyl records as changes in amplitude in the groove.",
+      "russian": "На виниловой пластинке они записываются как изменения амплитуды колебаний канавки."
+    },
+    {
+      "id": "2180",
+      "source_resource_id": 2180,
+      "source_start_frame": 3192,
+      "source_end_frame": 3229,
+      "audio_path": "recovered/audio/02180.wav",
+      "audio_sha256": "6955c56e27ccefaa112f05aba006d819c6055f78fc1dd1d5e82602aaaa15a859",
+      "duration_seconds": 2.7689795918367346,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 45
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 8,
+          "member_number": 38
+        },
+        {
+          "library_id": 8,
+          "member_number": 39
+        },
+        {
+          "library_id": 8,
+          "member_number": 42
+        },
+        {
+          "library_id": 8,
+          "member_number": 43
+        },
+        {
+          "library_id": 9,
+          "member_number": 30
+        }
+      ],
+      "english_asr": "A speaker works like a microphone in reverse.",
+      "russian": "Громкоговоритель работает как микрофон, только в обратном направлении:"
+    },
+    {
+      "id": "2186",
+      "source_resource_id": 2186,
+      "source_start_frame": 3231,
+      "source_end_frame": 3318,
+      "audio_path": "recovered/audio/02186.wav",
+      "audio_sha256": "e76f889ffb90f9ab2a17cb29c3ca188598b35a80609c0b053c100ea6ec447626",
+      "duration_seconds": 6.1387755102040815,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 45
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 8,
+          "member_number": 38
+        },
+        {
+          "library_id": 8,
+          "member_number": 39
+        },
+        {
+          "library_id": 8,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 42
+        },
+        {
+          "library_id": 8,
+          "member_number": 43
+        },
+        {
+          "library_id": 9,
+          "member_number": 30
+        }
+      ],
+      "english_asr": "Taking the voltage signals from a microphone or recording and vibrating to recreate the pressure wave.",
+      "russian": "он принимает сигнал напряжения от микрофона или записи и колеблется, воссоздавая волну давления."
+    },
+    {
+      "id": "2192",
+      "source_resource_id": 2192,
+      "source_start_frame": 3324,
+      "source_end_frame": 3376,
+      "audio_path": "recovered/audio/02192.wav",
+      "audio_sha256": "ba4956d32b5d7cfb16ed8cdbf1ebfaa63adfffd19d111d5068f8db69bf2a9887",
+      "duration_seconds": 3.7616326530612243,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 45
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 8,
+          "member_number": 38
+        },
+        {
+          "library_id": 8,
+          "member_number": 39
+        },
+        {
+          "library_id": 8,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 42
+        },
+        {
+          "library_id": 8,
+          "member_number": 43
+        },
+        {
+          "library_id": 8,
+          "member_number": 44
+        },
+        {
+          "library_id": 9,
+          "member_number": 30
+        }
+      ],
+      "english_asr": "Everything discussed so far is known as analog audio.",
+      "russian": "Всё, о чём мы говорили до сих пор, называется аналоговым звуком."
+    }
+  ],
+  "utterances": [
+    {
+      "id": "2150",
+      "segment_ids": [
+        "2150"
+      ],
+      "russian": "Микрофон преобразует звуковые волны давления в изменения электрического напряжения в проводе.",
+      "visual_cues": [
+        {
+          "segment_id": "2150"
+        }
+      ]
+    },
+    {
+      "id": "2156",
+      "segment_ids": [
+        "2156"
+      ],
+      "russian": "Эти изменения напряжения повторяют волны давления исходного звука.",
+      "visual_cues": [
+        {
+          "segment_id": "2156"
+        }
+      ]
+    },
+    {
+      "id": "2162",
+      "segment_ids": [
+        "2162"
+      ],
+      "russian": "Высокому давлению соответствует высокое напряжение, а низкому давлению — низкое напряжение.",
+      "visual_cues": [
+        {
+          "segment_id": "2162"
+        }
+      ]
+    },
+    {
+      "id": "2168",
+      "segment_ids": [
+        "2168"
+      ],
+      "russian": "Изменения напряжения передаются по проводу микрофона и могут быть записаны на магнитную ленту как изменения силы намагничивания.",
+      "visual_cues": [
+        {
+          "segment_id": "2168"
+        }
+      ]
+    },
+    {
+      "id": "2174",
+      "segment_ids": [
+        "2174"
+      ],
+      "russian": "На виниловой пластинке они записываются как изменения амплитуды колебаний канавки.",
+      "visual_cues": [
+        {
+          "segment_id": "2174"
+        }
+      ]
+    },
+    {
+      "id": "2180",
+      "segment_ids": [
+        "2180",
+        "2186"
+      ],
+      "russian": "Громкоговоритель работает как микрофон, только в обратном направлении: он принимает сигнал напряжения от микрофона или записи и колеблется, воссоздавая волну давления.",
+      "visual_cues": [
+        {
+          "segment_id": "2180"
+        },
+        {
+          "segment_id": "2186",
+          "anchor": "он принимает"
+        }
+      ]
+    },
+    {
+      "id": "2192",
+      "segment_ids": [
+        "2192"
+      ],
+      "russian": "Всё, о чём мы говорили до сих пор, называется аналоговым звуком.",
+      "visual_cues": [
+        {
+          "segment_id": "2192"
+        }
+      ]
+    }
+  ],
+  "review_notes": [
+    {
+      "status": "pending",
+      "note": "Automatic English transcripts and Russian translation require owner listening review. No substantive scientific correction was introduced."
+    },
+    {
+      "status": "pending",
+      "note": "Original Windows playback unavailable on this Linux host; score-derived visual timing and synchronization require comparison with continuous original playback."
+    }
+  ]
+}

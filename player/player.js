@@ -4,7 +4,38 @@
   const byId = id => document.getElementById(id);
   const error = byId('error');
   const audio = byId('narration');
-  const data = window.LESSON;
+  let data = window.LESSON;
+  let lessonId = data?.id || 'waveforms';
+  let assetBase = '';
+  const lessons = new Map([[lessonId, {data, base: ''}]]);
+  const lessonPaths = new Map(document.body.hasAttribute('data-course')
+    ? [['sound-fundamentals', 'lessons/sound-fundamentals/'],
+       ['analog-audio', 'lessons/analog-audio/'],
+       ['digital-audio', 'lessons/digital-audio/'],
+       ['sampling-rate', 'lessons/sampling-rate/']] : []);
+  const loading = new Map();
+  function loadLesson(id) {
+    if (lessons.has(id)) return Promise.resolve(lessons.get(id));
+    if (!loading.has(id)) {
+      loading.set(id, new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = `${lessonPaths.get(id)}lesson.js`;
+        script.onload = () => {
+          if (window.LESSON?.id !== id || !window.LESSON.utterances?.length) {
+            loading.delete(id);
+            reject(new Error('Invalid lesson data'));
+            return;
+          }
+          const loaded = {data: window.LESSON, base: lessonPaths.get(id)};
+          lessons.set(id, loaded);
+          resolve(loaded);
+        };
+        script.onerror = () => { loading.delete(id); reject(new Error('Lesson unavailable')); };
+        document.head.append(script);
+      }));
+    }
+    return loading.get(id);
+  }
   const captionsToggle = byId('captions-toggle');
   let captionsVisible = true;
   try { captionsVisible = localStorage.getItem('syntrillium-captions') !== 'off'; } catch {}
@@ -64,7 +95,7 @@
     byId('open-lesson').disabled = true;
     return;
   }
-  const utterances = data.utterances || data.segments;
+  let utterances = data.utterances || data.segments;
   const starts = [];
   let total = 0;
   for (const utterance of utterances) { starts.push(total); total += utterance.duration; }
@@ -78,19 +109,34 @@
   let pendingSeek = null;
   let animation = 0;
   let lastDraw = 0;
+  let silentPosition = 0;
+  let silentStarted = 0;
+  let silentPlaying = false;
+  function narrationPosition() {
+    return utterances[current].audio ? audio.currentTime || 0
+      : silentPosition + (silentPlaying ? (performance.now() - silentStarted) / 1000 : 0);
+  }
+  function pauseNarration() {
+    if (silentPlaying) silentPosition = narrationPosition();
+    silentPlaying = false;
+    audio.pause();
+  }
   const escape = value => String(value).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
   function commandSvg(item) {
     const {x, y, width, height} = item;
     let shape;
     switch (item.kind) {
       case 'image':
-        shape = `<image href="assets/${item.asset}.svg" x="${x}" y="${y}" width="${width}" height="${height}" preserveAspectRatio="none"/>`;
+        shape = `<image href="${assetBase}assets/${item.asset}.svg" x="${x}" y="${y}" width="${width}" height="${height}" preserveAspectRatio="none"/>`;
         break;
       case 'text':
         shape = `<text x="${x}" y="${y}" text-anchor="middle" font-size="${item.font_size}">${item.lines.map((value, i) => `<tspan x="${x}" dy="${i ? item.font_size * 1.15 : 0}">${escape(value)}</tspan>`).join('')}</text>`;
         break;
       case 'line':
         shape = `<path d="M${item.x1} ${item.y1}L${item.x2} ${item.y2}" stroke="${item.color}" stroke-width="${item.stroke_width}" fill="none"/>`;
+        break;
+      case 'pressure-arrow':
+        shape = `<path d="M${x - width / 2} ${y}h${width}m${-height} ${-height / 2}l${height} ${height / 2}l${-height} ${height / 2}" fill="none" stroke="#111" stroke-width="2"/>`;
         break;
       case 'ellipse':
         shape = `<ellipse cx="${item.cx}" cy="${item.cy}" rx="${item.rx}" ry="${item.ry}" fill="${item.color}"/>`;
@@ -126,7 +172,7 @@
     let index = 0;
     while (index + 1 < frames.length && frames[index + 1].at <= progress) index++;
     const frame = frames[index];
-    const items = segmentIndex === 0 && utterance.cues?.[0]?.frames === frames && index < 2
+    const items = lessonId === 'waveforms' && segmentIndex === 0 && utterance.cues?.[0]?.frames === frames && index < 2
       ? frame.items.filter(item => item.asset !== 'ball')
       : frame.items;
     byId('visualization').innerHTML = `<desc>${escape(caption || utterance.caption)}</desc>${items.map(commandSvg).join('')}`;
@@ -134,18 +180,58 @@
 
   const time = value => `${Math.floor(value / 60)}:${String(Math.floor(value % 60)).padStart(2, '0')}`;
   byId('lesson-duration').textContent = time(total);
+  function selectLesson(id, loaded) {
+    data = loaded.data;
+    lessonId = id;
+    assetBase = loaded.base;
+    utterances = data.utterances || data.segments;
+    starts.length = 0;
+    total = 0;
+    for (const utterance of utterances) { starts.push(total); total += utterance.duration; }
+    byId('lesson-title').textContent = data.title;
+    byId('lesson-duration').textContent = time(total);
+    byId('visualization').setAttribute('viewBox', id === 'sound-fundamentals' ? '0 65 550 290' : '0 65 550 270');
+    byId('visualization').setAttribute('aria-label', `Визуализация: ${data.title}`);
+    const topics = [...navigationPanel.querySelectorAll('ol > li')];
+    const index = topics.findIndex(item => item.querySelector(`a[href="#lesson/${id}"]`));
+    if (byId('lesson-number')) byId('lesson-number').textContent = String(index + 1);
+    for (const link of navigationPanel.querySelectorAll('a')) {
+      if (link.hash === `#lesson/${id}`) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    }
+    for (const [buttonId, adjacent, prefix, suffix] of [
+      ['previous-lesson', topics[index - 1], '← Предыдущий урок', ''],
+      ['next-lesson', topics[index + 1], 'Следующий урок', ' →'],
+    ]) {
+      const button = byId(buttonId);
+      button.disabled = !adjacent?.querySelector('a');
+      button.dataset.route = adjacent?.querySelector('a')?.hash || '';
+      button.textContent = `${prefix}${adjacent ? `: ${adjacent.textContent.trim()}` : ''}${suffix}`;
+    }
+    if (byId('narration-note')) {
+      byId('narration-note').textContent = utterances.some(item => !item.audio)
+        ? 'Черновик. Неозвученные фразы воспроизводятся без звука; время предварительное.'
+        : 'Черновик. Проверьте озвучку и синхронизацию с визуализациями.';
+    }
+  }
   function updatePosition() {
     const elapsed = previewPosition !== null
       ? previewPosition
-      : (finished ? total : starts[current] + Math.min(audio.currentTime || 0, utterances[current].duration));
+      : (finished ? total : starts[current] + Math.min(narrationPosition(), utterances[current].duration));
     byId('position').value = String(Math.round(elapsed / total * 1000));
     byId('position').setAttribute('aria-valuetext', `${time(elapsed)} из ${time(total)}`);
     byId('clock').textContent = `${time(elapsed)} / ${time(total)}`;
   }
   function animate(timestamp) {
-    if (audio.paused || byId('lesson').hidden) return;
+    if ((!silentPlaying && audio.paused) || byId('lesson').hidden) return;
+    if (silentPlaying && narrationPosition() >= utterances[current].duration) {
+      if (current + 1 < utterances.length) start(current + 1);
+      else complete();
+      return;
+    }
     if (timestamp - lastDraw > 60) {
-      draw(audio.currentTime);
+      draw(narrationPosition());
+      updatePosition();
       lastDraw = timestamp;
     }
     animation = requestAnimationFrame(animate);
@@ -161,10 +247,16 @@
     byId('previous').disabled = current === 0 && !finished;
     byId('next').disabled = current === utterances.length - 1;
     cancelAnimationFrame(animation);
-    if (playing && !seeking && !audio.paused) animation = requestAnimationFrame(animate);
+    if (playing && !seeking && (silentPlaying || !audio.paused)) animation = requestAnimationFrame(animate);
   }
   function play() {
     shouldPlay = true;
+    if (!utterances[current].audio) {
+      silentStarted = performance.now();
+      silentPlaying = true;
+      updateControls();
+      return;
+    }
     updateControls();
     audio.play().catch(reason => {
       if (reason.name === 'AbortError') return;
@@ -174,6 +266,7 @@
     });
   }
   function start(index, offset = 0, playing = true) {
+    pauseNarration();
     current = index;
     finished = false;
     shouldPlay = playing;
@@ -182,7 +275,9 @@
     pendingOffset = Math.max(0, offset);
     error.hidden = true;
     byId('caption').textContent = utterances[current].caption || utterances[current].russian;
-    audio.src = utterances[current].audio;
+    silentPosition = pendingOffset;
+    if (utterances[current].audio) audio.src = assetBase + utterances[current].audio;
+    else audio.removeAttribute('src');
     audio.load();
     draw(pendingOffset);
     updateControls();
@@ -191,7 +286,7 @@
   }
   function complete() {
     shouldPlay = false;
-    audio.pause();
+    pauseNarration();
     finished = true;
     previewPosition = null;
     pendingSeek = null;
@@ -212,7 +307,7 @@
     seeking = true;
     seekWasPlaying = shouldPlay && !finished;
     finished = false;
-    if (!audio.paused) audio.pause();
+    pauseNarration();
     updateControls();
   }
   function previewSeek(position) {
@@ -236,7 +331,8 @@
       return;
     }
     if (selection.index === current) {
-      audio.currentTime = selection.offset;
+      if (utterances[current].audio) audio.currentTime = selection.offset;
+      else silentPosition = selection.offset;
       byId('caption').textContent = utterances[current].caption || utterances[current].russian;
       draw(selection.offset);
       updatePosition();
@@ -248,18 +344,13 @@
     start(selection.index, selection.offset, playing);
   }
   let route = '';
-  function syncRoute() {
-    const nextRoute = location.hash === '#lesson/waveforms' ? 'lesson' : 'menu';
+  async function syncRoute() {
+    const requested = location.hash.replace(/^#lesson\//, '');
+    const nextRoute = lessons.has(requested) || lessonPaths.has(requested) ? requested : 'menu';
     if (nextRoute === route) return;
-    if (nextRoute === 'lesson') {
-      byId('menu').hidden = true;
-      byId('lesson').hidden = false;
-      route = nextRoute;
-      start(0, 0, false);
-      return;
-    }
     shouldPlay = false;
-    audio.pause();
+    pauseNarration();
+    cancelAnimationFrame(animation);
     seeking = false;
     previewPosition = null;
     pendingSeek = null;
@@ -267,22 +358,44 @@
     byId('menu').hidden = false;
     error.hidden = true;
     route = nextRoute;
+    if (nextRoute !== 'menu') {
+      try {
+        const loaded = await loadLesson(nextRoute);
+        if (route !== nextRoute) return;
+        selectLesson(nextRoute, loaded);
+        byId('menu').hidden = true;
+        byId('lesson').hidden = false;
+        start(0, 0, false);
+      } catch {
+        if (route === nextRoute) {
+          route = '';
+          showError('Не удалось открыть материалы урока. Распакуйте папку курса целиком и выберите урок снова.');
+        }
+      }
+    }
   }
   window.addEventListener('hashchange', syncRoute);
-  byId('open-lesson').addEventListener('click', () => { location.hash = 'lesson/waveforms'; });
+  const initialLessonId = lessonId;
+  byId('open-lesson').addEventListener('click', () => { location.hash = `lesson/${initialLessonId}`; });
+  for (const button of document.querySelectorAll('[data-lesson]')) {
+    button.addEventListener('click', () => { location.hash = `lesson/${button.dataset.lesson}`; });
+  }
+  for (const id of ['previous-lesson', 'next-lesson']) {
+    byId(id).addEventListener('click', () => { location.hash = byId(id).dataset.route; });
+  }
   byId('back').addEventListener('click', () => { location.hash = ''; });
   captionsToggle.addEventListener('click', () => setCaptionsVisible(!captionsVisible));
   byId('toggle').addEventListener('click', () => {
     if (finished) start(0);
     else if (shouldPlay) {
       shouldPlay = false;
-      audio.pause();
+      pauseNarration();
       updateControls();
     } else play();
   });
   byId('previous').addEventListener('click', () => start(Math.max(0, current - 1)));
   byId('next').addEventListener('click', () => start(Math.min(utterances.length - 1, current + 1)));
-  byId('retry').addEventListener('click', () => start(current));
+  byId('retry').addEventListener('click', () => { if (!route) syncRoute(); else start(current); });
   byId('position').addEventListener('input', event => previewSeek(Number(event.target.value) / 1000 * total));
   byId('position').addEventListener('change', commitSeek);
   byId('position').addEventListener('pointerup', commitSeek);
@@ -292,19 +405,21 @@
     if (finished) start(0);
     else if (shouldPlay) {
       shouldPlay = false;
-      audio.pause();
+      pauseNarration();
       updateControls();
     } else play();
   });
   audio.addEventListener('loadedmetadata', () => {
+    if (!utterances[current].audio) return;
     audio.currentTime = Math.min(pendingOffset, Math.max(0, audio.duration - 0.01));
     updatePosition();
   });
   audio.addEventListener('play', updateControls);
   audio.addEventListener('pause', updateControls);
-  audio.addEventListener('timeupdate', () => { updatePosition(); if (audio.paused && !seeking) draw(audio.currentTime); });
+  audio.addEventListener('timeupdate', () => { updatePosition(); if (audio.paused && !seeking) draw(narrationPosition()); });
   audio.addEventListener('ended', () => { if (current + 1 < utterances.length) start(current + 1); else complete(); });
   audio.addEventListener('error', () => {
+    if (!utterances[current].audio) return;
     showError('Не удалось открыть запись. Убедитесь, что папка урока распакована целиком, и повторите.');
     updateControls();
   });
