@@ -12,7 +12,11 @@
     ? [['sound-fundamentals', 'lessons/sound-fundamentals/'],
        ['analog-audio', 'lessons/analog-audio/'],
        ['digital-audio', 'lessons/digital-audio/'],
-       ['sampling-rate', 'lessons/sampling-rate/']] : []);
+       ['sampling-rate', 'lessons/sampling-rate/'],
+       ['bit-depth', 'lessons/bit-depth/'],
+       ['digital-summary', 'lessons/digital-summary/'],
+       ['computer-audio', 'lessons/computer-audio/'],
+       ['midi', 'lessons/midi/']] : []);
   const loading = new Map();
   function loadLesson(id) {
     if (lessons.has(id)) return Promise.resolve(lessons.get(id));
@@ -130,7 +134,7 @@
         shape = `<image href="${assetBase}assets/${item.asset}.svg" x="${x}" y="${y}" width="${width}" height="${height}" preserveAspectRatio="none"/>`;
         break;
       case 'text':
-        shape = `<text x="${x}" y="${y}" text-anchor="middle" font-size="${item.font_size}">${item.lines.map((value, i) => `<tspan x="${x}" dy="${i ? item.font_size * 1.15 : 0}">${escape(value)}</tspan>`).join('')}</text>`;
+        shape = `<text x="${x}" y="${y}" text-anchor="middle" font-size="${item.font_size}"${item.monospace ? ' font-family="monospace"' : ''}>${item.lines.map((value, i) => `<tspan x="${x}" dy="${i ? item.font_size * 1.15 : 0}">${escape(value)}</tspan>`).join('')}</text>`;
         break;
       case 'line':
         shape = `<path d="M${item.x1} ${item.y1}L${item.x2} ${item.y2}" stroke="${item.color}" stroke-width="${item.stroke_width}" fill="none"/>`;

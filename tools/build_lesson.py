@@ -16,30 +16,43 @@ import xml.etree.ElementTree as ET
 
 from waveforms import compile_visuals
 from narration import NarrationError, anchor_position, validate_utterances
+from computer_audio import (COMPUTER_BITMAPS, COMPUTER_AUDIO_RANGE, MIDI_RANGE,
+                            compile_computer_visuals, compile_midi_visuals)
 
 
 ASSETS = {'sine.svg': 2850, 'complex-1.svg': 2911, 'complex-2.svg': 2913, 'ball.svg': 2844}
+STAGED_TOPICS = {
+    'analog-audio': ('Analog Audio', 'Аналоговый звук', 2814, 3389),
+    'digital-audio': ('Digital Audio', 'Цифровой звук', 3389, 3697),
+    'sampling-rate': ('Sampling Rate', 'Частота дискретизации', 3697, 4684),
+    'bit-depth': ('Bit Depth', 'Разрядность', 4684, 5985),
+    'digital-summary': ('Digital Summary', 'Итоги: цифровой звук', 5985, 6377),
+    'computer-audio': ('Computer Audio', 'Звук на компьютере', *COMPUTER_AUDIO_RANGE),
+    'midi': ('MIDI', 'MIDI', *MIDI_RANGE),
+}
 
 
 def stage_audio(content, recovery, destination):
-    """Build Analog/Digital Audio and Sampling Rate visuals with silent, provisional narration timing."""
+    """Build audio lesson visuals with silent, provisional narration timing."""
     from analog_audio import FLASH_ASSETS, solid_flash_svg
     from analog_audio import compile_visuals
     from digital_audio import compile_visuals as compile_digital_visuals
+    from digital_summary import compile_visuals as compile_summary_visuals
     from composition import SOURCE_SHA256
     from sampling_rate import compile_visuals as compile_sampling_visuals
-    from sound_fundamentals import cone_bitmap
+    from bit_depth import compile_visuals as compile_bit_depth_visuals
+    from sound_fundamentals import bitmap_svg, cone_bitmap
 
     lesson = json.loads(content.read_text(encoding='utf-8'))
     composition = json.loads((recovery / 'composition.json').read_text(encoding='utf-8'))
     digital = lesson['id'] == 'digital-audio'
     sampling = lesson['id'] == 'sampling-rate'
-    title, start, end = {
-        'analog-audio': ('Analog Audio', 2814, 3389),
-        'digital-audio': ('Digital Audio', 3389, 3697),
-        'sampling-rate': ('Sampling Rate', 3697, 4684),
-    }.get(lesson['id'], ('Unknown', 0, 0))
-    if (lesson['id'] not in ('analog-audio', 'digital-audio', 'sampling-rate') or composition['source_sha256'] != SOURCE_SHA256
+    bit_depth = lesson['id'] == 'bit-depth'
+    summary = lesson['id'] == 'digital-summary'
+    computer = lesson['id'] == 'computer-audio'
+    midi = lesson['id'] == 'midi'
+    title, _, start, end = STAGED_TOPICS.get(lesson['id'], ('Unknown', '', 0, 0))
+    if (not start or composition['source_sha256'] != SOURCE_SHA256
             or lesson['source']['executable_sha256'] != SOURCE_SHA256):
         raise ValueError(f'Lesson and recovery source do not match {title}')
     members = {(m['library_id'], m['member_number']): m for m in composition['members']}
@@ -52,16 +65,24 @@ def stage_audio(content, recovery, destination):
         raise ValueError(f'Lesson does not cover the recovered {title} sound references in order')
     utterances = validate_utterances(lesson, lesson['segments'])
     shell = Path(__file__).resolve().parents[1] / 'player'
-    names = ('complex-1.svg',) if sampling else (('complex-1.svg', 'complex-2.svg') if digital else ('complex-2.svg',))
+    names = ('complex-1.svg',) if sampling or bit_depth or summary or computer else (
+        ('complex-1.svg', 'complex-2.svg') if digital else (() if midi else ('complex-2.svg',)))
     assets = {name: (shell / 'assets' / name).read_bytes() for name in names}
     provenance = [dict(path=f'assets/{name}', reused_from=f'player/assets/{name}',
                        source_sha256=digest(shell / 'assets' / name)) for name in names]
-    flash_assets = {} if sampling else ({'speaker': FLASH_ASSETS['speaker']} if digital else FLASH_ASSETS)
+    if summary:
+        flash_assets = {'mic': FLASH_ASSETS['mic'], 'sound-card': 2989}
+    elif computer:
+        flash_assets = {'sound-card': 2989, 'speaker': FLASH_ASSETS['speaker']}
+    elif midi:
+        flash_assets = {'sound-card': 2989, 'tape-recorder': FLASH_ASSETS['tape-recorder']}
+    else:
+        flash_assets = {} if sampling or bit_depth else ({'speaker': FLASH_ASSETS['speaker']} if digital else FLASH_ASSETS)
     for name, rid in flash_assets.items():
         source = recovery / 'flash' / f'{rid:05d}-12.swf'
         assets[name + '.svg'] = solid_flash_svg(source.read_bytes())
         provenance.append(dict(path=f'assets/{name}.svg', resource_id=rid, source_sha256=digest(source)))
-    if not sampling:
+    if not (sampling or bit_depth or midi):
         member = members[8, 39]
         cast = recovery / 'resources' / f"{member['resource_id']:05d}.bin"
         bitmap = recovery / 'resources/02915.bin'
@@ -72,13 +93,48 @@ def stage_audio(content, recovery, destination):
         provenance.append(dict(path='assets/leftcover.svg', resource_id=2915, source_sha256=digest(bitmap),
                                cast_resource_id=member['resource_id'], cast_sha256=digest(cast),
                                adaptation='Background mask recolored to player stage #eef2f6.'))
-    if digital or sampling:
+    if digital or sampling or bit_depth or summary or computer:
         assets['sample.svg'] = b'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 5"><path fill="#076938" d="M0 0H5V5H0Z"/></svg>\n'
         provenance.append(dict(path='assets/sample.svg', cast_resource_id=858,
                                cast_sha256=digest(recovery / 'resources/00858.bin'),
                                adaptation='Original primitive square, source RGB #076938.'))
-    compiler = compile_sampling_visuals if sampling else (compile_digital_visuals if digital else compile_visuals)
-    visuals = compiler(composition, lesson['segments'], lesson['labels'])
+    if computer or midi:
+        rid = 2947 if computer else 2977
+        assets['stage-mask.svg'] = b'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><path fill="#eef2f6" d="M0 0H1V1H0Z"/></svg>\n'
+        provenance.append(dict(path='assets/stage-mask.svg', resource_id=rid,
+                               source_sha256=digest(recovery / 'resources' / f'{rid:05d}.bin'),
+                               adaptation='Background mask recolored to the adapted stage.'))
+    if computer:
+        for name, (cast_id, rid) in COMPUTER_BITMAPS.items():
+            cast = recovery / 'resources' / f'{cast_id:05d}.bin'
+            bitmap = recovery / 'resources' / f'{rid:05d}.bin'
+            width, height, rgba = cone_bitmap(cast.read_bytes(), bitmap.read_bytes())
+            pixels = bytearray(rgba)
+            for i in range(0, len(pixels), 4):
+                if pixels[i:i+3] == b'\xff\xff\xff':
+                    pixels[i+3] = 0
+            assets[f'{name}.svg'] = bitmap_svg(width, height, pixels)
+            provenance.append(dict(path=f'assets/{name}.svg', resource_id=rid,
+                                   source_sha256=digest(bitmap), cast_resource_id=cast_id,
+                                   cast_sha256=digest(cast), adaptation='White matte made transparent.'))
+    if midi:
+        for name, rid in {'quarter-note': 2967, 'treble-clef': 2969,
+                          'cool-edit-2000': 3016, 'cool-edit-pro': 3018}.items():
+            source = recovery / 'flash' / f'{rid:05d}-12.swf'
+            exported = shell / 'lessons/midi/assets' / f'{name}.svg'
+            assets[exported.name] = exported.read_bytes()
+            provenance.append(dict(path=f'assets/{exported.name}', resource_id=rid,
+                                   source_sha256=digest(source),
+                                   adaptation='Rendered first Flash frame on a transparent stage.'))
+    compiler = {'bit-depth': compile_bit_depth_visuals, 'sampling-rate': compile_sampling_visuals,
+                'digital-summary': compile_summary_visuals,
+                'computer-audio': compile_computer_visuals, 'midi': compile_midi_visuals,
+                'digital-audio': compile_digital_visuals}.get(lesson['id'], compile_visuals)
+    labels = lesson['labels']
+    if midi:
+        previous = json.loads((shell.parent / 'content/computer-audio.json').read_text(encoding='utf-8'))
+        labels = dict(labels, computerAudio=previous['labels'])
+    visuals = compiler(composition, lesson['segments'], labels)
     segments = {str(s['id']): s for s in lesson['segments']}
     frames = {str(s['id']): f for s, f in zip(lesson['segments'], visuals)}
     playback = []
@@ -98,22 +154,21 @@ def stage_audio(content, recovery, destination):
         shutil.copyfile(shell / name, destination / name)
     html = (shell / 'index.html').read_text(encoding='utf-8').replace('<body data-course>', '<body>')
     html = html.replace('id="open-lesson"', 'disabled')
-    for lesson_id, other_title in (('analog-audio', 'Аналоговый звук'),
-                                   ('digital-audio', 'Цифровой звук'),
-                                   ('sampling-rate', 'Частота дискретизации')):
+    for number, (lesson_id, (_, other_title, _, _)) in enumerate(STAGED_TOPICS.items(), start=3):
         html = html.replace(f'id="open-{lesson_id}" data-lesson="{lesson_id}"',
                             'id="open-lesson"' if lesson_id == lesson['id'] else 'disabled')
         if lesson_id != lesson['id']:
             html = html.replace(f'<a href="#lesson/{lesson_id}">{other_title}</a>',
                                 f'<span aria-disabled="true">{other_title}</span>')
+        else:
+            html = html.replace('id="lesson-number">2', f'id="lesson-number">{number}')
     html = html.replace('id="open-sound-fundamentals" data-lesson="sound-fundamentals"', 'disabled')
     html = html.replace('<a href="#lesson/sound-fundamentals">Основы звука</a>',
                         '<span aria-disabled="true">Основы звука</span>')
     html = html.replace('<a href="#lesson/waveforms" aria-current="page">Форма звуковой волны</a>',
                         '<span aria-disabled="true">Форма звуковой волны</span>')
-    html = html.replace('Для проверки доступны первые пять уроков.',
+    html = html.replace('Для проверки доступны все девять уроков.',
                         f'Черновик урока «{lesson["title"]}» для проверки.')
-    html = html.replace('id="lesson-number">2', f'id="lesson-number">{5 if sampling else (4 if digital else 3)}')
     (destination / 'index.html').write_text(html, encoding='utf-8')
     (destination / 'lesson.js').write_text('window.LESSON = ' + json.dumps(
         data, ensure_ascii=False, separators=(',', ':')) + ';\n', encoding='utf-8')
@@ -207,10 +262,21 @@ def stage_sound_fundamentals(content, recovery, destination):
     html = html.replace('<button id="open-digital-audio" data-lesson="digital-audio">', '<button disabled>')
     html = html.replace('<a href="#lesson/digital-audio">Цифровой звук</a>',
                         '<span aria-disabled="true">Цифровой звук</span>')
+    html = html.replace('<button id="open-bit-depth" data-lesson="bit-depth">', '<button disabled>')
+    html = html.replace('<a href="#lesson/bit-depth">Разрядность</a>',
+                        '<span aria-disabled="true">Разрядность</span>')
+    html = html.replace('<button id="open-digital-summary" data-lesson="digital-summary">', '<button disabled>')
+    html = html.replace('<a href="#lesson/digital-summary">Итоги: цифровой звук</a>',
+                        '<span aria-disabled="true">Итоги: цифровой звук</span>')
     html = html.replace('<button id="open-sampling-rate" data-lesson="sampling-rate">', '<button disabled>')
     html = html.replace('<a href="#lesson/sampling-rate">Частота дискретизации</a>',
                         '<span aria-disabled="true">Частота дискретизации</span>')
-    html = html.replace('Для проверки доступны первые пять уроков.\n'
+    for lesson_id in ('computer-audio', 'midi'):
+        other_title = STAGED_TOPICS[lesson_id][1]
+        html = html.replace(f'id="open-{lesson_id}" data-lesson="{lesson_id}"', 'disabled')
+        html = html.replace(f'<a href="#lesson/{lesson_id}">{other_title}</a>',
+                            f'<span aria-disabled="true">{other_title}</span>')
+    html = html.replace('Для проверки доступны все девять уроков.\n'
                         '          Записи и изображения находятся в папке курса и воспроизводятся без интернета.',
                         'Черновик первого урока «Основы звука». Проверьте текст, '
                         'визуализации и последовательность объяснений.')
@@ -358,7 +424,7 @@ def main():
     try:
         if args.visuals_only:
             lesson_id = json.loads(args.content.read_text(encoding='utf-8'))['id']
-            if lesson_id in ('analog-audio', 'digital-audio', 'sampling-rate'):
+            if lesson_id in STAGED_TOPICS:
                 stage_audio(args.content, args.recovery, args.destination)
             else:
                 stage_sound_fundamentals(args.content, args.recovery, args.destination)

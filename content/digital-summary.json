@@ -1,0 +1,551 @@
+{
+  "id": "digital-summary",
+  "title": "Итоги: цифровой звук",
+  "source": {
+    "executable_sha256": "c385ac83b9cad64cc988d37b8e5b3c30586fcf63c478d56d473a5dcf5c360725",
+    "topic_title": "Digital Summary",
+    "entry_frame": 5985,
+    "next_topic_entry_frame": 6377,
+    "transcription_reviewed": false,
+    "translation_reviewed": false
+  },
+  "labels": {
+    "pressure": "Давление",
+    "voltage": "Напряжение",
+    "digitizedAudio": "Оцифрованный звук"
+  },
+  "segments": [
+    {
+      "id": "2444",
+      "source_resource_id": 2444,
+      "source_start_frame": 6000,
+      "source_end_frame": 6073,
+      "audio_path": "recovered/audio/02444.wav",
+      "audio_sha256": "22dd9e1fe29dc8e256926e282fc79494eea0d29d01d34e306003fc9a9f31e287",
+      "duration_seconds": 5.146122448979592,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 53
+        },
+        {
+          "library_id": 8,
+          "member_number": 37
+        },
+        {
+          "library_id": 8,
+          "member_number": 39
+        },
+        {
+          "library_id": 8,
+          "member_number": 41
+        },
+        {
+          "library_id": 9,
+          "member_number": 30
+        }
+      ],
+      "english_asr": "In summary, the process of sampling or digitizing starts with a pressure wave in the air.",
+      "russian": "Итак, дискретизация, или оцифровка, начинается с волны давления в воздухе."
+    },
+    {
+      "id": "2450",
+      "source_resource_id": 2450,
+      "source_start_frame": 6075,
+      "source_end_frame": 6128,
+      "audio_path": "recovered/audio/02450.wav",
+      "audio_sha256": "d3742feb314267b649e39f835c981963c886100cce861152abc28d585a6d834d",
+      "duration_seconds": 3.84,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 53
+        },
+        {
+          "library_id": 8,
+          "member_number": 37
+        },
+        {
+          "library_id": 8,
+          "member_number": 39
+        },
+        {
+          "library_id": 8,
+          "member_number": 40
+        },
+        {
+          "library_id": 8,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 42
+        },
+        {
+          "library_id": 9,
+          "member_number": 18
+        },
+        {
+          "library_id": 9,
+          "member_number": 30
+        }
+      ],
+      "english_asr": "A microphone converts this pressure wave into voltage variations.",
+      "russian": "Микрофон преобразует эту волну давления в колебания напряжения."
+    },
+    {
+      "id": "2762",
+      "source_resource_id": 2762,
+      "source_start_frame": 6130,
+      "source_end_frame": 6178,
+      "audio_path": "recovered/audio/02762.wav",
+      "audio_sha256": "72be5d89ced981e805642a949271f6554137defeaffb5ef83c325f39ee0c8a67",
+      "duration_seconds": 3.213061224489796,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 53
+        },
+        {
+          "library_id": 8,
+          "member_number": 37
+        },
+        {
+          "library_id": 8,
+          "member_number": 39
+        },
+        {
+          "library_id": 8,
+          "member_number": 40
+        },
+        {
+          "library_id": 8,
+          "member_number": 41
+        },
+        {
+          "library_id": 8,
+          "member_number": 42
+        },
+        {
+          "library_id": 9,
+          "member_number": 18
+        },
+        {
+          "library_id": 9,
+          "member_number": 30
+        }
+      ],
+      "english_asr": "a digital analog converter, such as a sound card.",
+      "russian": "Затем преобразователь, например звуковая карта,"
+    },
+    {
+      "id": "2456",
+      "source_resource_id": 2456,
+      "source_start_frame": 6180,
+      "source_end_frame": 6243,
+      "audio_path": "recovered/audio/02456.wav",
+      "audio_sha256": "632b692ebd0bd9c882bb2282bc9194e9ade16c1b0b6a7a7265ce1c56ba2e5535",
+      "duration_seconds": 4.310204081632653,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 53
+        },
+        {
+          "library_id": 8,
+          "member_number": 37
+        },
+        {
+          "library_id": 8,
+          "member_number": 39
+        },
+        {
+          "library_id": 8,
+          "member_number": 42
+        },
+        {
+          "library_id": 8,
+          "member_number": 47
+        },
+        {
+          "library_id": 9,
+          "member_number": 18
+        },
+        {
+          "library_id": 9,
+          "member_number": 30
+        },
+        {
+          "library_id": 10,
+          "member_number": 29
+        }
+      ],
+      "english_asr": "Then samples the signal as the sample rate and bit depth you choose.",
+      "russian": "берёт отсчёты сигнала с выбранной частотой дискретизации и разрядностью."
+    },
+    {
+      "id": "1648",
+      "source_resource_id": 1648,
+      "source_start_frame": 6245,
+      "source_end_frame": 6309,
+      "audio_path": "recovered/audio/01648.wav",
+      "audio_sha256": "f62c3963fdcdf67fe59747bc5992f986b8f77e901addb1d4107c31c89182af0d",
+      "duration_seconds": 4.41469387755102,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 53
+        },
+        {
+          "library_id": 8,
+          "member_number": 37
+        },
+        {
+          "library_id": 8,
+          "member_number": 39
+        },
+        {
+          "library_id": 8,
+          "member_number": 47
+        },
+        {
+          "library_id": 9,
+          "member_number": 18
+        },
+        {
+          "library_id": 10,
+          "member_number": 29
+        }
+      ],
+      "english_asr": "Upon playback, I digitaled analog converter like your sound card again.",
+      "russian": "При воспроизведении цифро-аналоговый преобразователь, например в той же звуковой карте,"
+    },
+    {
+      "id": "2468",
+      "source_resource_id": 2468,
+      "source_start_frame": 6311,
+      "source_end_frame": 6363,
+      "audio_path": "recovered/audio/02468.wav",
+      "audio_sha256": "aec2210fbc4b70bf7971303ed1db4273c109a1e79109fb0e5b15b4e21283cc7a",
+      "duration_seconds": 3.6310204081632653,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 53
+        },
+        {
+          "library_id": 8,
+          "member_number": 37
+        },
+        {
+          "library_id": 8,
+          "member_number": 39
+        },
+        {
+          "library_id": 8,
+          "member_number": 42
+        },
+        {
+          "library_id": 8,
+          "member_number": 47
+        },
+        {
+          "library_id": 9,
+          "member_number": 18
+        },
+        {
+          "library_id": 9,
+          "member_number": 31
+        },
+        {
+          "library_id": 10,
+          "member_number": 29
+        }
+      ],
+      "english_asr": "Reconstructs the waveform by connecting these samples together.",
+      "russian": "восстанавливает форму волны, соединяя отсчёты."
+    }
+  ],
+  "utterances": [
+    {
+      "id": "2444",
+      "segment_ids": [
+        "2444"
+      ],
+      "russian": "Итак, дискретизация, или оцифровка, начинается с волны давления в воздухе.",
+      "visual_cues": [
+        {
+          "segment_id": "2444"
+        }
+      ]
+    },
+    {
+      "id": "2450",
+      "segment_ids": [
+        "2450"
+      ],
+      "russian": "Микрофон преобразует эту волну давления в колебания напряжения.",
+      "visual_cues": [
+        {
+          "segment_id": "2450"
+        }
+      ]
+    },
+    {
+      "id": "2762",
+      "segment_ids": [
+        "2762",
+        "2456"
+      ],
+      "russian": "Затем преобразователь, например звуковая карта, берёт отсчёты сигнала с выбранной частотой дискретизации и разрядностью.",
+      "visual_cues": [
+        {
+          "segment_id": "2762"
+        },
+        {
+          "segment_id": "2456",
+          "anchor": "берёт отсчёты сигнала с выбранной частотой дискретизации и разрядностью."
+        }
+      ]
+    },
+    {
+      "id": "1648",
+      "segment_ids": [
+        "1648",
+        "2468"
+      ],
+      "russian": "При воспроизведении цифро-аналоговый преобразователь, например в той же звуковой карте, восстанавливает форму волны, соединяя отсчёты.",
+      "visual_cues": [
+        {
+          "segment_id": "1648"
+        },
+        {
+          "segment_id": "2468",
+          "anchor": "восстанавливает форму волны, соединяя отсчёты."
+        }
+      ]
+    }
+  ],
+  "review_notes": [
+    {
+      "status": "pending",
+      "note": "Automatic transcription and Russian translation require listening review. Segment 2762 uses the generic converter wording in the direction shown by the diagram; the playback converter in segment 1648 is rendered as “цифро-аналоговый преобразователь”. Original playback comparison and cue timing review are pending."
+    }
+  ]
+}

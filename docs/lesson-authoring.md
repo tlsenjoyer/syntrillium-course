@@ -20,8 +20,8 @@ transcription nor the translation is approved. Russian audio and cue timings
 have been promoted into the review player; final acceptance remains outstanding.
 
 The builder can now create a separate silent first-lesson review player with
-all nine utterances and 14 source visual cues. The main player now selects
-Sound Fundamentals, Waveforms, Analog Audio, Digital Audio, and Sampling Rate; the first lesson bundles all nine
+all nine utterances and 14 source visual cues. The main player includes all nine
+topics. The first lesson bundles all nine
 utterances promoted from `review-2`. Content approval, continuous original-playback
 comparison, synchronization review, and platform acceptance remain outstanding. The steps below distinguish
 review drafts from accepted learner content.
@@ -160,10 +160,10 @@ current default points to Waveforms.
 ## 5. Integrate the lesson and verify acceptance
 
 The first lesson is now bundled at `player/lessons/sound-fundamentals/`, and the
-main `player/index.html` enables the first five topics. Selection, previous/next lesson
+main `player/index.html` enables all nine topics. Selection, previous/next lesson
 controls, fragment routes, and browser history follow
 [ADR 0002](adr/0002-lesson-navigation-and-routes.md); changing lessons stops old
-narration. The other four topics stay disabled. Browser checks cover offline
+narration. Browser checks cover offline
 first-lesson playback, asset paths, switching, reloads, and history.
 
 The bundled first lesson initially uses the nine utterances promoted from
@@ -179,6 +179,16 @@ Lesson 4 likewise has a [production and review record](digital-audio-review.md)
 and bundled candidate narration, accessible from the main menu.
 Lesson 5 has a [production and review record](sampling-rate-review.md) and ten
 bundled candidate utterances, also accessible from the main menu.
+
+Lesson 6 has a [production and review record](bit-depth-review.md) and thirteen
+bundled candidate utterances, accessible from the main menu and lesson 5.
+
+Lesson 7 has a [production and review record](digital-summary-review.md) and four
+bundled candidate utterances, accessible from the main menu and lesson 6.
+
+Lessons 8 and 9 share a [production and review record](final-lessons-review.md)
+and bundle 15 and 12 candidate utterances respectively. Both are accessible from
+the main menu, the lesson list, and the preceding lesson.
 
 Useful existing checks:
 

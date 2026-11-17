@@ -3,8 +3,8 @@
 Work in progress for [issue #1](https://github.com/tlsenjoyer/syntrillium-course/issues/1).
 The source is `course.exe`; the requirements are in
 [the spec](docs/russian-course-spec.md). The offline player in `player/index.html`
-presents Sound Fundamentals, Waveforms, Analog Audio, Digital Audio, and Sampling Rate for review, with bundled Russian
-narration, lesson selection, and browser history.
+presents all nine lessons for review, with bundled Russian narration, lesson
+selection, and browser history.
 
 For the complete production sequence, review gates, and remaining first-lesson
 tooling gaps, see the [lesson-authoring workflow](docs/lesson-authoring.md).
@@ -31,6 +31,22 @@ in ten complete Russian utterances, generated with the same ElevenLabs voice
 and model. The waveform, sample-density animation, translated definitions, and
 narration are bundled for offline review. See the
 [lesson 5 production record](docs/sampling-rate-review.md) for remaining review.
+
+Lesson 6, «Разрядность», is enabled in the main menu, lesson list, and lesson
+5's next-lesson control. Eighteen source segments form thirteen complete Russian
+utterances, generated with the same authorized ElevenLabs voice and model.
+Binary-state tables, amplitude quantization, CD/DVD definitions, and narration
+are bundled for offline review. See the [lesson 6 production record](docs/bit-depth-review.md).
+
+Lesson 7, «Итоги: цифровой звук», is available from the main menu, lesson list,
+and lesson 6's next-lesson control. Four Russian utterances recap microphone
+conversion, sampling, and playback. See the [lesson 7 production record](docs/digital-summary-review.md).
+
+Lessons 8 and 9, «Звук на компьютере» and «MIDI», are available from the
+main menu and lesson list. They include 27 Russian narration utterances and
+localized visualizations of sound-card recording and playback, file size,
+and MIDI notation and synthesis. See the
+[lessons 8 and 9 production record](docs/final-lessons-review.md).
 
 The first course topic, Sound Fundamentals (Основы звука), now has a
 [Russian content draft](content/sound-fundamentals.json): all 14 source narration

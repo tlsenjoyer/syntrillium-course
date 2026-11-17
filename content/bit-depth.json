@@ -1,0 +1,1501 @@
+{
+  "id": "bit-depth",
+  "title": "Разрядность",
+  "source": {
+    "executable_sha256": "c385ac83b9cad64cc988d37b8e5b3c30586fcf63c478d56d473a5dcf5c360725",
+    "topic_title": "Bit Depth",
+    "entry_frame": 4684,
+    "next_topic_entry_frame": 5985,
+    "transcription_reviewed": false,
+    "translation_reviewed": false
+  },
+  "labels": {
+    "bitDepth": [
+      "Разрядность — точность представления амплитуды"
+    ],
+    "singleBit": [
+      "Один бит = 0 или 1"
+    ],
+    "bit1": [
+      "Бит 1"
+    ],
+    "zero": [
+      "0"
+    ],
+    "one": [
+      "1"
+    ],
+    "bit2": [
+      "Бит 2"
+    ],
+    "states2": [
+      "Состояние",
+      "1",
+      "2"
+    ],
+    "states4": [
+      "Состояние",
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "states8": [
+      "Состояние",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "bit3": [
+      "Бит 3"
+    ],
+    "cdQuality": [
+      "Качество CD: 16 бит — 65 536 значений"
+    ],
+    "dvdQuality": [
+      "Качество DVD: 24 бита — 16 777 216 значений"
+    ]
+  },
+  "segments": [
+    {
+      "id": "2306",
+      "source_resource_id": 2306,
+      "source_start_frame": 4702,
+      "source_end_frame": 4780,
+      "audio_path": "recovered/audio/02306.wav",
+      "audio_sha256": "a461d32689a8d0ac320e0721403d516f324f6c93c10b3f40b71971c98a1d5274",
+      "duration_seconds": 5.433469387755102,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 51
+        },
+        {
+          "library_id": 8,
+          "member_number": 37
+        },
+        {
+          "library_id": 8,
+          "member_number": 47
+        }
+      ],
+      "english_asr": "Just as the number of samples in each second of audio determines the resolution of the sampled audio,",
+      "russian": "Разрешение оцифрованного звука зависит не только от числа отсчётов в секунду,"
+    },
+    {
+      "id": "2312",
+      "source_resource_id": 2312,
+      "source_start_frame": 4782,
+      "source_end_frame": 4825,
+      "audio_path": "recovered/audio/02312.wav",
+      "audio_sha256": "06690a2ccfac03c40285b1c99764bb7f13bde02b47084b88390b3635790ec022",
+      "duration_seconds": 3.239183673469388,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 51
+        },
+        {
+          "library_id": 8,
+          "member_number": 37
+        },
+        {
+          "library_id": 8,
+          "member_number": 47
+        }
+      ],
+      "english_asr": "So does the resolution and the amplitude of each sample.",
+      "russian": "но и от точности представления амплитуды каждого отсчёта."
+    },
+    {
+      "id": "2318",
+      "source_resource_id": 2318,
+      "source_start_frame": 4829,
+      "source_end_frame": 4878,
+      "audio_path": "recovered/audio/02318.wav",
+      "audio_sha256": "b9b03ada285dbc22a0a93338851be8caac1e3d056e555da4e42a82accefd168c",
+      "duration_seconds": 3.474285714285714,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 51
+        },
+        {
+          "library_id": 8,
+          "member_number": 37
+        },
+        {
+          "library_id": 8,
+          "member_number": 47
+        },
+        {
+          "library_id": 10,
+          "member_number": 17
+        }
+      ],
+      "english_asr": "Amplitude resolution is referred to as the bit depth.",
+      "russian": "Разрешение по амплитуде называют разрядностью."
+    },
+    {
+      "id": "2324",
+      "source_resource_id": 2324,
+      "source_start_frame": 4882,
+      "source_end_frame": 4959,
+      "audio_path": "recovered/audio/02324.wav",
+      "audio_sha256": "1e20c357608ab3df28e117438b694e3a1394e3cbe158f901d13100848d147f13",
+      "duration_seconds": 5.511836734693878,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 51
+        },
+        {
+          "library_id": 10,
+          "member_number": 17
+        },
+        {
+          "library_id": 10,
+          "member_number": 18
+        }
+      ],
+      "english_asr": "A bit is a computer term meaning a single number that can have a value of either 0 or 1.",
+      "russian": "Бит — это компьютерный термин: одна двоичная цифра, которая может принимать значение ноль или один."
+    },
+    {
+      "id": "2330",
+      "source_resource_id": 2330,
+      "source_start_frame": 4963,
+      "source_end_frame": 5021,
+      "audio_path": "recovered/audio/02330.wav",
+      "audio_sha256": "ba52831dd21590dbd1188460a70f26a88b0a3fef01a07f206dc8a9ce1908289e",
+      "duration_seconds": 4.3363265306122445,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 51
+        },
+        {
+          "library_id": 10,
+          "member_number": 18
+        },
+        {
+          "library_id": 10,
+          "member_number": 19
+        },
+        {
+          "library_id": 10,
+          "member_number": 20
+        },
+        {
+          "library_id": 10,
+          "member_number": 21
+        },
+        {
+          "library_id": 10,
+          "member_number": 23
+        }
+      ],
+      "english_asr": "A single bit can represent two states, such as on and off.",
+      "russian": "Один бит может представлять два состояния, например «включено» и «выключено»."
+    },
+    {
+      "id": "2336",
+      "source_resource_id": 2336,
+      "source_start_frame": 5025,
+      "source_end_frame": 5065,
+      "audio_path": "recovered/audio/02336.wav",
+      "audio_sha256": "47c3efd7418e2f3d7c98db8511696815edea6005049195b3cbc0220b9ddd54eb",
+      "duration_seconds": 3.030204081632653,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 51
+        },
+        {
+          "library_id": 10,
+          "member_number": 19
+        },
+        {
+          "library_id": 10,
+          "member_number": 20
+        },
+        {
+          "library_id": 10,
+          "member_number": 21
+        },
+        {
+          "library_id": 10,
+          "member_number": 22
+        },
+        {
+          "library_id": 10,
+          "member_number": 23
+        },
+        {
+          "library_id": 10,
+          "member_number": 24
+        }
+      ],
+      "english_asr": "Two bits together can represent four different states.",
+      "russian": "Два бита вместе могут представлять четыре разных состояния."
+    },
+    {
+      "id": "2342",
+      "source_resource_id": 2342,
+      "source_start_frame": 5067,
+      "source_end_frame": 5129,
+      "audio_path": "recovered/audio/02342.wav",
+      "audio_sha256": "c1c97c725eb1cef83f1c1814f4f73fe94bdc8746e7cbb1c4a658264a38ef9385",
+      "duration_seconds": 4.362448979591837,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 51
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 10,
+          "member_number": 19
+        },
+        {
+          "library_id": 10,
+          "member_number": 20
+        },
+        {
+          "library_id": 10,
+          "member_number": 21
+        },
+        {
+          "library_id": 10,
+          "member_number": 22
+        },
+        {
+          "library_id": 10,
+          "member_number": 24
+        }
+      ],
+      "english_asr": "The bits can be 0 0 1 0 0 1 or 1 1.",
+      "russian": "Это сочетания: ноль-ноль, один-ноль, ноль-один и один-один."
+    },
+    {
+      "id": "2348",
+      "source_resource_id": 2348,
+      "source_start_frame": 5131,
+      "source_end_frame": 5189,
+      "audio_path": "recovered/audio/02348.wav",
+      "audio_sha256": "fd4f3417394a8285b1d2caae2eefc194e08721b469c3dd27b772de0aef90d33b",
+      "duration_seconds": 4.179591836734694,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 51
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 10,
+          "member_number": 19
+        },
+        {
+          "library_id": 10,
+          "member_number": 20
+        },
+        {
+          "library_id": 10,
+          "member_number": 21
+        },
+        {
+          "library_id": 10,
+          "member_number": 22
+        },
+        {
+          "library_id": 10,
+          "member_number": 24
+        }
+      ],
+      "english_asr": "Each additional bit doubles the number of states that can be represented.",
+      "russian": "Каждый дополнительный бит удваивает число возможных состояний."
+    },
+    {
+      "id": "2354",
+      "source_resource_id": 2354,
+      "source_start_frame": 5191,
+      "source_end_frame": 5272,
+      "audio_path": "recovered/audio/02354.wav",
+      "audio_sha256": "3f2bd696a9ab5973731f892ec7f4a27b00374d70703c4a86ae128919e3fcb135",
+      "duration_seconds": 5.668571428571428,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 51
+        },
+        {
+          "library_id": 10,
+          "member_number": 19
+        },
+        {
+          "library_id": 10,
+          "member_number": 20
+        },
+        {
+          "library_id": 10,
+          "member_number": 21
+        },
+        {
+          "library_id": 10,
+          "member_number": 22
+        },
+        {
+          "library_id": 10,
+          "member_number": 24
+        },
+        {
+          "library_id": 10,
+          "member_number": 25
+        },
+        {
+          "library_id": 10,
+          "member_number": 26
+        }
+      ],
+      "english_asr": "So a third bit lets us represent 8 states of 4th, 16th, and so on.",
+      "russian": "Поэтому третий бит позволяет представить восемь состояний, четвёртый — шестнадцать, и так далее."
+    },
+    {
+      "id": "2360",
+      "source_resource_id": 2360,
+      "source_start_frame": 5274,
+      "source_end_frame": 5340,
+      "audio_path": "recovered/audio/02360.wav",
+      "audio_sha256": "f6f690487680b9fcc068557fefe212abb0a998e280c481be35155bd9e66c35ba",
+      "duration_seconds": 4.7542857142857144,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 51
+        },
+        {
+          "library_id": 10,
+          "member_number": 19
+        },
+        {
+          "library_id": 10,
+          "member_number": 20
+        },
+        {
+          "library_id": 10,
+          "member_number": 21
+        },
+        {
+          "library_id": 10,
+          "member_number": 22
+        },
+        {
+          "library_id": 10,
+          "member_number": 25
+        },
+        {
+          "library_id": 10,
+          "member_number": 26
+        }
+      ],
+      "english_asr": "The resolution and amplitude is just as important as the sampling resolution.",
+      "russian": "Разрешение по амплитуде так же важно, как и частота дискретизации."
+    },
+    {
+      "id": "2366",
+      "source_resource_id": 2366,
+      "source_start_frame": 5345,
+      "source_end_frame": 5445,
+      "audio_path": "recovered/audio/02366.wav",
+      "audio_sha256": "6470a9df30c8372e2e8ba93ad95651562b1579010d4a78986293d050eb8e2778",
+      "duration_seconds": 6.791836734693877,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 51
+        },
+        {
+          "library_id": 8,
+          "member_number": 37
+        }
+      ],
+      "english_asr": "When a waveform is sampled, each sample is assigned the amplitude value closest to the original analog wave.",
+      "russian": "При дискретизации звуковой волны каждому отсчёту присваивается значение амплитуды, ближайшее к исходной аналоговой волне."
+    },
+    {
+      "id": "2372",
+      "source_resource_id": 2372,
+      "source_start_frame": 5447,
+      "source_end_frame": 5536,
+      "audio_path": "recovered/audio/02372.wav",
+      "audio_sha256": "2bb88d970bc40c393b5b8f8d2bb33db250c8f24ae46f928f94fbe0463f610cca",
+      "duration_seconds": 6.164897959183674,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 51
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 8,
+          "member_number": 37
+        },
+        {
+          "library_id": 8,
+          "member_number": 47
+        }
+      ],
+      "english_asr": "With a resolution of two bits, each sample can have one of only four possible amplitude positions.",
+      "russian": "При разрядности два бита каждый отсчёт может занимать лишь одно из четырёх возможных положений по амплитуде."
+    },
+    {
+      "id": "2378",
+      "source_resource_id": 2378,
+      "source_start_frame": 5539,
+      "source_end_frame": 5606,
+      "audio_path": "recovered/audio/02378.wav",
+      "audio_sha256": "b8c5a6d2fdbecbf468f24ecc303b3f9aab048e123a12cc41a20d70cee03a4a5b",
+      "duration_seconds": 4.597551020408163,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 51
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 8,
+          "member_number": 37
+        },
+        {
+          "library_id": 8,
+          "member_number": 47
+        }
+      ],
+      "english_asr": "With 3-bit resolution, each sample has 8 possible amplitude values.",
+      "russian": "При разрядности три бита каждый отсчёт имеет восемь возможных значений амплитуды."
+    },
+    {
+      "id": "2390",
+      "source_resource_id": 2390,
+      "source_start_frame": 5609,
+      "source_end_frame": 5668,
+      "audio_path": "recovered/audio/02390.wav",
+      "audio_sha256": "92be5db51bb1a68f7abda16df5c924f397ec75acb5a04ec0d9a4b643b5f28c27",
+      "duration_seconds": 4.310204081632653,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 51
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 8,
+          "member_number": 37
+        },
+        {
+          "library_id": 8,
+          "member_number": 47
+        }
+      ],
+      "english_asr": "Higher bit depth means a lower noise floor and higher fidelity.",
+      "russian": "Чем выше разрядность, тем ниже уровень шума и выше точность воспроизведения."
+    },
+    {
+      "id": "2396",
+      "source_resource_id": 2396,
+      "source_start_frame": 5670,
+      "source_end_frame": 5706,
+      "audio_path": "recovered/audio/02396.wav",
+      "audio_sha256": "a9b895d596d46e0d185689f02bfd3e03b58468674c48ed3eb0afbb7a9a2ffa71",
+      "duration_seconds": 2.6383673469387756,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 51
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 8,
+          "member_number": 37
+        },
+        {
+          "library_id": 8,
+          "member_number": 47
+        },
+        {
+          "library_id": 10,
+          "member_number": 27
+        }
+      ],
+      "english_asr": "CD quality sound is 16-bit.",
+      "russian": "Звук качества компакт-диска имеет разрядность шестнадцать бит,"
+    },
+    {
+      "id": "2402",
+      "source_resource_id": 2402,
+      "source_start_frame": 5708,
+      "source_end_frame": 5799,
+      "audio_path": "recovered/audio/02402.wav",
+      "audio_sha256": "4b674d4f1caa511ba09f54ff158bc2c82c08f45aedf15c62ee81abf0ef3b80da",
+      "duration_seconds": 6.295510204081633,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 51
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 8,
+          "member_number": 37
+        },
+        {
+          "library_id": 8,
+          "member_number": 47
+        },
+        {
+          "library_id": 10,
+          "member_number": 27
+        }
+      ],
+      "english_asr": "which means that each sample has 65,536 possible amplitude values.",
+      "russian": "то есть каждый отсчёт может принимать одно из шестидесяти пяти тысяч пятисот тридцати шести значений амплитуды."
+    },
+    {
+      "id": "2408",
+      "source_resource_id": 2408,
+      "source_start_frame": 5801,
+      "source_end_frame": 5846,
+      "audio_path": "recovered/audio/02408.wav",
+      "audio_sha256": "b2735cfb878b2ad346f86d3e6319867a4532a023a22e9c944520787b2774a974",
+      "duration_seconds": 3.213061224489796,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 51
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 8,
+          "member_number": 37
+        },
+        {
+          "library_id": 8,
+          "member_number": 47
+        },
+        {
+          "library_id": 10,
+          "member_number": 27
+        },
+        {
+          "library_id": 10,
+          "member_number": 28
+        }
+      ],
+      "english_asr": "DVD quality sound is 24-bit.",
+      "russian": "Звук качества DVD имеет разрядность двадцать четыре бита,"
+    },
+    {
+      "id": "2414",
+      "source_resource_id": 2414,
+      "source_start_frame": 5848,
+      "source_end_frame": 5973,
+      "audio_path": "recovered/audio/02414.wav",
+      "audio_sha256": "e79762bcd3e45235d812ff025470879ad1095a70830d525bc4a9831383c91b15",
+      "duration_seconds": 8.646530612244899,
+      "visual_member_refs": [
+        {
+          "library_id": 1,
+          "member_number": 3
+        },
+        {
+          "library_id": 2,
+          "member_number": 1
+        },
+        {
+          "library_id": 2,
+          "member_number": 9
+        },
+        {
+          "library_id": 2,
+          "member_number": 10
+        },
+        {
+          "library_id": 3,
+          "member_number": 2
+        },
+        {
+          "library_id": 3,
+          "member_number": 47
+        },
+        {
+          "library_id": 3,
+          "member_number": 48
+        },
+        {
+          "library_id": 3,
+          "member_number": 49
+        },
+        {
+          "library_id": 3,
+          "member_number": 55
+        },
+        {
+          "library_id": 6,
+          "member_number": 51
+        },
+        {
+          "library_id": 8,
+          "member_number": 6
+        },
+        {
+          "library_id": 8,
+          "member_number": 37
+        },
+        {
+          "library_id": 8,
+          "member_number": 47
+        },
+        {
+          "library_id": 10,
+          "member_number": 28
+        }
+      ],
+      "english_asr": "which means that each sample has 16,777,216 possible amplitude values.",
+      "russian": "то есть каждый отсчёт может принимать одно из шестнадцати миллионов семисот семидесяти семи тысяч двухсот шестнадцати значений амплитуды."
+    }
+  ],
+  "utterances": [
+    {
+      "id": "2306",
+      "segment_ids": [
+        "2306",
+        "2312"
+      ],
+      "russian": "Разрешение оцифрованного звука зависит не только от числа отсчётов в секунду, но и от точности представления амплитуды каждого отсчёта.",
+      "visual_cues": [
+        {
+          "segment_id": "2306"
+        },
+        {
+          "segment_id": "2312",
+          "anchor": "но и от точности представления амплитуды каждого отсчёта."
+        }
+      ]
+    },
+    {
+      "id": "2318",
+      "segment_ids": [
+        "2318"
+      ],
+      "russian": "Разрешение по амплитуде называют разрядностью.",
+      "visual_cues": [
+        {
+          "segment_id": "2318"
+        }
+      ]
+    },
+    {
+      "id": "2324",
+      "segment_ids": [
+        "2324"
+      ],
+      "russian": "Бит — это компьютерный термин: одна двоичная цифра, которая может принимать значение ноль или один.",
+      "visual_cues": [
+        {
+          "segment_id": "2324"
+        }
+      ]
+    },
+    {
+      "id": "2330",
+      "segment_ids": [
+        "2330"
+      ],
+      "russian": "Один бит может представлять два состояния, например «включено» и «выключено».",
+      "visual_cues": [
+        {
+          "segment_id": "2330"
+        }
+      ]
+    },
+    {
+      "id": "2336",
+      "segment_ids": [
+        "2336",
+        "2342"
+      ],
+      "russian": "Два бита вместе могут представлять четыре разных состояния. Это сочетания: ноль-ноль, один-ноль, ноль-один и один-один.",
+      "visual_cues": [
+        {
+          "segment_id": "2336"
+        },
+        {
+          "segment_id": "2342",
+          "anchor": "Это сочетания: ноль-ноль, один-ноль, ноль-один и один-один."
+        }
+      ]
+    },
+    {
+      "id": "2348",
+      "segment_ids": [
+        "2348",
+        "2354"
+      ],
+      "russian": "Каждый дополнительный бит удваивает число возможных состояний. Поэтому третий бит позволяет представить восемь состояний, четвёртый — шестнадцать, и так далее.",
+      "visual_cues": [
+        {
+          "segment_id": "2348"
+        },
+        {
+          "segment_id": "2354",
+          "anchor": "Поэтому третий бит позволяет представить восемь состояний, четвёртый — шестнадцать, и так далее."
+        }
+      ]
+    },
+    {
+      "id": "2360",
+      "segment_ids": [
+        "2360"
+      ],
+      "russian": "Разрешение по амплитуде так же важно, как и частота дискретизации.",
+      "visual_cues": [
+        {
+          "segment_id": "2360"
+        }
+      ]
+    },
+    {
+      "id": "2366",
+      "segment_ids": [
+        "2366"
+      ],
+      "russian": "При дискретизации звуковой волны каждому отсчёту присваивается значение амплитуды, ближайшее к исходной аналоговой волне.",
+      "visual_cues": [
+        {
+          "segment_id": "2366"
+        }
+      ]
+    },
+    {
+      "id": "2372",
+      "segment_ids": [
+        "2372"
+      ],
+      "russian": "При разрядности два бита каждый отсчёт может занимать лишь одно из четырёх возможных положений по амплитуде.",
+      "visual_cues": [
+        {
+          "segment_id": "2372"
+        }
+      ]
+    },
+    {
+      "id": "2378",
+      "segment_ids": [
+        "2378"
+      ],
+      "russian": "При разрядности три бита каждый отсчёт имеет восемь возможных значений амплитуды.",
+      "visual_cues": [
+        {
+          "segment_id": "2378"
+        }
+      ]
+    },
+    {
+      "id": "2390",
+      "segment_ids": [
+        "2390"
+      ],
+      "russian": "Чем выше разрядность, тем ниже уровень шума и выше точность воспроизведения.",
+      "visual_cues": [
+        {
+          "segment_id": "2390"
+        }
+      ]
+    },
+    {
+      "id": "2396",
+      "segment_ids": [
+        "2396",
+        "2402"
+      ],
+      "russian": "Звук качества компакт-диска имеет разрядность шестнадцать бит, то есть каждый отсчёт может принимать одно из шестидесяти пяти тысяч пятисот тридцати шести значений амплитуды.",
+      "visual_cues": [
+        {
+          "segment_id": "2396"
+        },
+        {
+          "segment_id": "2402",
+          "anchor": "то есть каждый отсчёт может принимать одно из шестидесяти пяти тысяч пятисот тридцати шести значений амплитуды."
+        }
+      ]
+    },
+    {
+      "id": "2408",
+      "segment_ids": [
+        "2408",
+        "2414"
+      ],
+      "russian": "Звук качества DVD имеет разрядность двадцать четыре бита, то есть каждый отсчёт может принимать одно из шестнадцати миллионов семисот семидесяти семи тысяч двухсот шестнадцати значений амплитуды.",
+      "visual_cues": [
+        {
+          "segment_id": "2408"
+        },
+        {
+          "segment_id": "2414",
+          "anchor": "то есть каждый отсчёт может принимать одно из шестнадцати миллионов семисот семидесяти семи тысяч двухсот шестнадцати значений амплитуды."
+        }
+      ]
+    }
+  ],
+  "review_notes": [
+    {
+      "status": "pending",
+      "note": "Automatic English transcription and Russian translation require listening review. ASR errors in 2312, 2354 and 2360 are interpreted from the surrounding explanation and original diagrams; no curriculum correction is introduced."
+    },
+    {
+      "status": "pending",
+      "note": "Original Windows playback comparison, narration listening, synchronization and native Windows/macOS acceptance remain outstanding. Score timing is provisional."
+    }
+  ]
+}

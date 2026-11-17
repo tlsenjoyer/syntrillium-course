@@ -1,4 +1,4 @@
-"""Convert the known Analog Audio score and its solid-fill Flash illustrations."""
+"""Convert the known Analog Audio score and its Flash illustrations."""
 import struct
 
 from composition import SOURCE_SHA256
@@ -10,7 +10,7 @@ FLASH_ASSETS = {'mic': 2917, 'speaker': 2923, 'tape-recorder': 2965}
 
 
 def solid_flash_svg(data):
-    """Decode this source's DefineShape2 paths; reject other fill/line formats."""
+    """Decode DefineShape2 paths with one solid fill or stroke per style block."""
     if len(data) < 12 or data[:4] != b'FWS\x04' or struct.unpack_from('<I', data, 4)[0] != len(data):
         raise ValueError('Unexpected Analog Audio Flash header')
     bits = Bits(data, 8)
@@ -41,17 +41,26 @@ def solid_flash_svg(data):
 
         def styles():
             shape.position = (shape.position + 7) // 8 * 8
-            if shape.read(8) != 1 or shape.read(8) != 0:
-                raise ValueError('Expected one solid Analog Audio fill')
-            color = '#%02x%02x%02x' % tuple(shape.read(8) for _ in range(3))
-            if shape.read(8) != 0:
-                raise ValueError('Unsupported Analog Audio line styles')
+            fills = shape.read(8)
+            style = 'fill="none"'
+            if fills:
+                if fills != 1 or shape.read(8) != 0:
+                    raise ValueError('Expected one solid Flash fill')
+                color = '#%02x%02x%02x' % tuple(shape.read(8) for _ in range(3))
+                style = f'fill="{color}" fill-rule="evenodd"'
+            lines = shape.read(8)
+            if fills + lines != 1:
+                raise ValueError('Expected one Flash fill or stroke')
+            if lines:
+                width = shape.read(8) + 256 * shape.read(8)
+                color = '#%02x%02x%02x' % tuple(shape.read(8) for _ in range(3))
+                style += f' stroke="{color}" stroke-width="{width}" stroke-linecap="round" stroke-linejoin="round"'
             fill_bits, line_bits = shape.read(4), shape.read(4)
-            if fill_bits != 1 or line_bits:
-                raise ValueError('Unexpected Analog Audio style indices')
-            return color, fill_bits, line_bits
+            if (fill_bits, line_bits) != (fills, lines):
+                raise ValueError('Unexpected Flash style indices')
+            return style, fill_bits, line_bits
 
-        color, fill_bits, line_bits = styles()
+        style, fill_bits, line_bits = styles()
         path = []
         while True:
             if not shape.read(1):
@@ -59,7 +68,7 @@ def solid_flash_svg(data):
                 if not flags:
                     break
                 if flags & 16:
-                    paths.append((color, ' '.join(path)))
+                    paths.append((style, ' '.join(path)))
                     path = []
                 if flags & 1:
                     count = shape.read(5)
@@ -68,7 +77,7 @@ def solid_flash_svg(data):
                     if flags & flag:
                         shape.read(count)
                 if flags & 16:
-                    color, fill_bits, line_bits = styles()
+                    style, fill_bits, line_bits = styles()
             else:
                 straight, count = shape.read(1), shape.read(4) + 2
                 if straight:
@@ -83,10 +92,10 @@ def solid_flash_svg(data):
                 else:
                     cx, cy, ax, ay = [shape.read(count, True) for _ in range(4)]
                     path.append(f'q{cx} {cy} {cx + ax} {cy + ay}')
-        paths.append((color, ' '.join(path)))
+        paths.append((style, ' '.join(path)))
     if not paths or right <= left or bottom <= top:
         raise ValueError('Analog Audio Flash contains no usable shapes')
-    svg = ''.join(f'<path fill="{color}" fill-rule="evenodd" d="{path}"/>' for color, path in paths)
+    svg = ''.join(f'<path {style} d="{path}"/>' for style, path in paths)
     return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{left} {top} {right-left} {bottom-top}">'
             f'{svg}</svg>\n').encode()
 

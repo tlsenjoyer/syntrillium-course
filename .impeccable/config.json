@@ -169,6 +169,12 @@
         ],
         "createdAt": "2026-11-17T21:26:14.523Z",
         "reason": "Agent decision: generated narration preview inherits the incumbent player Arial typography; preserve consistency with the course and the source stylesheet exception."
+      },
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "createdAt": "2026-11-17T21:59:43.865Z",
+        "reason": "Agent: lowercase detector spelling of the existing Arial course font; generated lesson previews preserve the shared offline player typography."
       }
     ]
   }

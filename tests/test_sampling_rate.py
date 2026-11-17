@@ -114,7 +114,7 @@ class SamplingRateTests(unittest.TestCase):
             page.get_by_role('button', name='Частота дискретизации', exact=True).click()
             page.wait_for_function("document.querySelector('#lesson-number').textContent === '5'")
             self.assertTrue(page.locator('#previous-lesson').is_enabled())
-            self.assertTrue(page.locator('#next-lesson').is_disabled())
+            self.assertTrue(page.locator('#next-lesson').is_enabled())
             for index in range(10):
                 page.locator('#toggle').click()
                 page.wait_for_function("document.querySelector('audio').currentTime > 0.1")

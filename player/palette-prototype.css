@@ -25,8 +25,7 @@
 :root[data-palette]:not([data-palette="original"]) .lesson-navigation[data-expanded="true"] > summary,
 :root[data-palette]:not([data-palette="original"]) .lesson-navigation > summary:hover { background: var(--soft); }
 :root[data-palette]:not([data-palette="original"]) .play-button:hover:not(:disabled),
-:root[data-palette]:not([data-palette="original"]) .captions-toggle:hover:not(:disabled),
-:root[data-palette]:not([data-palette="original"]) .topics #open-lesson:hover { background: var(--hover); }
+:root[data-palette]:not([data-palette="original"]) .captions-toggle:hover:not(:disabled) { background: var(--hover); }
 body { padding-bottom: 112px; }
 .palette-switcher { position: fixed; z-index: 100; bottom: 16px; left: 50%; transform: translateX(-50%); width: max-content; max-width: calc(100% - 24px); padding: 10px 14px; background: #202832; color: #fff; border-radius: 12px; box-shadow: 0 6px 24px #0003; font: 14px/1.4 Arial, sans-serif; }
 .palette-switcher .palette-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
