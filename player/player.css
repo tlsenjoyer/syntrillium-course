@@ -33,6 +33,8 @@ button:disabled { color: var(--disabled); background: transparent; border-color:
 .course-header p { font-weight: bold; margin: 0; text-align: left; }
 .course-title a { color: inherit; text-decoration: none; }
 .course-title a:hover { text-decoration: underline; text-underline-offset: 4px; }
+#lesson-history { display: flex; gap: 8px; margin-inline-start: auto; }
+#lesson-history button { padding-inline: 12px; }
 main { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
 h1 { font-size: 30px; line-height: 1.2; margin: 0 0 24px; text-wrap: balance; }
 h2 { font-size: 24px; margin: 0 0 16px; }

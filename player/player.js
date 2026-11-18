@@ -379,6 +379,22 @@
     }
   }
   window.addEventListener('hashchange', syncRoute);
+  const historyControls = byId('lesson-history');
+  if (historyControls && window.navigation) {
+    const back = byId('history-back');
+    const forward = byId('history-forward');
+    function updateHistoryControls() {
+      const entries = window.navigation.entries();
+      const index = window.navigation.currentEntry.index;
+      back.disabled = !entries[index - 1]?.sameDocument;
+      forward.disabled = !entries[index + 1]?.sameDocument;
+    }
+    back.addEventListener('click', () => history.back());
+    forward.addEventListener('click', () => history.forward());
+    window.navigation.addEventListener('currententrychange', updateHistoryControls);
+    updateHistoryControls();
+    historyControls.hidden = false;
+  }
   const initialLessonId = lessonId;
   byId('open-lesson').addEventListener('click', () => { location.hash = `lesson/${initialLessonId}`; });
   for (const button of document.querySelectorAll('[data-lesson]')) {

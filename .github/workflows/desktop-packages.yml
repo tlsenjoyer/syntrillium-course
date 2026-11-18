@@ -1,0 +1,42 @@
+name: Desktop packages
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ['desktop-v*']
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: windows-2025
+            args: --win --x64
+          - runner: macos-15
+            args: --mac --arm64
+          - runner: macos-15-intel
+            args: --mac --x64
+          - runner: ubuntu-24.04
+            args: --linux --x64
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run package -- ${{ matrix.args }}
+      - uses: actions/upload-artifact@v7
+        with:
+          name: desktop-${{ matrix.runner }}
+          path: |
+            dist/*.exe
+            dist/*.dmg
+            dist/*.deb
+            dist/*.pacman
+          if-no-files-found: error

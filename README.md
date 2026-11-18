@@ -2,9 +2,13 @@
 
 Work in progress for [issue #1](https://github.com/tlsenjoyer/syntrillium-course/issues/1).
 The source is `course.exe`; the requirements are in
-[the spec](docs/russian-course-spec.md). The offline player in `player/index.html`
-presents all nine lessons for review, with bundled Russian narration, lesson
-selection, and browser history.
+[the spec](docs/russian-course-spec.md).
+
+The learner distribution is the Electron desktop app. Get the package for your
+computer from [GitHub Releases](https://github.com/tlsenjoyer/syntrillium-course/releases)
+once a release is published. See [desktop installation and release testing](docs/desktop-release.md).
+For course authoring and review, `player/index.html` still opens directly from
+disk and presents all nine lessons with the bundled Russian narration.
 
 For the complete production sequence, review gates, and remaining first-lesson
 tooling gaps, see the [lesson-authoring workflow](docs/lesson-authoring.md).

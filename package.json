@@ -1,0 +1,53 @@
+{
+  "name": "syntrillium-course",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Русский курс цифрового звука",
+  "author": "Syntrillium Course contributors <tlsenjoyer@users.noreply.github.com>",
+  "homepage": "https://github.com/tlsenjoyer/syntrillium-course",
+  "main": "desktop/main.cjs",
+  "desktopName": "io.github.tlsenjoyer.syntrillium-course.desktop",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-builder --publish never"
+  },
+  "devDependencies": {
+    "electron": "45.3.4",
+    "electron-builder": "26.18.0"
+  },
+  "build": {
+    "appId": "io.github.tlsenjoyer.syntrillium-course",
+    "productName": "Курс цифрового звука",
+    "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
+    "files": [
+      "desktop/main.cjs",
+      "player/**/*",
+      "!player/palette-prototype.*",
+      "!player/**/generation.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "executableName": "syntrillium-course"
+    },
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.education",
+      "identity": "-",
+      "notarize": false,
+      "hardenedRuntime": false
+    },
+    "linux": {
+      "target": ["deb", "pacman"],
+      "executableName": "syntrillium-course",
+      "syncDesktopName": true,
+      "category": "Education"
+    },
+    "deb": {
+      "depends": ["libasound2t64", "libcups2t64", "libgbm1", "libgtk-3-0t64", "libnss3", "libudev1"],
+      "recommends": []
+    },
+    "pacman": {
+      "depends": ["alsa-lib", "gtk3", "mesa", "nss", "systemd-libs"]
+    }
+  }
+}
