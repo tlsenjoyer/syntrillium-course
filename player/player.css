@@ -27,7 +27,7 @@ body { margin: 0; }
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
 button, input { font: inherit; accent-color: var(--accent); }
 button { color: var(--accent); background: var(--stage); border: 1px solid var(--edge); border-radius: 22px; min-height: 44px; padding: 8px 22px; cursor: pointer; }
-button:hover:not(:disabled) { background: var(--soft); border-color: var(--accent); }
+button:hover:not(:disabled, .text-button) { background: var(--soft); border-color: var(--accent); }
 button:disabled { color: var(--disabled); background: transparent; border-color: var(--edge); cursor: default; }
 .course-header { background: var(--blue); padding: 18px max(24px, calc((100% - 1200px) / 2 + 24px)); border-bottom: 5px solid var(--green); }
 .course-header p { font-weight: bold; margin: 0; text-align: left; }
@@ -50,6 +50,7 @@ p { margin: 0 0 18px; }
 .lesson-stepper { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--edge); }
 .lesson-stepper .text-button { flex-shrink: 1; text-align: left; }
 .text-button { background: transparent; padding: 8px 0; border: 0; border-radius: 0; text-decoration: underline; text-underline-offset: 4px; flex-shrink: 0; }
+.text-button:hover:not(:disabled) { color: var(--hover); text-decoration-thickness: 2px; }
 #lesson { position: relative; display: grid; grid-template-columns: 0px minmax(0, 1fr); align-items: start; transition: grid-template-columns var(--navigation-duration) var(--navigation-ease); }
 #lesson .lesson-main { grid-column: 2; width: 100%; max-width: 846px; margin-inline: auto; }
 #lesson[data-navigation-open="true"] { grid-template-columns: 306px minmax(0, 1fr); }

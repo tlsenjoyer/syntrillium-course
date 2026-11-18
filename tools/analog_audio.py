@@ -117,8 +117,10 @@ def drawing(member, state, labels):
     label = {(8, 41): 'pressure', (8, 42): 'voltage', (8, 44): 'analogAudio'}.get(key)
     if label:
         # Embedded Flash labels register at their center, unlike Director rich text.
+        if label == 'analogAudio':
+            return dict(kind='text', opacity=opacity, x=275, y=y+5, lines=[labels[label]], font_size=20)
         return dict(kind='text', opacity=opacity, x=x, y=y+5, lines=[labels[label]],
-                    font_size=20 if key == (8, 44) else 14)
+                    font_size=14)
     if key == (9, 30):
         return dict(kind='symbol', opacity=opacity, x=x, y=y+8, value='→', font_size=30)
     raise ValueError(f'Analog Audio visual cast member {key} is not converted')
@@ -128,7 +130,9 @@ def compile_visuals(composition, segments, labels):
     if composition['source_sha256'] != SOURCE_SHA256:
         raise ValueError('Analog Audio requires the known source executable')
     members = {(m['library_id'], m['member_number']): m for m in composition['members']}
+    # The original left cover obscures the waveform inside the adapted stage.
     states = [s for s in composition['score']['sprites'] if s['library_id'] in (8, 9)
+              and (s['library_id'], s['member_number']) != (8, 39)
               and s['start_frame'] < 3389 and s['end_frame'] >= 2814]
     visuals = []
     for index, segment in enumerate(segments):

@@ -32,8 +32,10 @@ not been marked as approved narration.
 `tools/digital_audio.py` preserves the recovered score's event and channel order:
 analog waveform and loudspeaker, transition to a single waveform, successive
 sample markers and scanning line, then Russian digitizing and conversion labels.
-It reuses the existing waveform SVGs, speaker Flash conversion, and background
-mask. The original sample square is reproduced with its score color and geometry.
+It reuses the existing waveform SVGs and speaker Flash conversion. The player's
+stage clips the scrolling waveform at its edge. The original left-cover bitmap
+is omitted because it hid a strip of the waveform inside the stage. The original
+sample square is reproduced with its score color and geometry.
 The White Pop film loop (2927) is reconstructed as a three-frame white-circle
 pulse. That reconstruction requires comparison with original playback.
 

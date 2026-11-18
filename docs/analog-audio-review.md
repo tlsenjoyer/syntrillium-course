@@ -33,8 +33,9 @@ reach this lesson. Bundled playback requires no network access or API key.
 and tape recorder (2965) from solid-fill DefineShape2 paths. Unsupported fills,
 strokes, rotation, and malformed resources are rejected. The existing converted
 complex waveform is reused. Pressure, voltage, and analog-audio labels are
-Russian. The original left-cover bitmap is a background mask; its geometry is
-retained with the adapted player's stage color instead of the original green.
+Russian, and the closing title is horizontally centered. The player's stage
+clips the scrolling waveform at its edge. The original left-cover bitmap is
+omitted because it hid a strip of the waveform inside the stage.
 
 Visual states follow the recovered score's channel and event order. Utterance
 cue boundaries use ElevenLabs character timings. Positions within each cue

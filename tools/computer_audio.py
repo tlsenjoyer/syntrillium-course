@@ -12,17 +12,28 @@ COMPUTER_BITMAPS = {
 }
 
 
-def text(x, y, lines, size, opacity):
-    return dict(kind='text', x=x, y=y, lines=lines, font_size=size, opacity=opacity)
+def text(x, y, lines, size, opacity, anchor='middle'):
+    item = dict(kind='text', x=x, y=y, lines=lines, font_size=size, opacity=opacity)
+    if anchor != 'middle':
+        item['anchor'] = anchor
+    return item
 
 
 def computer_drawing(member, state, labels, frame):
     library, number = member['library_id'], member['member_number']
     key = library, number
     if library < 10 or number == 29:
-        if key != (8, 56):
-            return summary_drawing(member, state, labels, frame)
-        return source_image(state, 'stage-mask')
+        if key == (8, 56):
+            mask = source_image(state, 'stage-mask')
+            # Keep the waveform mask inside the speaker's horizontal bounds.
+            return dict(mask, x=mask['x'] + 14.5, width=80)
+        item = summary_drawing(member, state, labels, frame)
+        if key == (8, 37) and frame >= 6902:
+            # Leave room for the jack labels as the scenes pan.
+            item['x'] += 88 if frame < 7277 else 98
+        if key == (8, 43):
+            item['y'] -= 10
+        return item
     opacity = source_opacity(state)
     x, y, width, height = (state[k] for k in ('x', 'y', 'width', 'height'))
     bitmap = {4: 'header-bracket', 7: 'data-bracket', 31: 'record-arrow'}.get(number)
@@ -36,9 +47,11 @@ def computer_drawing(member, state, labels, frame):
     if number == 39:
         samples = member['text']['value'].splitlines()[3:]
         return text(x + 30, y + 15, labels[str(number)] + samples, 13, opacity)
-    if 8 <= number <= 16:
-        center = {8: 173, 9: 359}.get(number, 260)
-        return text(center, y + 17, labels[str(number)], 18, opacity)
+    if number in (8, 9):
+        x, anchor = (254, 'end') if number == 8 else (266, 'start')
+        return text(x, y + 17, labels[str(number)], 18, opacity, anchor)
+    if 10 <= number <= 16:
+        return text(260, y + 17, labels[str(number)], 18, opacity)
     if number == 38:
         return text(x + width/2, y + 14 - (27 if frame >= 7277 else 0),
                     labels[str(number)], 14, opacity)
@@ -46,12 +59,12 @@ def computer_drawing(member, state, labels, frame):
         return text(x + width/2 + 28, y - 10, labels[str(number)], 15, opacity)
     if number == 41:
         return text(x + width/2, y - 22, labels[str(number)], 15, opacity)
-    if number in (34, 35, 40):
-        center = x + {34: 58, 35: 74, 40: 62}[number]
-        return text(center, y + (-30 if number == 40 else 12), labels[str(number)], 12,
-                    opacity if center < 550 else 0)
-    size = {1: 23, 3: 14, 32: 13, 33: 16}.get(number, 16)
-    center = {2: 49, 3: 218, 6: 48, 32: 95, 33: 271}.get(number, x + width/2)
+    if number in (3, 34, 35, 36, 40):
+        dx, dy, size = {3: (6, 10, 14), 34: (20, 13, 12), 35: (18, 9, 12),
+                        36: (24, 9, 16), 40: (19, 16, 12)}[number]
+        return text(x + dx, y + dy, labels[str(number)], size, opacity, 'start')
+    size = {1: 23, 32: 13, 33: 16}.get(number, 16)
+    center = {2: 49, 6: 48, 32: 95, 33: 271}.get(number, x + width/2)
     return text(center, y + size, labels[str(number)], size, opacity if center < 550 else 0)
 
 

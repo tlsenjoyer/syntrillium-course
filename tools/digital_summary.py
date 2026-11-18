@@ -24,4 +24,5 @@ def drawing(member, state, labels, frame):
 
 
 def compile_visuals(composition, segments, labels):
-    return compile_score(composition, segments, labels, 5985, 6377, (8, 9, 10), drawing, 'Digital Summary')
+    return compile_score(composition, segments, labels, 5985, 6377, (8, 9, 10), drawing, 'Digital Summary',
+                         excluded_members=((8, 39),))

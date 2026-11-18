@@ -2150,12 +2150,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -2165,22 +2165,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -2197,12 +2197,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -2212,22 +2212,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -2263,12 +2263,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -2278,22 +2278,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -2310,12 +2310,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -2325,22 +2325,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -2354,12 +2354,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 289.5,
-                  "y": 119,
+                  "x": 288.5,
+                  "y": 128,
                   "lines": [
                     "Бит 2"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -2369,57 +2369,57 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 }
               ]
             },
@@ -2429,12 +2429,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -2444,22 +2444,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -2473,12 +2473,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 289.5,
-                  "y": 119,
+                  "x": 288.5,
+                  "y": 128,
                   "lines": [
                     "Бит 2"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -2488,57 +2488,57 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 }
               ]
             }
@@ -2555,12 +2555,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -2570,22 +2570,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -2599,12 +2599,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 289.5,
-                  "y": 119,
+                  "x": 288.5,
+                  "y": 128,
                   "lines": [
                     "Бит 2"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -2614,57 +2614,57 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 }
               ]
             },
@@ -2674,12 +2674,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -2689,22 +2689,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -2718,12 +2718,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 289.5,
-                  "y": 119,
+                  "x": 288.5,
+                  "y": 128,
                   "lines": [
                     "Бит 2"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -2733,57 +2733,57 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "opacity": 1,
@@ -2803,12 +2803,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -2818,22 +2818,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -2847,12 +2847,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 289.5,
-                  "y": 119,
+                  "x": 288.5,
+                  "y": 128,
                   "lines": [
                     "Бит 2"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -2862,57 +2862,57 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "opacity": 1,
@@ -2932,12 +2932,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -2947,22 +2947,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -2976,12 +2976,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 289.5,
-                  "y": 119,
+                  "x": 288.5,
+                  "y": 128,
                   "lines": [
                     "Бит 2"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -2991,57 +2991,57 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "opacity": 1,
@@ -3061,12 +3061,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -3076,22 +3076,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -3105,12 +3105,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 289.5,
-                  "y": 119,
+                  "x": 288.5,
+                  "y": 128,
                   "lines": [
                     "Бит 2"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -3120,57 +3120,57 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "opacity": 1,
@@ -3190,12 +3190,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -3205,22 +3205,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -3234,12 +3234,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 289.5,
-                  "y": 119,
+                  "x": 288.5,
+                  "y": 128,
                   "lines": [
                     "Бит 2"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -3249,57 +3249,57 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "opacity": 1,
@@ -3319,12 +3319,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -3334,22 +3334,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -3363,12 +3363,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 289.5,
-                  "y": 119,
+                  "x": 288.5,
+                  "y": 128,
                   "lines": [
                     "Бит 2"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -3378,57 +3378,57 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "opacity": 1,
@@ -3448,12 +3448,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -3463,22 +3463,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -3492,12 +3492,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 289.5,
-                  "y": 119,
+                  "x": 288.5,
+                  "y": 128,
                   "lines": [
                     "Бит 2"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -3507,57 +3507,57 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "opacity": 1,
@@ -3577,12 +3577,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -3592,22 +3592,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -3621,12 +3621,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 289.5,
-                  "y": 119,
+                  "x": 288.5,
+                  "y": 128,
                   "lines": [
                     "Бит 2"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -3636,57 +3636,57 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "opacity": 1,
@@ -3706,12 +3706,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -3721,22 +3721,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -3750,12 +3750,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 289.5,
-                  "y": 119,
+                  "x": 288.5,
+                  "y": 128,
                   "lines": [
                     "Бит 2"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -3765,57 +3765,57 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "opacity": 1,
@@ -3835,12 +3835,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -3850,22 +3850,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -3879,12 +3879,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 289.5,
-                  "y": 119,
+                  "x": 288.5,
+                  "y": 128,
                   "lines": [
                     "Бит 2"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -3894,57 +3894,57 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "opacity": 1,
@@ -3964,12 +3964,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -3979,22 +3979,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -4008,12 +4008,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 289.5,
-                  "y": 119,
+                  "x": 288.5,
+                  "y": 128,
                   "lines": [
                     "Бит 2"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -4023,57 +4023,57 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "opacity": 1,
@@ -4112,12 +4112,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -4127,22 +4127,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -4156,12 +4156,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 289.5,
-                  "y": 119,
+                  "x": 288.5,
+                  "y": 128,
                   "lines": [
                     "Бит 2"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -4171,57 +4171,57 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "opacity": 1,
@@ -4241,12 +4241,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -4256,22 +4256,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -4285,12 +4285,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 289.5,
-                  "y": 119,
+                  "x": 288.5,
+                  "y": 128,
                   "lines": [
                     "Бит 2"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -4300,57 +4300,57 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "opacity": 1,
@@ -4370,12 +4370,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -4385,22 +4385,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -4414,12 +4414,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 289.5,
-                  "y": 119,
+                  "x": 288.5,
+                  "y": 128,
                   "lines": [
                     "Бит 2"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -4429,57 +4429,57 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 }
               ]
             }
@@ -4496,12 +4496,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -4511,22 +4511,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -4540,12 +4540,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 289.5,
-                  "y": 119,
+                  "x": 288.5,
+                  "y": 128,
                   "lines": [
                     "Бит 2"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -4555,57 +4555,57 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 }
               ]
             },
@@ -4615,12 +4615,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -4630,22 +4630,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -4663,12 +4663,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 289.5,
-                  "y": 119,
+                  "x": 288.5,
+                  "y": 128,
                   "lines": [
                     "Бит 2"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -4678,147 +4678,147 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 351.5,
-                  "y": 119,
+                  "x": 348.5,
+                  "y": 128,
                   "lines": [
                     "Бит 3"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 239,
+                  "y": 238,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 261,
+                  "y": 260,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 283,
+                  "y": 282,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 305,
+                  "y": 304,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 305,
+                  "y": 304,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 283,
+                  "y": 282,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 239,
+                  "y": 238,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 261,
+                  "y": 260,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -4828,27 +4828,27 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 348.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 348.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -4858,17 +4858,17 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 348.5,
-                  "y": 283,
+                  "y": 282,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -4878,7 +4878,7 @@ window.LESSON = {
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -4888,17 +4888,17 @@ window.LESSON = {
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 348.5,
-                  "y": 305,
+                  "y": 304,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 }
               ]
             },
@@ -4908,12 +4908,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
+                  "x": 224.5,
+                  "y": 128,
                   "lines": [
                     "Бит 1"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -4923,22 +4923,22 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 143.0,
+                  "x": 143,
                   "y": 128,
                   "lines": [
                     "Состояние",
@@ -4956,12 +4956,12 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 289.5,
-                  "y": 119,
+                  "x": 288.5,
+                  "y": 128,
                   "lines": [
                     "Бит 2"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -4971,147 +4971,147 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 217,
+                  "y": 216,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 351.5,
-                  "y": 119,
+                  "x": 348.5,
+                  "y": 128,
                   "lines": [
                     "Бит 3"
                   ],
-                  "font_size": 19
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 239,
+                  "y": 238,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 261,
+                  "y": 260,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 283,
+                  "y": 282,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 305,
+                  "y": 304,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 305,
+                  "y": 304,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 283,
+                  "y": 282,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 239,
+                  "y": 238,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 261,
+                  "y": 260,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -5121,27 +5121,27 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 348.5,
-                  "y": 173,
+                  "y": 172,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 348.5,
-                  "y": 195,
+                  "y": 194,
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -5151,17 +5151,17 @@ window.LESSON = {
                   "lines": [
                     "0"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 348.5,
-                  "y": 283,
+                  "y": 282,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -5171,7 +5171,7 @@ window.LESSON = {
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
@@ -5181,17 +5181,152 @@ window.LESSON = {
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 348.5,
-                  "y": 305,
+                  "y": 304,
                   "lines": [
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 19.1304347826087
+                }
+              ]
+            },
+            {
+              "at": 0.5903614457831325,
+              "items": [
+                {
+                  "kind": "text",
+                  "opacity": 1,
+                  "x": 143,
+                  "y": 90,
+                  "lines": [
+                    "Состояние",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10",
+                    "11",
+                    "12",
+                    "13",
+                    "14",
+                    "15",
+                    "16"
+                  ],
+                  "font_size": 12.173913043478262
+                },
+                {
+                  "kind": "text",
+                  "opacity": 1,
+                  "x": 224.5,
+                  "y": 90,
+                  "lines": [
+                    "Бит 1",
+                    "0",
+                    "1",
+                    "0",
+                    "1",
+                    "0",
+                    "1",
+                    "0",
+                    "1",
+                    "0",
+                    "1",
+                    "0",
+                    "1",
+                    "0",
+                    "1",
+                    "0",
+                    "1"
+                  ],
+                  "font_size": 12.173913043478262
+                },
+                {
+                  "kind": "text",
+                  "opacity": 1,
+                  "x": 288.5,
+                  "y": 90,
+                  "lines": [
+                    "Бит 2",
+                    "0",
+                    "0",
+                    "1",
+                    "1",
+                    "0",
+                    "0",
+                    "1",
+                    "1",
+                    "0",
+                    "0",
+                    "1",
+                    "1",
+                    "0",
+                    "0",
+                    "1",
+                    "1"
+                  ],
+                  "font_size": 12.173913043478262
+                },
+                {
+                  "kind": "text",
+                  "opacity": 1,
+                  "x": 348.5,
+                  "y": 90,
+                  "lines": [
+                    "Бит 3",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "1",
+                    "1",
+                    "1",
+                    "1",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "1",
+                    "1",
+                    "1",
+                    "1"
+                  ],
+                  "font_size": 12.173913043478262
+                },
+                {
+                  "kind": "text",
+                  "opacity": 1,
+                  "x": 412.5,
+                  "y": 90,
+                  "lines": [
+                    "Бит 4",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "1",
+                    "1",
+                    "1",
+                    "1",
+                    "1",
+                    "1",
+                    "1",
+                    "1"
+                  ],
+                  "font_size": 12.173913043478262
                 }
               ]
             }
@@ -5219,38 +5354,8 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 227.5,
-                  "y": 119,
-                  "lines": [
-                    "Бит 1"
-                  ],
-                  "font_size": 19
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 224.5,
-                  "y": 150,
-                  "lines": [
-                    "0"
-                  ],
-                  "font_size": 16
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 224.5,
-                  "y": 173,
-                  "lines": [
-                    "1"
-                  ],
-                  "font_size": 16
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 143.0,
-                  "y": 128,
+                  "x": 143,
+                  "y": 90,
                   "lines": [
                     "Состояние",
                     "1",
@@ -5260,249 +5365,121 @@ window.LESSON = {
                     "5",
                     "6",
                     "7",
-                    "8"
+                    "8",
+                    "9",
+                    "10",
+                    "11",
+                    "12",
+                    "13",
+                    "14",
+                    "15",
+                    "16"
                   ],
-                  "font_size": 19.1304347826087
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 289.5,
-                  "y": 119,
-                  "lines": [
-                    "Бит 2"
-                  ],
-                  "font_size": 19
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 288.5,
-                  "y": 150,
-                  "lines": [
-                    "0"
-                  ],
-                  "font_size": 16
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 288.5,
-                  "y": 173,
-                  "lines": [
-                    "0"
-                  ],
-                  "font_size": 16
+                  "font_size": 12.173913043478262
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 224.5,
-                  "y": 195,
+                  "y": 90,
                   "lines": [
-                    "0"
+                    "Бит 1",
+                    "0",
+                    "1",
+                    "0",
+                    "1",
+                    "0",
+                    "1",
+                    "0",
+                    "1",
+                    "0",
+                    "1",
+                    "0",
+                    "1",
+                    "0",
+                    "1",
+                    "0",
+                    "1"
                   ],
-                  "font_size": 16
+                  "font_size": 12.173913043478262
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 288.5,
-                  "y": 195,
+                  "y": 90,
                   "lines": [
+                    "Бит 2",
+                    "0",
+                    "0",
+                    "1",
+                    "1",
+                    "0",
+                    "0",
+                    "1",
+                    "1",
+                    "0",
+                    "0",
+                    "1",
+                    "1",
+                    "0",
+                    "0",
+                    "1",
                     "1"
                   ],
-                  "font_size": 16
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 224.5,
-                  "y": 217,
-                  "lines": [
-                    "1"
-                  ],
-                  "font_size": 16
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 288.5,
-                  "y": 217,
-                  "lines": [
-                    "1"
-                  ],
-                  "font_size": 16
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 351.5,
-                  "y": 119,
-                  "lines": [
-                    "Бит 3"
-                  ],
-                  "font_size": 19
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 224.5,
-                  "y": 239,
-                  "lines": [
-                    "0"
-                  ],
-                  "font_size": 16
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 224.5,
-                  "y": 261,
-                  "lines": [
-                    "1"
-                  ],
-                  "font_size": 16
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 224.5,
-                  "y": 283,
-                  "lines": [
-                    "0"
-                  ],
-                  "font_size": 16
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 224.5,
-                  "y": 305,
-                  "lines": [
-                    "1"
-                  ],
-                  "font_size": 16
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 288.5,
-                  "y": 305,
-                  "lines": [
-                    "1"
-                  ],
-                  "font_size": 16
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 288.5,
-                  "y": 283,
-                  "lines": [
-                    "1"
-                  ],
-                  "font_size": 16
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 288.5,
-                  "y": 239,
-                  "lines": [
-                    "0"
-                  ],
-                  "font_size": 16
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 288.5,
-                  "y": 261,
-                  "lines": [
-                    "0"
-                  ],
-                  "font_size": 16
+                  "font_size": 12.173913043478262
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
                   "x": 348.5,
-                  "y": 150,
+                  "y": 90,
                   "lines": [
-                    "0"
-                  ],
-                  "font_size": 16
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 348.5,
-                  "y": 173,
-                  "lines": [
-                    "0"
-                  ],
-                  "font_size": 16
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 348.5,
-                  "y": 195,
-                  "lines": [
-                    "0"
-                  ],
-                  "font_size": 16
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 348.5,
-                  "y": 216,
-                  "lines": [
-                    "0"
-                  ],
-                  "font_size": 16
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 348.5,
-                  "y": 283,
-                  "lines": [
+                    "Бит 3",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "1",
+                    "1",
+                    "1",
+                    "1",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "1",
+                    "1",
+                    "1",
                     "1"
                   ],
-                  "font_size": 16
+                  "font_size": 12.173913043478262
                 },
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 348.5,
-                  "y": 260,
+                  "x": 412.5,
+                  "y": 90,
                   "lines": [
+                    "Бит 4",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "1",
+                    "1",
+                    "1",
+                    "1",
+                    "1",
+                    "1",
+                    "1",
                     "1"
                   ],
-                  "font_size": 16
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 348.5,
-                  "y": 238,
-                  "lines": [
-                    "1"
-                  ],
-                  "font_size": 16
-                },
-                {
-                  "kind": "text",
-                  "opacity": 1,
-                  "x": 348.5,
-                  "y": 305,
-                  "lines": [
-                    "1"
-                  ],
-                  "font_size": 16
+                  "font_size": 12.173913043478262
                 }
               ]
             },

@@ -57,6 +57,18 @@ class SamplingRateTests(unittest.TestCase):
         self.assertEqual(len(samples(doubling[0])), 21)
         self.assertEqual(len(samples(doubling[-1])), 41)
         self.assertEqual([len(samples(f)) for f in doubling], sorted(len(samples(f)) for f in doubling))
+        for cue, index, line_count in [('2246', 0, 0), ('2246', -1, 20), ('2252', 0, 20),
+                                       ('2258', 0, 0), ('2258', -1, 40), ('2264', 0, 0)]:
+            with self.subTest(cue=cue, index=index):
+                frame = cues[cue]['frames'][index]
+                lines = [i for i in frame['items'] if i['kind'] == 'line']
+                self.assertEqual(len(lines), line_count)
+                if line_count:
+                    centers = sorted((i['x'] + i['width'] / 2, i['y'] + i['height'] / 2)
+                                     for i in samples(frame))
+                    self.assertEqual([(i['x1'], i['y1'], i['x2'], i['y2']) for i in lines],
+                                     [a + b for a, b in zip(centers, centers[1:])])
+                    self.assertTrue(all(i['color'] == '#ff0000' for i in lines))
         labels = json.loads((ROOT / 'content/sampling-rate.json').read_text())['labels']
         rendered = [i.get('lines') for c in cues.values() for f in c['frames'] for i in f['items']]
         for lines in labels.values():

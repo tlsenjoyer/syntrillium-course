@@ -14,14 +14,14 @@ may differ. Narration uses complete reviewed utterances, as defined in
 ## Current first-lesson status
 
 «Основы звука» has a [content draft](../content/sound-fundamentals.json)
-covering 14 source segments in nine Russian narration utterances, and a
+covering 13 source segments in eight Russian narration utterances, and a
 [source inventory](../content/sources/sound-fundamentals.json). Neither the
 transcription nor the translation is approved. Russian audio and cue timings
 have been promoted into the review player; final acceptance remains outstanding.
 
 The builder can now create a separate silent first-lesson review player with
-all nine utterances and 14 source visual cues. The main player includes all nine
-topics. The first lesson bundles all nine
+eight utterances and 13 source visual cues. The main player includes all nine
+topics. The first lesson bundles eight
 utterances promoted from `review-2`. Content approval, continuous original-playback
 comparison, synchronization review, and platform acceptance remain outstanding. The steps below distinguish
 review drafts from accepted learner content.
@@ -32,8 +32,9 @@ Follow the [README recovery and audio-export instructions](../README.md#recover-
 Reuse an existing valid recovery rather than overwriting it. Retain executable
 and audio hashes, resource IDs, source-segment order, visual member references,
 and topic boundaries in the source inventory. For this lesson, the topic starts
-at frame 130 and the next topic starts at 1003. Frame addresses are not playback
-timestamps: original scripts may hold or jump frames.
+at frame 130 and the next topic starts at 1003. The Russian adaptation ends
+before the closing source segment at frame 944. Original scripts may hold or
+jump frames, so frame addresses differ from playback timestamps.
 
 Inspect original playback using the
 [Windows inspection guide](agents/windows-inspection.md). Capture successive
@@ -166,7 +167,7 @@ controls, fragment routes, and browser history follow
 narration. Browser checks cover offline
 first-lesson playback, asset paths, switching, reloads, and history.
 
-The bundled first lesson initially uses the nine utterances promoted from
+The bundled first lesson uses eight utterances promoted from
 `review-2`. For subsequent narration promotions into this integrated copy, use
 `--player player/lessons/sound-fundamentals` instead of the staged player path.
 The staged player remains the standalone source for candidate previews.

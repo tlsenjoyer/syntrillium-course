@@ -15,7 +15,7 @@
   --edge: #a6c4b9; --soft: #d6e8e0; --hover: #104d3f; --disabled: #506f63;
 }
 :root[data-palette]:not([data-palette="original"]) button { border-color: var(--edge); }
-:root[data-palette]:not([data-palette="original"]) button:hover:not(:disabled) { background: var(--soft); border-color: var(--accent); }
+:root[data-palette]:not([data-palette="original"]) button:hover:not(:disabled, .text-button) { background: var(--soft); border-color: var(--accent); }
 :root[data-palette]:not([data-palette="original"]) button:disabled { color: var(--disabled); }
 :root[data-palette]:not([data-palette="original"]) .stage { border-color: var(--edge); }
 :root[data-palette]:not([data-palette="original"]) .lesson-stepper,

@@ -1,6 +1,6 @@
 {
   "source_sha256": "c385ac83b9cad64cc988d37b8e5b3c30586fcf63c478d56d473a5dcf5c360725",
-  "content_sha256": "cf724c9f2f944420e48814121bf628c7ac5bdeafbaa0523ce72d8b7107f138b1",
+  "content_sha256": "397c51deaa6a25a8fc938c2f7597880bd5cd144f024c89efe193a7b075e0a0ba",
   "vectors": [
     {
       "path": "assets/cone-18.svg",
@@ -178,16 +178,6 @@
       ],
       "sha256": "795d05df3937b7a9320bb6e2dae5eea7bb6d13bd6cc7c1d9d9ea75489378c5c3",
       "duration": 6.56
-    },
-    {
-      "path": "audio/01970.mp3",
-      "utterance_id": "1970",
-      "source_resource_id": 1970,
-      "source_resource_ids": [
-        1970
-      ],
-      "sha256": "c1a0844fcfae2594823a962ba9919e559397244d25ebec318d006edda86941c9",
-      "duration": 4.56
     }
   ],
   "review_status": "unverified draft",
@@ -437,33 +427,6 @@
       "segment_ids": [
         "1958",
         "1964"
-      ]
-    },
-    "1970": {
-      "provider": "elevenlabs",
-      "voice_id": "3EuKHIEZbSzrHGNmdYsx",
-      "model_id": "eleven_v4_turbo",
-      "output_format": "mp3_44100_128",
-      "voice_settings": {
-        "stability": 0.5,
-        "similarity_boost": 0.75,
-        "style": 0,
-        "use_speaker_boost": true,
-        "speed": 1
-      },
-      "text_sha256": "94faf033767e7830c9d387a13070f61ad4f91fd79e594d6189598c7a7252303c",
-      "sha256": "c1a0844fcfae2594823a962ba9919e559397244d25ebec318d006edda86941c9",
-      "request_id": "huxXWvnhUwSlxNHPHn7K",
-      "candidate": "candidates/elevenlabs/sound-fundamentals/review-2",
-      "duration": 4.56,
-      "cue_times": [
-        {
-          "segment_id": "1970",
-          "at": 0.0
-        }
-      ],
-      "segment_ids": [
-        "1970"
       ]
     }
   }

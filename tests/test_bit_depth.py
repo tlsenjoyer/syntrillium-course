@@ -40,13 +40,30 @@ class BitDepthTests(unittest.TestCase):
             rendered = [i.get('lines') for c in cues.values() for f in c['frames'] for i in f['items']]
             for label in lesson['labels'].values():
                 self.assertIn(label, rendered)
-            for sid, count in [('2330', 2), ('2336', 8), ('2354', 24)]:
-                digits = [i for i in cues[sid]['frames'][-1]['items'] if i.get('lines') in (['0'], ['1'])]
-                self.assertEqual(len(digits), count)
-            table = next(i for i in cues['2354']['frames'][-1]['items'] if i.get('lines') == lesson['labels']['states8'])
-            rows = [table['y'] + n * table['font_size'] * 1.15 for n in range(1, 9)]
-            for digit in digits:
-                self.assertLessEqual(min(abs(digit['y'] - y) for y in rows), 2)
+            for count, (sid, progress) in enumerate([
+                ('2330', 1), ('2336', 1), ('2354', 0.5),
+            ], start=1):
+                items = [f for f in cues[sid]['frames'] if f['at'] <= progress][-1]['items']
+                table = next(i for i in items if i.get('lines', [''])[0] == 'Состояние')
+                self.assertEqual(len(table['lines']), 2**count + 1)
+                for bit in range(count):
+                    header = next(i for i in items if i.get('lines') == [f'Бит {bit + 1}'])
+                    self.assertEqual(header['y'], table['y'])
+                    digits = sorted((i for i in items if i.get('lines') in (['0'], ['1'])
+                                     and i['x'] == header['x']), key=lambda i: i['y'])
+                    self.assertEqual(len(digits), 2**count)
+                    for row, digit in enumerate(digits, start=1):
+                        self.assertAlmostEqual(digit['y'], table['y'] + row * table['font_size'] * 1.15)
+                        self.assertEqual(digit['font_size'], table['font_size'])
+            fourth = cues['2354']['frames'][-1]['items']
+            self.assertEqual(fourth, cues['2360']['frames'][0]['items'])
+            self.assertNotIn(['Бит 4'], [i.get('lines') for i in cues['2360']['frames'][-1]['items']])
+            for bit, column in enumerate(fourth[1:]):
+                self.assertEqual(column['lines'], [f'Бит {bit + 1}'] +
+                                 [str(state >> bit & 1) for state in range(16)])
+                self.assertEqual(column['y'], fourth[0]['y'])
+            self.assertEqual(len(fourth), 5)
+            self.assertEqual(fourth[0]['lines'], ['Состояние'] + [str(n) for n in range(1, 17)])
             samples = lambda sid: [i['y'] for i in cues[sid]['frames'][-1]['items'] if i.get('asset') == 'sample']
             self.assertEqual(len(set(samples('2372'))), 4)
             # Seven of the eight possible levels are occupied by this source waveform.
@@ -78,6 +95,13 @@ class BitDepthTests(unittest.TestCase):
         for u, original in zip(data['utterances'], lesson['utterances']):
             times = validate_candidate_record(original, manifest['candidate_utterances'][u['id']], player / u['audio'])
             self.assertEqual([c['at'] for c in u['cues']], [times[sid] for sid in u['segment_ids']])
+        utterance = next(u for u in data['utterances'] if u['id'] == '2348')
+        cue = utterance['cues'][-1]
+        reveal = next(f['at'] for f in cue['frames'] if any(i['lines'][0] == 'Бит 4' for i in f['items']))
+        alignment = manifest['candidate_utterances']['2348']['alignment']
+        word = ''.join(alignment['characters']).index('четвёртый')
+        self.assertAlmostEqual(cue['at'] + reveal * (utterance['duration'] - cue['at']),
+                               alignment['character_start_times_seconds'][word], delta=0.05)
         for asset in manifest['vectors']:
             self.assertEqual(hashlib.sha256((player / asset['path']).read_bytes()).hexdigest(), asset['sha256'])
 

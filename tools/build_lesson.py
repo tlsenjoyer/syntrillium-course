@@ -82,7 +82,7 @@ def stage_audio(content, recovery, destination):
         source = recovery / 'flash' / f'{rid:05d}-12.swf'
         assets[name + '.svg'] = solid_flash_svg(source.read_bytes())
         provenance.append(dict(path=f'assets/{name}.svg', resource_id=rid, source_sha256=digest(source)))
-    if not (sampling or bit_depth or midi):
+    if computer:
         member = members[8, 39]
         cast = recovery / 'resources' / f"{member['resource_id']:05d}.bin"
         bitmap = recovery / 'resources/02915.bin'
@@ -109,14 +109,22 @@ def stage_audio(content, recovery, destination):
             cast = recovery / 'resources' / f'{cast_id:05d}.bin'
             bitmap = recovery / 'resources' / f'{rid:05d}.bin'
             width, height, rgba = cone_bitmap(cast.read_bytes(), bitmap.read_bytes())
-            pixels = bytearray(rgba)
-            for i in range(0, len(pixels), 4):
-                if pixels[i:i+3] == b'\xff\xff\xff':
-                    pixels[i+3] = 0
-            assets[f'{name}.svg'] = bitmap_svg(width, height, pixels)
+            if name == 'record-arrow':
+                assets[f'{name}.svg'] = (
+                    b'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 82">'
+                    b'<path d="M0 0H7V66H45V58L60 69.5 45 81V73H0Z"/></svg>\n'
+                )
+                adaptation = 'Bent arrow redrawn as a continuous path.'
+            else:
+                pixels = bytearray(rgba)
+                for i in range(0, len(pixels), 4):
+                    if pixels[i:i+3] == b'\xff\xff\xff':
+                        pixels[i+3] = 0
+                assets[f'{name}.svg'] = bitmap_svg(width, height, pixels)
+                adaptation = 'White matte made transparent.'
             provenance.append(dict(path=f'assets/{name}.svg', resource_id=rid,
                                    source_sha256=digest(bitmap), cast_resource_id=cast_id,
-                                   cast_sha256=digest(cast), adaptation='White matte made transparent.'))
+                                   cast_sha256=digest(cast), adaptation=adaptation))
     if midi:
         for name, rid in {'quarter-note': 2967, 'treble-clef': 2969,
                           'cool-edit-2000': 3016, 'cool-edit-pro': 3018}.items():
@@ -189,7 +197,7 @@ def stage_audio(content, recovery, destination):
 
 def stage_sound_fundamentals(content, recovery, destination):
     """Build a separate, silent review player; never generate or approve speech."""
-    from sound_fundamentals import bitmap_svg, cone_bitmap, ear_svg
+    from sound_fundamentals import END_FRAME, bitmap_svg, cone_bitmap, ear_svg
     from sound_fundamentals import compile_visuals as compile_sound_visuals
     from composition import SOURCE_SHA256
 
@@ -199,7 +207,7 @@ def stage_sound_fundamentals(content, recovery, destination):
             or lesson['source']['executable_sha256'] != SOURCE_SHA256):
         raise ValueError('Lesson and recovery source do not match Sound Fundamentals')
     members = {(m['library_id'], m['member_number']): m for m in composition['members']}
-    sounds = [s for s in composition['score']['sounds'] if 130 <= s['start_frame'] < 1003]
+    sounds = [s for s in composition['score']['sounds'] if 130 <= s['start_frame'] < END_FRAME]
     expected = {(s['start_frame'], media['resource_id']) for s in sounds
                 for media in members[s['library_id'], s['member_number']]['media']
                 if media['present'] and media['tag'] == 'ediM'}

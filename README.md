@@ -53,8 +53,8 @@ and MIDI notation and synthesis. See the
 [lessons 8 and 9 production record](docs/final-lessons-review.md).
 
 The first course topic, Sound Fundamentals (Основы звука), now has a
-[Russian content draft](content/sound-fundamentals.json): all 14 source narration
-segments, their automatic English transcripts, and nine complete Russian
+[Russian content draft](content/sound-fundamentals.json): 13 source narration
+segments, their automatic English transcripts, and eight complete Russian
 narration utterances with visual cue anchors. Its
 [source inventory](content/sources/sound-fundamentals.json) retains audio hashes
 and visual member references. Translation and transcription remain unreviewed;

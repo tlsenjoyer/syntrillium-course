@@ -170,17 +170,6 @@
       "duration_seconds": 3.3436734693877552,
       "english_asr": "And when it swings low, it represents lower pressure.",
       "russian": "а отклонение вниз — понижение давления."
-    },
-    {
-      "id": "1970",
-      "source_resource_id": 1970,
-      "source_start_frame": 944,
-      "source_end_frame": 1002,
-      "audio_path": "recovered/audio/01970.wav",
-      "audio_sha256": "8b8da6f493ae6114c1d605b6a75d06b8c070b3de73111b1098aff6101fd16b8e",
-      "duration_seconds": 4.0751020408163265,
-      "english_asr": "This waveform is the equivalent of the pressure waves in the air below.",
-      "russian": "Эта кривая соответствует волнам давления в воздухе, показанным внизу."
     }
   ],
   "utterances": [
@@ -302,18 +291,6 @@
         {
           "segment_id": "1964",
           "anchor": "а отклонение вниз — понижение давления."
-        }
-      ]
-    },
-    {
-      "id": "1970",
-      "segment_ids": [
-        "1970"
-      ],
-      "russian": "Эта кривая соответствует волнам давления в воздухе, показанным внизу.",
-      "visual_cues": [
-        {
-          "segment_id": "1970"
         }
       ]
     }

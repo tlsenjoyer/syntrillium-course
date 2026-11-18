@@ -25,15 +25,6 @@
       "resource_id": 2965,
       "source_sha256": "1a120d0a6fa22ba7c555e7d1693363de1801b1c481d55997f3ec3f71c3595366",
       "sha256": "c5dfa52bd2a4494febebbbcf79c60ae180b1e2a09d95c05be9d613f22e4a1750"
-    },
-    {
-      "path": "assets/leftcover.svg",
-      "resource_id": 2915,
-      "source_sha256": "a4bcdc7ab5edd411c792f9e5edbb31907ee5338ac5a2e3022038093279e78cd2",
-      "cast_resource_id": 1355,
-      "cast_sha256": "b979610905023968edd67bbcf042a71adcd537216b7d3795b2b6e2ddc92933d8",
-      "adaptation": "Background mask recolored to player stage #eef2f6.",
-      "sha256": "55352f4edd7fd50cba1622170d03622b047ae68f8881b6a66701c0616707bea4"
     }
   ],
   "audio": [

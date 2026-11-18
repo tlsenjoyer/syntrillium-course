@@ -12,6 +12,9 @@ from composition import SOURCE_SHA256
 from waveforms import drawing
 
 
+END_FRAME = 944  # The adaptation cuts the final source segment starting here.
+
+
 class Bits:
     def __init__(self, data, offset=0):
         self.data, self.position = data, offset * 8
@@ -160,17 +163,18 @@ def compile_visuals(composition, segments, labels, cone_sizes):
         raise ValueError('Sound Fundamentals requires the known source executable')
     members = {m['member_number']: m for m in composition['members'] if m['library_id'] == 8}
     states = [s for s in composition['score']['sprites'] if s['library_id'] == 8
-              and s['start_frame'] < 1003 and s['end_frame'] >= 130]
+              and s['start_frame'] < END_FRAME and s['end_frame'] >= 130]
+    states.sort(key=lambda s: s['channel'])
     result = []
     for index, segment in enumerate(segments):
         start = segment['source_start_frame']
-        end = segments[index + 1]['source_start_frame'] if index + 1 < len(segments) else 1003
+        end = segments[index + 1]['source_start_frame'] if index + 1 < len(segments) else END_FRAME
         frames = []
         for frame in range(start, end):
+            active = [s for s in states if s['start_frame'] <= frame <= s['end_frame']]
+            shows_wave = any(s['member_number'] == 5 for s in active)
             items = []
-            for state in sorted(states, key=lambda s: s['channel']):
-                if not state['start_frame'] <= frame <= state['end_frame']:
-                    continue
+            for state in active:
                 number = state['member_number']
                 if 18 <= number <= 26:
                     width, height = cone_sizes[number]
@@ -185,15 +189,24 @@ def compile_visuals(composition, segments, labels, cone_sizes):
                                       width=state['width'], height=state['height'], opacity=1))
                 elif state['width'] > 0 and state['height'] > 0:
                     item = drawing(members[number], state, labels)
-                    if number == 1:
+                    if number == 1 and not shows_wave:
                         # shortcut: reconstructed runtime motion; calibrate against continuous original playback before approval.
                         phase = (frame - 315) * math.tau / 32 - (state['x'] - 80) / 45
                         item['x'] += 12 * math.sin(phase)
-                        if frame >= 727:
-                            item['width'] = item['height'] = 10
-                            item['x'] = state['x'] + 6 * math.sin(phase)
-                            item['y'] = 315 + (state['y'] - 200) / 3
                     items.append(item)
+            if shows_wave:
+                wave = next(item for item in items if item.get('asset') == 'sine')
+                balls = sorted((item for item in items if item.get('asset') == 'ball'),
+                               key=lambda item: item['x'])
+                # The sine asset starts at a crest and spans two cycles.
+                crest = wave['x'] + wave['width'] * 7 / 400
+                wavelength = wave['width'] * 196.5 / 400
+                for index, ball in enumerate(balls):
+                    phase = 2 * math.tau * (index + 0.5) / len(balls)
+                    # Compress horizontal spacing at crests while keeping the same molecules.
+                    x = crest + wavelength * (phase - 0.7 * math.sin(phase)) / math.tau
+                    y = wave['y'] + wave['height'] * 0.7 + (ball['y'] - 180) * 0.45
+                    ball.update(x=round(x - 5, 2), y=round(y - 5, 2), width=10, height=10)
             frames.append(dict(at=(frame - start) / (end - start), items=items))
         result.append(frames)
     return result

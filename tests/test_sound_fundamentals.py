@@ -10,14 +10,14 @@ from narration import validate_utterances
 
 
 class SoundFundamentalsTests(unittest.TestCase):
-    def test_translation_covers_source_in_order_with_complete_utterances(self):
+    def test_translation_covers_retained_source_segments_in_order(self):
         lesson = json.loads((ROOT / 'content/sound-fundamentals.json').read_text())
         source = json.loads((ROOT / 'content/sources/sound-fundamentals.json').read_text())
         self.assertEqual(lesson['source']['executable_sha256'], source['source']['executable_sha256'])
         fields = ('id', 'source_resource_id', 'source_start_frame', 'source_end_frame', 'audio_sha256')
         self.assertEqual(
             [tuple(s[k] for k in fields) for s in lesson['segments']],
-            [tuple(s[k] for k in fields) for s in source['segments']])
+            [tuple(s[k] for k in fields) for s in source['segments'] if s['id'] != '1970'])
         for segment in lesson['segments']:
             self.assertTrue(segment['english_asr'].strip())
             self.assertTrue(segment['russian'].strip())

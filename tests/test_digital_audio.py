@@ -51,6 +51,7 @@ class DigitalAudioTests(unittest.TestCase):
         self.assertTrue(all(u['audio'] is None and u['duration'] > 0 for u in data['utterances']))
         cues = {c['segment_id']: c for u in data['utterances'] for c in u['cues']}
         self.assertEqual(list(cues), ['2198', '2204', '2210', '2216', '2222'])
+        self.assertFalse((self.player / 'assets/leftcover.svg').exists())
         samples = lambda f: [i for i in f['items'] if i.get('asset') == 'sample']
         sampling = cues['2210']['frames']
         self.assertEqual(len(samples(sampling[0])), 0)
@@ -112,6 +113,9 @@ class DigitalAudioTests(unittest.TestCase):
             page.goto((ROOT / 'player/index.html').as_uri())
             page.get_by_role('button', name='Цифровой звук', exact=True).click()
             page.wait_for_function("document.querySelector('#lesson-number').textContent === '4'")
+            stage = page.locator('#visualization')
+            self.assertEqual(stage.locator('image[href$="/complex-2.svg"]').count(), 2)
+            self.assertEqual(stage.locator('image[href$="/leftcover.svg"]').count(), 0)
             self.assertTrue(page.locator('#previous-lesson').is_enabled())
             self.assertTrue(page.locator('#next-lesson').is_enabled())
             for index in range(3):

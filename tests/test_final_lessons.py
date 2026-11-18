@@ -34,6 +34,68 @@ class FinalLessonsTests(unittest.TestCase):
                         self.assertTrue((bundle / 'assets' / f'{asset}.svg').is_file(), asset)
 
     @unittest.skipUnless(importlib.util.find_spec('playwright'), 'Player checks require Playwright')
+    def test_computer_audio_diagram_alignment(self):
+        from playwright.sync_api import expect, sync_playwright
+
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH'))
+            page = browser.new_page(offline=True)
+            page.goto((ROOT / 'player/index.html').as_uri() + '#lesson/computer-audio')
+            expect(page.locator('#lesson-title')).to_have_text('Звук на компьютере')
+            stage = page.locator('#visualization')
+            position = page.locator('#position')
+
+            def seek(percent):
+                position.evaluate('''(slider, value) => {
+                    slider.value = value;
+                    slider.dispatchEvent(new Event('input', {bubbles: true}));
+                }''', percent * 10)
+
+            def box(selector, label=None):
+                element = stage.locator(selector, has_text=label).first
+                return element.evaluate('''node => {
+                    const {x, y, width, height} = node.getBBox();
+                    return {x, y, width, height};
+                }''')
+
+            seek(39)
+            line = box('text', 'Линейный вход')
+            mic = box('text', 'Микрофонный вход')
+            wave = box('image[href$="/complex-1.svg"]')
+            self.assertEqual(line['x'], mic['x'])
+            self.assertLess(mic['x'] + mic['width'], wave['x'])
+            heading = box('text', 'Аналоговый сигнал на входе')
+            arrow = box('text', '←')
+            self.assertAlmostEqual(heading['y'] + heading['height'] / 2,
+                                   arrow['y'] + arrow['height'] / 2, delta=6)
+
+            seek(62)
+            line = box('text', 'Линейный выход')
+            wave = box('image[href$="/complex-1.svg"]')
+            speaker = box('image[href$="/speaker.svg"]')
+            mask = box('image[href$="/stage-mask.svg"]')
+            self.assertLess(line['x'] + line['width'], wave['x'])
+            self.assertAlmostEqual(speaker['y'] + speaker['height'] / 2,
+                                   wave['y'] + wave['height'] / 2, delta=3)
+            self.assertAlmostEqual(mask['x'], speaker['x'], delta=1)
+            self.assertEqual(mask['width'], speaker['width'])
+
+            seek(74)
+            rows = stage.locator('text', has_text='Частота дискретизации: 44 100 Гц').locator('tspan')
+            row_starts = rows.evaluate_all('nodes => nodes.map(node => node.getStartPositionOfChar(0).x)')
+            self.assertEqual(len(row_starts), 3)
+            self.assertAlmostEqual(min(row_starts), max(row_starts), delta=1)
+            bracket = box('image[href$="/header-bracket.svg"]')
+            self.assertAlmostEqual(row_starts[0], bracket['x'] + bracket['width'], delta=10)
+
+            seek(100)
+            rate = box('text', '44 100 отсчётов/с')
+            bits = box('text', '× 16 бит/отсчёт')
+            self.assertAlmostEqual(bits['x'] - (rate['x'] + rate['width']), 12, delta=2)
+            self.assertEqual(rate['y'], bits['y'])
+            browser.close()
+
+    @unittest.skipUnless(importlib.util.find_spec('playwright'), 'Player checks require Playwright')
     def test_menu_complete_offline_playback_and_final_lesson_boundary(self):
         from playwright.sync_api import expect, sync_playwright
 

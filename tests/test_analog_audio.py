@@ -46,7 +46,7 @@ class AnalogAudioTests(unittest.TestCase):
         self.assertEqual(speaker['segment_ids'], ['2180', '2186'])
         self.assertTrue(all(u['russian'].endswith('.') for u in utterances))
 
-    def test_silent_build_preserves_visual_order_and_all_original_assets(self):
+    def test_silent_build_preserves_visual_order_and_illustrations(self):
         lesson = player_lesson(self.player)
         self.assertEqual(lesson['id'], 'analog-audio')
         self.assertEqual([c['segment_id'] for u in lesson['utterances'] for c in u['cues']],
@@ -54,7 +54,7 @@ class AnalogAudioTests(unittest.TestCase):
         self.assertTrue(all(u['audio'] is None and u['duration'] > 0 for u in lesson['utterances']))
         used = {i['asset'] for u in lesson['utterances'] for c in u['cues'] for f in c['frames']
                 for i in f['items'] if i['kind'] == 'image'}
-        self.assertEqual(used, {'complex-2', 'leftcover', 'mic', 'speaker', 'tape-recorder'})
+        self.assertEqual(used, {'complex-2', 'mic', 'speaker', 'tape-recorder'})
         for asset in used:
             ET.parse(self.player / 'assets' / f'{asset}.svg')
         cues = {c['segment_id']: c for u in lesson['utterances'] for c in u['cues']}
@@ -64,7 +64,8 @@ class AnalogAudioTests(unittest.TestCase):
         self.assertIn('tape-recorder', assets('2168'))
         self.assertIn('speaker', assets('2180'))
         final = cues['2192']['frames'][-1]['items']
-        self.assertTrue(any(i.get('lines') == ['Аналоговый звук'] for i in final))
+        title = next(i for i in final if i.get('lines') == ['Аналоговый звук'])
+        self.assertEqual(title['x'], 275)
         self.assertEqual((self.player / 'index.html').read_text().count('id="open-lesson"'), 1)
         with self.assertRaises(FileExistsError):
             stage_audio(ROOT / 'content/analog-audio.json', self.recovery, self.player)
@@ -107,6 +108,35 @@ class AnalogAudioTests(unittest.TestCase):
             self.assertEqual(times[0], 0)
             self.assertTrue(all(a < b for a, b in zip(times, times[1:])))
             self.assertLess(times[-1], u['duration'])
+
+    @unittest.skipUnless(importlib.util.find_spec('playwright'), 'Player checks require Playwright')
+    def test_voltage_waveform_is_uncovered_and_closing_title_is_centered(self):
+        from playwright.sync_api import sync_playwright
+        with sync_playwright() as p:
+            browser = p.chromium.launch(
+                executable_path=os.environ.get('PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH'))
+            page = browser.new_page(offline=True)
+            page.goto((ROOT / 'player/index.html').as_uri() + '#lesson/analog-audio')
+            page.wait_for_function("document.querySelector('#lesson-number').textContent === '3'")
+            seek = """(el, value) => {
+                el.value = value;
+                el.dispatchEvent(new Event('input', {bubbles: true}));
+            }"""
+            position = page.locator('#position')
+            stage = page.locator('#visualization')
+            position.evaluate(seek, '465')
+            self.assertEqual(stage.get_by_text('Напряжение', exact=True).count(), 1)
+            self.assertEqual(stage.locator('image[href$="/complex-2.svg"]').count(), 1)
+            self.assertEqual(stage.locator('image[href$="/leftcover.svg"]').count(), 0)
+            position.evaluate(seek, '1000')
+            title = stage.get_by_text('Аналоговый звук', exact=True)
+            offset = title.evaluate("""el => {
+                const text = el.getBoundingClientRect();
+                const stage = el.ownerSVGElement.getBoundingClientRect();
+                return (text.left + text.right - stage.left - stage.right) / 2;
+            }""")
+            self.assertAlmostEqual(offset, 0, delta=1)
+            browser.close()
 
     @unittest.skipUnless(importlib.util.find_spec('playwright'), 'Player checks require Playwright')
     def test_offline_lesson_navigation_audio_seeking_and_history(self):

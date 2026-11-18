@@ -1,4 +1,4 @@
-"""Convert Sampling Rate score events using the existing waveform and sample square."""
+"""Convert Sampling Rate score events, including the reconstructed wave."""
 from composition import SOURCE_SHA256
 from digital_audio import drawing as digital_drawing
 
@@ -22,7 +22,7 @@ def compile_visuals(composition, segments, labels):
     if composition['source_sha256'] != SOURCE_SHA256:
         raise ValueError('Sampling Rate requires the known source executable')
     members = {(m['library_id'], m['member_number']): m for m in composition['members']}
-    states = [s for s in composition['score']['sprites'] if s['library_id'] in (8, 9)
+    states = [s for s in composition['score']['sprites'] if s['library_id'] in (8, 9, 11)
               and s['start_frame'] < 4684 and s['end_frame'] >= 3697]
     visuals = []
     for index, segment in enumerate(segments):
@@ -35,7 +35,17 @@ def compile_visuals(composition, segments, labels):
         for frame in sorted(changes):
             active = sorted((s for s in states if s['start_frame'] <= frame <= s['end_frame']
                              and s['width'] > 0 and s['height'] > 0), key=lambda s: s['channel'])
-            frames.append(dict(at=(frame-start)/(end-start), items=[
-                drawing(members[s['library_id'], s['member_number']], s, labels, frame) for s in active]))
+            items = [drawing(members[s['library_id'], s['member_number']], s, labels, frame)
+                     for s in active if s['library_id'] != 11]
+            if any(s['library_id'] == 11 for s in active):
+                # Use the source red-line layer's timing and join the visible sample centers.
+                samples = [i for i in items if i.get('asset') == 'sample']
+                centers = sorted((i['x'] + i['width'] / 2, i['y'] + i['height'] / 2) for i in samples)
+                first_sample = items.index(samples[0])
+                items[first_sample:first_sample] = [
+                    dict(kind='line', opacity=1, x1=x1, y1=y1, x2=x2, y2=y2,
+                         color='#ff0000', stroke_width=1)
+                    for (x1, y1), (x2, y2) in zip(centers, centers[1:])]
+            frames.append(dict(at=(frame-start)/(end-start), items=items))
         visuals.append(frames)
     return visuals

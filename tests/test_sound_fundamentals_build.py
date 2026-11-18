@@ -33,13 +33,14 @@ class SoundFundamentalsBuildTests(unittest.TestCase):
         cls.player = Path(cls.temp.name) / 'player'
         stage_sound_fundamentals(ROOT / 'content/sound-fundamentals.json', cls.recovery, cls.player)
 
-    def test_build_preserves_all_source_cues_without_generating_audio(self):
+    def test_build_preserves_retained_source_cues_without_generating_audio(self):
         data = player_lesson(self.player)
         content = json.loads((ROOT / 'content/sound-fundamentals.json').read_text())
         self.assertEqual(data['id'], 'sound-fundamentals')
-        self.assertEqual(len(data['utterances']), 9)
+        self.assertEqual(len(data['utterances']), 8)
         self.assertEqual([c['segment_id'] for u in data['utterances'] for c in u['cues']],
                          [s['id'] for s in content['segments']])
+        self.assertEqual(len(data['utterances'][-1]['cues'][-1]['frames']), 48)
         self.assertFalse(list((self.player / 'audio').iterdir()))
         self.assertTrue(all(u['audio'] is None and u['duration'] > 0 for u in data['utterances']))
         used = {i['asset'] for u in data['utterances'] for c in u['cues'] for f in c['frames']
@@ -64,6 +65,21 @@ class SoundFundamentalsBuildTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'sound references in order'):
             stage_sound_fundamentals(source, self.recovery, destination)
         self.assertFalse(destination.exists())
+
+    def test_waveform_shows_more_molecules_near_crests_than_troughs(self):
+        data = player_lesson(self.player)
+        frames = [f for u in data['utterances'] for c in u['cues'] for f in c['frames']
+                  if any(i.get('asset') == 'sine' for i in f['items'])]
+        self.assertTrue(frames)
+        for frame in frames:
+            balls = [i for i in frame['items'] if i.get('asset') == 'ball']
+            self.assertEqual(len(balls), 28)
+            self.assertTrue(all(102 <= ball['x'] + 5 <= 426 and 202 < ball['y'] < 265
+                                for ball in balls))
+            centers = [ball['x'] + ball['width'] / 2 for ball in balls]
+            crest_count = sum(abs(x - 265) < 20 for x in centers)
+            for trough in (184, 347):
+                self.assertGreaterEqual(crest_count, 2 * sum(abs(x - trough) < 20 for x in centers))
 
     def test_asset_decoding_preserves_alpha_and_rejects_truncation(self):
         cast = (self.recovery / 'resources/00610.bin').read_bytes()

@@ -22,6 +22,8 @@ class DigitalSummaryTests(unittest.TestCase):
         self.assertEqual([u['id'] for u in data['utterances']], ['2444', '2450', '2762', '1648'])
         cues = {c['segment_id']: c for u in data['utterances'] for c in u['cues']}
         self.assertEqual(list(cues), ['2444', '2450', '2762', '2456', '1648', '2468'])
+        self.assertFalse(any(i.get('asset') == 'leftcover'
+                             for cue in cues.values() for f in cue['frames'] for i in f['items']))
         for recorded, original in zip(data['utterances'], lesson['utterances'], strict=True):
             times = validate_candidate_record(original, manifest['candidate_utterances'][recorded['id']],
                                               BUNDLE / recorded['audio'])
@@ -63,6 +65,14 @@ class DigitalSummaryTests(unittest.TestCase):
             expect(page.locator('#lesson-number')).to_have_text('7')
             page.reload()
             expect(page.locator('#lesson-number')).to_have_text('7')
+            page.locator('#position').evaluate("""el => {
+                el.value = '340';
+                el.dispatchEvent(new Event('input', {bubbles: true}));
+            }""")
+            stage = page.locator('#visualization')
+            expect(stage.locator('image[href$="/mic.svg"]')).to_have_count(1)
+            expect(stage.locator('image[href$="/complex-1.svg"]')).to_have_count(2)
+            expect(stage.locator('image[href$="/leftcover.svg"]')).to_have_count(0)
             expect(page.locator('#error')).to_be_hidden()
             self.assertEqual(errors, [])
             browser.close()

@@ -34,8 +34,9 @@ approved.
 
 `tools/bit_depth.py` preserves score event and channel order using the existing
 waveform, primitive lines and sample square. Localized labels cover bit depth,
-single-bit values, one/two/three-bit tables, and the CD/DVD amplitude counts.
-State numbers align with the original binary digit rows. The source waveform
+single-bit values, binary tables, and the CD/DVD amplitude counts.
+Table headers and rows share baselines. The sixteen-state table is reconstructed
+and appears at «четвёртый» in the bundled narration. The source waveform
 occupies four levels in the two-bit example and seven of eight possible levels
 in the three-bit example; the source's eight reference lines are retained.
 

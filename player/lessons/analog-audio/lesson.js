@@ -51,15 +51,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 4.0,
-                  "y": 75.5,
-                  "width": 36,
-                  "height": 243
                 }
               ]
             },
@@ -93,15 +84,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -135,15 +117,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -177,15 +150,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -219,15 +183,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -261,15 +216,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -303,15 +249,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -345,15 +282,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -387,15 +315,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -429,15 +348,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -471,15 +381,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -513,15 +414,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -555,15 +447,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -597,15 +480,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -639,15 +513,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -699,15 +564,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -759,15 +615,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -846,15 +693,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -933,15 +771,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -1020,15 +849,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -1107,15 +927,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -1194,15 +1005,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -1281,15 +1083,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -1368,15 +1161,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -1455,15 +1239,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -1542,15 +1317,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -1629,15 +1395,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -1716,15 +1473,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -1803,15 +1551,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -1890,15 +1629,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -1977,15 +1707,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -2064,15 +1785,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -2151,15 +1863,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -2238,15 +1941,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -2325,15 +2019,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             }
@@ -2430,15 +2115,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             }
@@ -2535,15 +2211,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             }
@@ -2640,15 +2307,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -2727,15 +2385,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -2814,15 +2463,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -2901,15 +2541,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -2988,15 +2619,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -3075,15 +2697,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -3162,15 +2775,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -3249,15 +2853,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -3336,15 +2931,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -3423,15 +3009,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -3510,15 +3087,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -3597,15 +3165,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -3684,15 +3243,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -3771,15 +3321,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -3858,15 +3399,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -3945,15 +3477,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -4032,15 +3555,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -4119,15 +3633,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -4206,15 +3711,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -4293,15 +3789,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -4380,15 +3867,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -4467,15 +3945,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -4554,15 +4023,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -4641,15 +4101,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -4728,15 +4179,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -4815,15 +4257,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -4902,15 +4335,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -4989,15 +4413,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -5076,15 +4491,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -5163,15 +4569,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -5214,15 +4611,6 @@ window.LESSON = {
                   "y2": 263,
                   "color": "#111111",
                   "stroke_width": 2
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -5274,15 +4662,6 @@ window.LESSON = {
                   "y": 216.5,
                   "width": 175,
                   "height": 73
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -5334,15 +4713,6 @@ window.LESSON = {
                   "y": 216.5,
                   "width": 175,
                   "height": 73
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             }
@@ -5412,15 +4782,6 @@ window.LESSON = {
                   "y": 216.5,
                   "width": 175,
                   "height": 73
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -5472,15 +4833,6 @@ window.LESSON = {
                   "y": 216.5,
                   "width": 175,
                   "height": 73
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             }
@@ -5551,15 +4903,6 @@ window.LESSON = {
                   "y": 176.5,
                   "width": 80,
                   "height": 105
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -5611,15 +4954,6 @@ window.LESSON = {
                   "y": 176.5,
                   "width": 80,
                   "height": 105
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             }
@@ -5678,15 +5012,6 @@ window.LESSON = {
                   "y": 176.5,
                   "width": 80,
                   "height": 105
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -5738,15 +5063,6 @@ window.LESSON = {
                   "y": 176.5,
                   "width": 80,
                   "height": 105
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -5798,15 +5114,6 @@ window.LESSON = {
                   "y": 176.5,
                   "width": 80,
                   "height": 105
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -5858,15 +5165,6 @@ window.LESSON = {
                   "y": 176.5,
                   "width": 80,
                   "height": 105
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -5918,15 +5216,6 @@ window.LESSON = {
                   "y": 176.5,
                   "width": 80,
                   "height": 105
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -5978,15 +5267,6 @@ window.LESSON = {
                   "y": 176.5,
                   "width": 80,
                   "height": 105
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -6038,15 +5318,6 @@ window.LESSON = {
                   "y": 176.5,
                   "width": 80,
                   "height": 105
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -6098,15 +5369,6 @@ window.LESSON = {
                   "y": 176.5,
                   "width": 80,
                   "height": 105
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -6158,15 +5420,6 @@ window.LESSON = {
                   "y": 176.5,
                   "width": 80,
                   "height": 105
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -6218,15 +5471,6 @@ window.LESSON = {
                   "y": 176.5,
                   "width": 80,
                   "height": 105
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -6278,15 +5522,6 @@ window.LESSON = {
                   "y": 176.5,
                   "width": 80,
                   "height": 105
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -6338,15 +5573,6 @@ window.LESSON = {
                   "y": 176.5,
                   "width": 80,
                   "height": 105
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -6398,15 +5624,6 @@ window.LESSON = {
                   "y": 176.5,
                   "width": 80,
                   "height": 105
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -6458,15 +5675,6 @@ window.LESSON = {
                   "y": 176.5,
                   "width": 80,
                   "height": 105
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -6545,15 +5753,6 @@ window.LESSON = {
                   "y": 176.5,
                   "width": 80,
                   "height": 105
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -6632,15 +5831,6 @@ window.LESSON = {
                   "y": 176.5,
                   "width": 80,
                   "height": 105
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             }
@@ -6737,15 +5927,6 @@ window.LESSON = {
                   "y": 176.5,
                   "width": 80,
                   "height": 105
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -6755,7 +5936,7 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 164,
+                  "x": 275,
                   "y": 90,
                   "lines": [
                     "Аналоговый звук"
@@ -6834,15 +6015,6 @@ window.LESSON = {
                   "y": 176.5,
                   "width": 80,
                   "height": 105
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             },
@@ -6852,7 +6024,7 @@ window.LESSON = {
                 {
                   "kind": "text",
                   "opacity": 1,
-                  "x": 164,
+                  "x": 275,
                   "y": 90,
                   "lines": [
                     "Аналоговый звук"
@@ -6931,15 +6103,6 @@ window.LESSON = {
                   "y": 176.5,
                   "width": 80,
                   "height": 105
-                },
-                {
-                  "kind": "image",
-                  "opacity": 1,
-                  "asset": "leftcover",
-                  "x": 7.5,
-                  "y": 93.0,
-                  "width": 29,
-                  "height": 208
                 }
               ]
             }

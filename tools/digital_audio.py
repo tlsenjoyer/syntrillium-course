@@ -29,14 +29,18 @@ def drawing(member, state, labels, frame):
 
 
 def compile_visuals(composition, segments, labels):
-    return compile_score(composition, segments, labels, 3389, 3697, (8, 9), drawing, 'Digital Audio')
+    # The player's stage edge clips the scrolling waveform.
+    return compile_score(composition, segments, labels, 3389, 3697, (8, 9), drawing, 'Digital Audio',
+                         excluded_members=((8, 39),))
 
 
-def compile_score(composition, segments, labels, entry, boundary, libraries, draw, topic):
+def compile_score(composition, segments, labels, entry, boundary, libraries, draw, topic, *,
+                  excluded_members=()):
     if composition['source_sha256'] != SOURCE_SHA256:
         raise ValueError(f'{topic} requires the known source executable')
     members = {(m['library_id'], m['member_number']): m for m in composition['members']}
     states = [s for s in composition['score']['sprites'] if s['library_id'] in libraries
+              and (s['library_id'], s['member_number']) not in excluded_members
               and s['start_frame'] < boundary and s['end_frame'] >= entry]
     visuals = []
     for index, segment in enumerate(segments):
