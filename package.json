@@ -19,6 +19,9 @@
     "appId": "io.github.tlsenjoyer.syntrillium-course",
     "productName": "Курс цифрового звука",
     "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
+    "directories": {
+      "output": "dist/build"
+    },
     "files": [
       "desktop/main.cjs",
       "player/**/*",

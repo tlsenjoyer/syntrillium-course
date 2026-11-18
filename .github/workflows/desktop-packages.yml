@@ -37,8 +37,8 @@ jobs:
         with:
           name: desktop-${{ matrix.runner }}
           path: |
-            dist/*.exe
-            dist/*.dmg
-            dist/*.deb
-            dist/*.pacman
+            dist/build/*.exe
+            dist/build/*.dmg
+            dist/build/*.deb
+            dist/build/*.pacman
           if-no-files-found: error

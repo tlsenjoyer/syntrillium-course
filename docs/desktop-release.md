@@ -40,10 +40,10 @@ installer, run `npm run package --` with the matching arguments on its host OS.
 | Intel macOS | `--mac --x64` |
 | x64 Linux | `--linux --x64` |
 
-The packages appear in `dist/`. The **Desktop packages** GitHub Actions workflow
-builds all packages on demand. For a release, set the version in `package.json`
-and `package-lock.json` with `npm version <version> --no-git-tag-version` if
-needed, then commit the version change. Build the Windows and Arch installers
+The packages appear in `dist/build/`. The **Desktop packages** GitHub Actions
+workflow builds all packages on demand. For a release, set the version in
+`package.json` and `package-lock.json` with `npm version <version> --no-git-tag-version`
+if needed, then commit the version change. Build the Windows and Arch installers
 locally from the release commit. Pushing its `desktop-v<version>` tag builds the
 two macOS disk images and the Debian package on GitHub. Download those artifacts
 and upload all five installers to a draft GitHub release for the tag. Publish
