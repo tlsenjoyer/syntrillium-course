@@ -57,9 +57,9 @@ first launch from the app menu. Use the same files intended for release.
    narration, caption visibility, diagram changes timed to the narration, and
    the final replay control. Test pause, seeking, and keyboard operation.
 2. While lesson 2 plays, choose lesson 7 from the lesson list. Confirm lesson 2
-   stops. **Назад** should return to lesson 2, **Вперёд** should revisit lesson 7,
-   and **Предыдущий урок** should open lesson 6. Check the disabled course-order
-   controls at lessons 1 and 9.
+   stops and **Предыдущий урок** opens lesson 6. Check that **К темам курса**
+   opens the course menu and that the course-order controls are disabled at
+   their respective boundaries, lessons 1 and 9.
 3. Record the exact OS version, architecture, installer filename, and each
    outcome in the release notes.
 

@@ -60,29 +60,23 @@ class PlayerTests(unittest.TestCase):
         page.get_by_role('button', name='Воспроизвести', exact=True).click()
         page.wait_for_function("!document.querySelector('audio').paused")
 
-    def test_history_controls_retrace_a_jump_and_keep_course_order(self):
+    def test_lesson_list_jumps_and_stepper_follows_course_order(self):
         from playwright.sync_api import expect, sync_playwright
         with sync_playwright() as p:
             browser = p.chromium.launch(executable_path=os.environ.get('PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH'))
             page = browser.new_page(offline=True)
             self._open_lesson(page)
 
-            back = page.get_by_role('button', name='Назад', exact=True)
-            forward = page.get_by_role('button', name='Вперёд', exact=True)
+            history_buttons = page.get_by_role('banner').get_by_role(
+                'button', name=re.compile('^(Назад|Вперёд)$'), include_hidden=True)
+            expect(history_buttons).to_have_count(0)
             lesson_number = page.locator('#lesson-number')
-            expect(back).to_be_enabled()
-            expect(forward).to_be_disabled()
             page.get_by_role('link', name='Итоги: цифровой звук').click()
             expect(lesson_number).to_have_text('7')
             self.assertTrue(page.locator('audio').evaluate('audio => audio.paused'))
 
-            back.click()
-            expect(lesson_number).to_have_text('2')
-            forward.click()
-            expect(lesson_number).to_have_text('7')
             page.locator('#previous-lesson').click()
             expect(lesson_number).to_have_text('6')
-            expect(forward).to_be_disabled()
 
             page.get_by_role('link', name='Основы звука').click()
             expect(page.locator('#previous-lesson')).to_be_disabled()
