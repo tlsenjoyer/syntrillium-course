@@ -35,17 +35,19 @@ installer, run `npm run package --` with the matching arguments on its host OS.
 | Build host | Arguments |
 | --- | --- |
 | Windows | `--win --x64` |
+| Arch Linux | `--linux pacman --x64` |
 | Apple Silicon macOS | `--mac --arm64` |
 | Intel macOS | `--mac --x64` |
 | x64 Linux | `--linux --x64` |
 
 The packages appear in `dist/`. The **Desktop packages** GitHub Actions workflow
-builds the same files on demand and for `desktop-v*` tags. For a release,
-update the version in `package.json` and `package-lock.json` with
-`npm version <version> --no-git-tag-version`, commit it, and tag that commit
-`desktop-v<version>`. Download the build artifacts, extract the installers, and
-upload them as assets on a draft GitHub release for that tag. Publish the draft
-after the transferred packages pass the checks below.
+builds all packages on demand. For a release, set the version in `package.json`
+and `package-lock.json` with `npm version <version> --no-git-tag-version` if
+needed, then commit the version change. Build the Windows and Arch installers
+locally from the release commit. Pushing its `desktop-v<version>` tag builds the
+two macOS disk images and the Debian package on GitHub. Download those artifacts
+and upload all five installers to a draft GitHub release for the tag. Publish
+the draft after the transferred packages pass the checks below.
 
 ## Verify the transferred packages
 

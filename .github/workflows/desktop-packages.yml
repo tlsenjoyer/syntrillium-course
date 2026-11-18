@@ -14,15 +14,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        runner: [windows-2025, macos-15, macos-15-intel, ubuntu-24.04]
+        exclude: ${{ github.event_name == 'push' && fromJSON('[{"runner":"windows-2025"}]') || fromJSON('[]') }}
         include:
-          - runner: windows-2025
-            args: --win --x64
           - runner: macos-15
             args: --mac --arm64
           - runner: macos-15-intel
             args: --mac --x64
           - runner: ubuntu-24.04
-            args: --linux --x64
+            args: ${{ github.event_name == 'push' && '--linux deb --x64' || '--linux --x64' }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -30,7 +30,9 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - run: npm run package -- ${{ matrix.args }}
+      - if: github.event_name == 'workflow_dispatch' && runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y libarchive-tools
+      - run: npm run package -- ${{ matrix.args || '--win --x64' }}
       - uses: actions/upload-artifact@v7
         with:
           name: desktop-${{ matrix.runner }}
