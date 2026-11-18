@@ -53,6 +53,8 @@
   // Navigation is independent of narration. Keep the native details fallback,
   // but defer removing `open` until its closing animation has finished.
   const lesson = byId('lesson');
+  const menu = byId('menu');
+  const transport = lesson.querySelector('.transport');
   const navigation = byId('lesson-navigation');
   const navigationToggle = navigation.querySelector('summary');
   const navigationPanel = navigation.querySelector('nav');
@@ -358,23 +360,29 @@
     seeking = false;
     previewPosition = null;
     pendingSeek = null;
-    byId('lesson').hidden = true;
-    byId('menu').hidden = false;
     error.hidden = true;
     route = nextRoute;
-    if (nextRoute !== 'menu') {
-      try {
-        const loaded = await loadLesson(nextRoute);
-        if (route !== nextRoute) return;
-        selectLesson(nextRoute, loaded);
-        byId('menu').hidden = true;
-        byId('lesson').hidden = false;
-        start(0, 0, false);
-      } catch {
-        if (route === nextRoute) {
-          route = '';
-          showError('Не удалось открыть материалы урока. Распакуйте папку курса целиком и выберите урок снова.');
-        }
+    if (nextRoute === 'menu') {
+      lesson.hidden = true;
+      menu.hidden = false;
+      return;
+    }
+    transport.inert = true;
+    updateControls();
+    try {
+      const loaded = await loadLesson(nextRoute);
+      if (route !== nextRoute) return;
+      selectLesson(nextRoute, loaded);
+      start(0, 0, false);
+      transport.inert = false;
+      menu.hidden = true;
+      lesson.hidden = false;
+    } catch {
+      if (route === nextRoute) {
+        route = '';
+        lesson.hidden = true;
+        menu.hidden = false;
+        showError('Не удалось открыть материалы урока. Распакуйте папку курса целиком и выберите урок снова.');
       }
     }
   }
@@ -404,7 +412,7 @@
   byId('position').addEventListener('change', commitSeek);
   byId('position').addEventListener('pointerup', commitSeek);
   document.addEventListener('keydown', event => {
-    if (event.code !== 'Space' || byId('lesson').hidden || event.target?.closest?.('button, summary, select, textarea, [contenteditable="true"]')) return;
+    if (event.code !== 'Space' || lesson.hidden || transport.inert || event.target?.closest?.('button, summary, select, textarea, [contenteditable="true"]')) return;
     event.preventDefault();
     if (finished) start(0);
     else if (shouldPlay) {

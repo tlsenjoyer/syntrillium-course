@@ -12,6 +12,31 @@ ROOT = Path(__file__).resolve().parents[1]
 
 @unittest.skipUnless(importlib.util.find_spec('playwright'), 'Player checks require Playwright')
 class PlayerTests(unittest.TestCase):
+    def test_lesson_stays_visible_until_the_next_lesson_loads(self):
+        from playwright.sync_api import expect, sync_playwright
+        with sync_playwright() as p:
+            browser = p.chromium.launch(executable_path=os.environ.get('PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH'))
+            page = browser.new_page(viewport={'width': 1000, 'height': 800})
+            page.goto((ROOT / 'player/index.html').as_uri() + '#lesson/waveforms')
+            stage = page.locator('.stage')
+            expect(stage).to_be_visible()
+            next_lesson = page.locator('#next-lesson')
+            next_lesson.scroll_into_view_if_needed()
+            before = stage.bounding_box()
+            page.evaluate("""() => {
+                const append = document.head.append.bind(document.head);
+                document.head.append = script => {
+                    window.finishLessonLoad = () => append(script);
+                };
+            }""")
+            next_lesson.click()
+            page.wait_for_function('window.finishLessonLoad !== undefined')
+            self.assertEqual(stage.bounding_box(), before)
+            self.assertTrue(page.locator('#menu').is_hidden())
+            page.evaluate('window.finishLessonLoad()')
+            expect(page.locator('#lesson-title')).to_have_text('Аналоговый звук')
+            browser.close()
+
     def test_first_lesson_is_available_offline_and_switches_without_old_narration(self):
         from playwright.sync_api import sync_playwright
         with sync_playwright() as p:
